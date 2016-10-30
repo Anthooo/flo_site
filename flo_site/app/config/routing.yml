@@ -1,0 +1,4 @@
+flo:
+    resource: "@FloBundle/Resources/config/routing.yml"
+    prefix:   /
+
