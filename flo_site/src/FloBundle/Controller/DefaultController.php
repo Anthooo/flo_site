@@ -10,4 +10,9 @@ class DefaultController extends Controller
     {
         return $this->render('FloBundle:Default:index.html.twig');
     }
+
+    public function adminAction()
+    {
+        return $this->render('@Flo/Admin/index.html.twig');
+    }
 }

@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Abouts list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Date</th>
+                <th>Contenu</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for about in abouts %}
+            <tr>
+                <td><a href="{{ path('about_show', { 'id': about.id }) }}">{{ about.id }}</a></td>
+                <td>{{ about.date }}</td>
+                <td>{{ about.contenu }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('about_show', { 'id': about.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('about_edit', { 'id': about.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('about_new') }}">Create a new about</a>
+        </li>
+    </ul>
+{% endblock %}

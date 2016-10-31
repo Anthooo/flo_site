@@ -1,0 +1,11 @@
+<?php
+
+namespace FloBundle\Entity;
+
+/**
+ * Modele
+ */
+class Modele
+{
+    
+}
