@@ -3,6 +3,8 @@
 namespace FloBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
+
 
 class DefaultController extends Controller
 {
@@ -53,5 +55,40 @@ class DefaultController extends Controller
         return $this->render('@Flo/User/contact.html.twig');
     }
 
+    public function mailAction()
+    {
+        return $this->render('@Flo/User/confirm.html.twig');
+    }
 
+    public function sendAction(Request $request)
+    {
+        $from = $this->getParameter('mailer_user');
+        $name = $request->request->get('nom');
+        $firstname = $request->request->get('prenom');
+        $mail = $request->request->get('email');
+//        $sujet = $request->request->get('Sujet');
+        $msg = $request->request->get('msg');
+
+        $message = \Swift_Message::newInstance()
+            ->setSubject('Contact Site')
+            ->setFrom(array($from => 'Florence Menet-Pélisson'))
+            ->setTo($from)
+            ->setBody(
+                $this->renderView(
+                    '@Flo/User/mail.html.twig',
+                    array(
+                        'nom' => $name,
+                        'prenom' => $firstname,
+                        'email' => $mail,
+//                        'sujet' => $sujet,
+                        'msg' => $msg
+                    )
+                ),
+                'text/html'
+            );
+
+        $this->get('mailer')->send($message);
+        return $this->render('@Flo/User/confirm.html.twig');
+
+    }
 }

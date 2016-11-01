@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block header %}
+    {% include '@Flo/Default/navbar.html.twig' %}
+{% endblock %}
+
+{% block body %}
+
+    <body class="page">
+         <div class="container">
+
+             <div class="row center confirm">
+                 <div>
+                    <h4>Merci,</h4>
+                    <h4>votre message a bien été envoyé.</h4>
+                 </div>
+
+                 <div class="btnconfirm">
+                 <a href="{{ path('flo_homepage') }}" class="waves-effect waves-light btn btn-large"><i class="material-icons left">home</i>Revenir à l'accueil</a>
+                 </div>
+             </div>
+         </div>
+    </body>
+
+
+{% endblock %}
