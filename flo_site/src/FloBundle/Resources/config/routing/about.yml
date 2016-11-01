@@ -1,0 +1,20 @@
+about_index:
+    path:     /
+    defaults: { _controller: "FloBundle:About:index" }
+    methods:  GET
+
+about_new:
+    path:     /new
+    defaults: { _controller: "FloBundle:About:new" }
+    methods:  [GET, POST]
+
+about_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "FloBundle:About:edit" }
+    methods:  [GET, POST]
+
+about_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "FloBundle:About:delete" }
+    requirements:
+      id: \d+

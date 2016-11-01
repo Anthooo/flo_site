@@ -1,0 +1,124 @@
+.admin {
+  padding: 10px;
+  background: url('../images/pattern.png') #BEBAB9;
+  background-repeat: repeat, no-repeat;
+  background-position: 0 0;
+  background-size: 10px 10px, cover;
+}
+
+.row .adm {
+  width: 100%;
+}
+
+.container .row {
+  padding: 15px;
+}
+
+.admincontenu, .modeleadmin, .aboutadmin {
+  padding: 15px;
+  background: RGBA(250, 250, 250, 0.3);
+  border-radius: 15px;
+  font-size: 20px;
+  min-height: 100vh;
+}
+
+.modeleadmin, .aboutadmin {
+  height: 300px;
+  padding-top: 10% !important;
+}
+.adminhome {
+  margin-top: 7%;
+  padding-top: 45px;
+}
+
+.adminmenu {
+  margin-top: 50px;
+  padding-top: 50px;
+}
+
+.adminmenu a{
+  color: transparent;
+  display: block;
+  text-transform: uppercase;
+  text-shadow: 0px 0px 5px #fff;
+  letter-spacing: 1px;
+  font-size: 25px;
+  text-align: center;
+}
+
+.adminmenu:hover a{
+  text-shadow: 0px 0px 5px #424242;
+}
+
+.adminmenu a:hover{
+  color: #fff;
+  text-shadow: 0px 0px 1px #fff;
+}
+
+.admin .textarea{
+  height:100px;
+}
+
+.admin select{
+  display: block;
+}
+
+.materialboxed{
+  height: 100px;
+  display: initial;
+}
+
+.materialboxed.active {
+  height: 100% !important;
+  width: 100% !important;
+}
+td, th {
+  text-align: center;
+  border: 1px solid dimgrey;
+  color: dimgrey;
+  max-height: 150px;
+  overflow: hidden;
+}
+
+.contentmodele {
+  max-height: 150px;
+  overflow: scroll;
+}
+
+.adminbtn {
+  background: none;
+  border: none;
+}
+
+
+.admin .material-icons {
+   color: dimgrey;
+  background: none;
+}
+
+.admin .material-icons:hover {
+  color: white;
+}
+
+//NAVBAR ADMIN
+
+.navadm {
+  padding: 10px !important;
+}
+
+.navadm a{
+  color: white;
+  text-align: left;
+}
+
+.navadm a:hover{
+  border-radius: 15px;
+}
+
+.navadm nav ul {
+  width: 100%;
+}
+
+.navadm .dropdown-content {
+  border-radius:15px;
+}

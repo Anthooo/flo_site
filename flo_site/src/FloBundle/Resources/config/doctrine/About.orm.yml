@@ -1,0 +1,17 @@
+FloBundle\Entity\About:
+    type: entity
+    table: null
+    repositoryClass: FloBundle\Repository\AboutRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        date:
+            type: string
+            length: 255
+        contenu:
+            type: text
+    lifecycleCallbacks: {  }

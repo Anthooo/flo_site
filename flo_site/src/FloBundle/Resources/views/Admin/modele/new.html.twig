@@ -1,0 +1,74 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <body class="admin">
+
+    <div class="row">
+        {% include '@Flo/Default/navadmin.html.twig' %}
+
+        <div class="col l10">
+            <div class="container adm">
+                <div class="row admincontenu">
+
+                    <h1>Modele creation</h1>
+
+                    {{ form_start(form) }}
+
+                    <div class="row input-field">
+                        {{ form_label(form.titre) }}
+                        {{ form_widget(form.titre) }}
+                        {{ form_errors(form.titre) }}
+                    </div>
+
+                    <div class="row textarea tinymce">
+                        <label>Contenu</label>
+                        {{ form_widget(form.contenu) }}
+                        {{ form_errors(form.contenu) }}
+                    </div>
+
+                    <div class="row">
+                        <label>Catégorie :</label>
+                        {{ form_widget(form.categorie) }}
+                        {{ form_errors(form.categorie) }}
+                    </div>
+
+                    <div class="row file-field input-field">
+                        <div class="btn">
+                            <span>Image</span>
+                            {{ form_widget(form.image.file) }}
+                        </div>
+                        <div class="file-path-wrapper">
+                            <input class="file-path validate" type="text" placeholder="Cliquez pour ajouter votre image">
+                        </div>
+                        {{ form_errors(form.image.file) }}
+                    </div>
+
+                    <div class="row input-field">
+                        {{ form_widget(form.image.dimensions) }}
+                        {{ form_label(form.image.dimensions) }}
+                        {{ form_errors(form.image.dimensions) }}
+                    </div>
+
+                    <div class="row input-field">
+                        <label>Description de l'image</label>
+                        {{ form_widget(form.image.alt) }}
+                        {{ form_errors(form.image.alt) }}
+                    </div>
+
+
+
+                    <div class="row center">
+                        <button class="adminbtn" type="submit" title="Valider"><i class="medium material-icons">check_circle</i></button>
+                        <a href="{{ path('modele_index') }}"><i class="medium material-icons">cancel</i></a>
+                    </div>
+
+                    {{ form_end(form) }}
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
+
+{% endblock %}

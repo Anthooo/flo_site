@@ -1,3 +1,31 @@
-flo_homepage:
-    path:     /
-    defaults: { _controller: FloBundle:Default:index }
+#-----------------------------------------------------------------------------------------------------
+#Appel route utilisateur/client
+#-----------------------------------------------------------------------------------------------------
+
+user_routing:
+    resource: routing/user.yml
+    prefix:   /
+
+#-----------------------------------------------------------------------------------------------------
+#Route accueil admin
+#-----------------------------------------------------------------------------------------------------
+
+admin_homepage:
+    path:     /admin/
+    defaults: { _controller: FloBundle:Default:admin }
+
+#-----------------------------------------------------------------------------------------------------
+#Appel route admin
+#-----------------------------------------------------------------------------------------------------
+
+flo_modele:
+    resource: "@FloBundle/Resources/config/routing/modele.yml"
+    prefix:   /admin/modele
+
+flo_categorie:
+    resource: "@FloBundle/Resources/config/routing/categorie.yml"
+    prefix:   /admin/categorie
+
+flo_about:
+    resource: "@FloBundle/Resources/config/routing/about.yml"
+    prefix:   /admin/about

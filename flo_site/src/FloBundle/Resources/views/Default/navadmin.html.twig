@@ -1,0 +1,23 @@
+<div class="col l2 admincontenu navadm">
+    <ul id="dropdown1" class="dropdown-content">
+        <li><a href="{{ path('modele_index') }}">Accueil</a></li>
+        <li><a href="{{ path('modele_new') }}">Nouveau</a></li>
+    </ul>
+    <ul id="dropdown2" class="dropdown-content">
+        <li><a href="{{ path('about_index') }}">Accueil</a></li>
+        <li><a href="{{ path('about_new') }}">Nouveau</a></li>
+    </ul>
+    <nav>
+        <div class="nav-wrapper">
+            <ul class="left hide-on-med-and-down">
+                <li><a href="{{ path('admin_homepage') }}">Accueil</a></li>
+                <li><a class="dropdown-button" href="#!" data-activates="dropdown1"><i class="material-icons right">arrow_drop_down</i>Modèles</a></li>
+                <li><a class="dropdown-button" href="#!" data-activates="dropdown2">A propos<i class="material-icons right">arrow_drop_down</i></a></li>
+                <li class="divider"></li>
+                <li><a href="{{ path('flo_oeuvres') }}">Retour "Oeuvres"</a></li>
+                <li><a href="{{ path('flo_fictions') }}">Retour "Fictions"</a></li>
+                <li><a href="{{ path('flo_about') }}">Retour "A propos"</a></li>
+            </ul>
+        </div>
+    </nav>
+</div>

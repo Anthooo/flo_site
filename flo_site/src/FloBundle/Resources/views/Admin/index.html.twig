@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <body class="admin">
+
+    <div class="container adminhome">
+        <div class="row ">
+            <h1>FLORENCE MENET-PELISSON</h1>
+
+            <div class="row adminmenu">
+                <a href="{{ path('modele_index') }}"><div class="col l5 modeleadmin">Modèles</div></a>
+                <a href="{{ path('about_index') }}"><div class="col offset-l2 l5 aboutadmin">A propos</div></a>
+            </div>
+
+        </div>
+    </div>
+
+    </div>
+
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <body class="admin">
+
+        <div class="row">
+            {% include '@Flo/Default/navadmin.html.twig' %}
+
+
+            <div class="col l10">
+                <div class="container adm">
+                    <div class="row admincontenu">
+                        <h1>Edition</h1>
+
+                        {{ form_start(edit_form) }}
+                            {{ form_widget(edit_form) }}
+                                <div class="row center">
+                                    <button class="adminbtn" type="submit" title="Valider"><i class="medium material-icons">check_circle</i></button>
+                                    <a href="{{ path('about_index') }}" title="Annuler"><i class="medium material-icons">cancel</i></a>
+                                    <a href="{{ path('about_delete', { 'id': about.id }) }}" title="Effacer"><i class="medium material-icons">delete</i> </a>
+                                </div>
+
+
+                        {{ form_end(edit_form) }}
+
+                    </div>
+
+                </div>
+
+            </div>
+
+    </body>
+
+{% endblock %}
