@@ -42,7 +42,7 @@ class AboutController extends Controller
             $em->persist($about);
             $em->flush($about);
 
-            return $this->redirectToRoute('about_show', array('id' => $about->getId()));
+            return $this->redirectToRoute('about_index', array('id' => $about->getId()));
         }
 
         return $this->render('@Flo/Admin/about/new.html.twig', array(
@@ -51,40 +51,27 @@ class AboutController extends Controller
         ));
     }
 
-    /**
-     * Finds and displays a about entity.
-     *
-     */
-    public function showAction(About $about)
-    {
-        $deleteForm = $this->createDeleteForm($about);
-
-        return $this->render('@Flo/Admin/about/show.html.twig', array(
-            'about' => $about,
-            'delete_form' => $deleteForm->createView(),
-        ));
-    }
-
+//
     /**
      * Displays a form to edit an existing about entity.
      *
      */
     public function editAction(Request $request, About $about)
     {
-        $deleteForm = $this->createDeleteForm($about);
         $editForm = $this->createForm('FloBundle\Form\AboutType', $about);
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($about);
+            $em->flush();
 
-            return $this->redirectToRoute('about_edit', array('id' => $about->getId()));
+            return $this->redirectToRoute('about_index', array('id' => $about->getId()));
         }
 
         return $this->render('@Flo/Admin/about/edit.html.twig', array(
             'about' => $about,
             'edit_form' => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
         ));
     }
 
@@ -92,33 +79,18 @@ class AboutController extends Controller
      * Deletes a about entity.
      *
      */
-    public function deleteAction(Request $request, About $about)
-    {
-        $form = $this->createDeleteForm($about);
-        $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
+    public function deleteAction($id)
+    {
+        if ($id) {
+            $em = $this->getDoctrine()->getEntityManager();
+            $about = $em->getRepository('FloBundle:About')->findOneById($id);
             $em->remove($about);
-            $em->flush($about);
-        }
+            $em->flush();
 
-        return $this->redirectToRoute('about_index');
-    }
+            return $this->redirectToRoute('about_index');
+        } else
+            return $this->redirectToRoute('about_index');
 
-    /**
-     * Creates a form to delete a about entity.
-     *
-     * @param About $about The about entity
-     *
-     * @return \Symfony\Component\Form\Form The form
-     */
-    private function createDeleteForm(About $about)
-    {
-        return $this->createFormBuilder()
-            ->setAction($this->generateUrl('about_delete', array('id' => $about->getId())))
-            ->setMethod('DELETE')
-            ->getForm()
-        ;
     }
 }

@@ -42,7 +42,7 @@ class CategorieController extends Controller
             $em->persist($categorie);
             $em->flush($categorie);
 
-            return $this->redirectToRoute('categorie_show', array('id' => $categorie->getId()));
+            return $this->redirectToRoute('categorie_index', array('id' => $categorie->getId()));
         }
 
         return $this->render('@Flo/Admin/categorie/new.html.twig', array(
@@ -59,7 +59,7 @@ class CategorieController extends Controller
     {
         $deleteForm = $this->createDeleteForm($categorie);
 
-        return $this->render('@Flo/Admin/categorie/show.html.twig', array(
+        return $this->render('@Flo/Admin/categorie/index.html.twig', array(
             'categorie' => $categorie,
             'delete_form' => $deleteForm->createView(),
         ));

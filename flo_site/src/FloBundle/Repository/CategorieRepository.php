@@ -10,4 +10,13 @@ namespace FloBundle\Repository;
  */
 class CategorieRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function getModeleByCateg($categ){
+        $sql = 'SELECT * FROM categorie JOIN modele ON categorie.id = modele.categorie_id JOIN image ON image.id = modele.image_id WHERE nom = :categ';
+        $params = array(
+            'categ' => $categ,
+        );
+
+        return $this->getEntityManager()->getConnection()->executeQuery($sql, $params)->fetchAll();
+
+    }
 }

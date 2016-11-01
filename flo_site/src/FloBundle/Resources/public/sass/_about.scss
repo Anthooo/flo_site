@@ -144,7 +144,7 @@
 	}
 
 	.cbp_tmtimeline > li .cbp_tmtime span {
-		text-align: left;
+		text-align: center;
 	}
 
 	.cbp_tmtimeline > li .cbp_tmlabel {
@@ -168,10 +168,7 @@
 	}
 
 	.cbp_tmtimeline > li .cbp_tmicon {
-		position: relative;
-		float: right;
-		left: auto;
-		margin: -55px 5px 0 0px;
+		display: none;
 	}	
 }
 

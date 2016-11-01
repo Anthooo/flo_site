@@ -3,11 +3,6 @@ about_index:
     defaults: { _controller: "FloBundle:About:index" }
     methods:  GET
 
-about_show:
-    path:     /{id}/show
-    defaults: { _controller: "FloBundle:About:show" }
-    methods:  GET
-
 about_new:
     path:     /new
     defaults: { _controller: "FloBundle:About:new" }
@@ -21,4 +16,5 @@ about_edit:
 about_delete:
     path:     /{id}/delete
     defaults: { _controller: "FloBundle:About:delete" }
-    methods:  DELETE
+    requirements:
+      id: \d+

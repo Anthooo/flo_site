@@ -20,6 +20,6 @@ FloBundle\Entity\Modele:
             targetEntity: FloBundle\Entity\Categorie
         image:
             targetEntity: FloBundle\Entity\Image
-#            cascade: ["persist", "remove"]
+            cascade: ["persist", "remove"]
 
     lifecycleCallbacks: {  }

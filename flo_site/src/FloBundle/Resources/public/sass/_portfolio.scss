@@ -8,6 +8,7 @@
 .grid {
 	position: relative;
 	margin: 0 auto;
+	left: 25px;
 }
 
 .js .grid::after {
@@ -178,7 +179,10 @@
 
 .description--preview p {
 	font-size: 0.65em;
-	max-width: 100%;
+	max-width: 80%;
+	overflow: scroll;
+	height: 50%;
+	text-align: justify;
 }
 
 .description--preview p em {
@@ -310,14 +314,14 @@
 	padding: 0;
 	cursor: pointer;
 	vertical-align: top;
-	color: #6bd68a;
+	color: #FFF;
 	border: none;
 	background: none;
 }
 
 .action:hover,
 .action:focus {
-	color: #6bd68a;
+	color: #FFF;
 	outline: none;
 }
 

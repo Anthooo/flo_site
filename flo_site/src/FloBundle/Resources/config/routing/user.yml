@@ -1,3 +1,23 @@
 flo_homepage:
     path:     /
     defaults: { _controller: FloBundle:Default:index }
+
+flo_oeuvres:
+    path:     /oeuvres
+    defaults: { _controller: FloBundle:Default:oeuvres}
+
+flo_fictions:
+    path:     /fictions
+    defaults: { _controller: FloBundle:Default:fictions}
+
+flo_cours:
+    path:     /cours
+    defaults: { _controller: FloBundle:Default:cours}
+
+flo_about:
+    path:     /a-propos
+    defaults: { _controller: FloBundle:Default:about }
+
+flo_contact:
+    path:     /contact
+    defaults: { _controller: FloBundle:Default:contact}

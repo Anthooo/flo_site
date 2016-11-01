@@ -1,21 +1,57 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Categorie edit</h1>
 
-    {{ form_start(edit_form) }}
-        {{ form_widget(edit_form) }}
-        <input type="submit" value="Edit" />
-    {{ form_end(edit_form) }}
+    <body class="admin">
 
-    <ul>
-        <li>
-            <a href="{{ path('categorie_index') }}">Back to the list</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+    <div class="row">
+        <div class="col l2 admincontenu navadm">
+            <ul id="dropdown1" class="dropdown-content">
+                <li><a href="{{ path('modele_index') }}">Accueil</a></li>
+                <li><a href="{{ path('modele_new') }}">Nouveau</a></li>
+            </ul>
+            <ul id="dropdown2" class="dropdown-content">
+                <li><a href="{{ path('about_index') }}">Accueil</a></li>
+                <li><a href="{{ path('about_new') }}">Nouveau</a></li>
+            </ul>
+            <nav>
+                <div class="nav-wrapper">
+                    <ul class="left hide-on-med-and-down">
+                        <li><a href="{{ path('admin_homepage') }}">Accueil</a></li>
+                        <li><a class="dropdown-button" href="#!" data-activates="dropdown1"><i class="material-icons right">arrow_drop_down</i>Modèles</a></li>
+                        <li><a class="dropdown-button" href="#!" data-activates="dropdown2">A propos<i class="material-icons right">arrow_drop_down</i></a></li>
+
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <div class="col l10">
+            <div class="container adm">
+                <div class="row admincontenu">
+
+                <h1>Categorie edit</h1>
+
+                {{ form_start(edit_form) }}
+                    {{ form_widget(edit_form) }}
+                    <input type="submit" value="Edit" />
+                {{ form_end(edit_form) }}
+
+                <ul>
+                    <li>
+                        <a href="{{ path('categorie_index') }}">Back to the list</a>
+                    </li>
+                    <li>
+                        {{ form_start(delete_form) }}
+                            <input type="submit" value="Delete">
+                        {{ form_end(delete_form) }}
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </body>
+
 {% endblock %}

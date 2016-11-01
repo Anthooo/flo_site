@@ -7,6 +7,12 @@ namespace FloBundle\Entity;
  */
 class Categorie
 {
+    public function __toString()
+    {
+        return $this->nom;
+    }
+
+    // GENERATED CODE //
     /**
      * @var int
      */

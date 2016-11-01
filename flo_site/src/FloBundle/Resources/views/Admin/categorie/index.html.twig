@@ -1,39 +1,70 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Categories list</h1>
+    <body class="admin">
+    <div class="row">
+        <div class="col l2 admincontenu navadm">
+            <ul id="dropdown1" class="dropdown-content">
+                <li><a href="{{ path('modele_index') }}">Accueil</a></li>
+                <li><a href="{{ path('modele_new') }}">Nouveau</a></li>
+            </ul>
+            <ul id="dropdown2" class="dropdown-content">
+                <li><a href="{{ path('about_index') }}">Accueil</a></li>
+                <li><a href="{{ path('about_new') }}">Nouveau</a></li>
+            </ul>
+            <nav>
+                <div class="nav-wrapper">
+                    <ul class="left hide-on-med-and-down">
+                        <li><a href="{{ path('admin_homepage') }}">Accueil</a></li>
+                        <li><a class="dropdown-button" href="#!" data-activates="dropdown1"><i class="material-icons right">arrow_drop_down</i>Modèles</a></li>
+                        <li><a class="dropdown-button" href="#!" data-activates="dropdown2">A propos<i class="material-icons right">arrow_drop_down</i></a></li>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Nom</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for categorie in categories %}
-            <tr>
-                <td><a href="{{ path('categorie_show', { 'id': categorie.id }) }}">{{ categorie.id }}</a></td>
-                <td>{{ categorie.nom }}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('categorie_show', { 'id': categorie.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('categorie_edit', { 'id': categorie.id }) }}">edit</a>
-                        </li>
                     </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+                </div>
+            </nav>
+        </div>
 
-    <ul>
-        <li>
-            <a href="{{ path('categorie_new') }}">Create a new categorie</a>
-        </li>
-    </ul>
+        <div class="col l10">
+            <div class="container adm">
+                <div class="row admincontenu">
+
+                <h1>Categories list</h1>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Nom</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for categorie in categories %}
+                        <tr>
+                            <td>{{ categorie.id }}</td>
+                            <td>{{ categorie.nom }}</td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <a href="{{ path('categorie_edit', { 'id': categorie.id }) }}">edit</a>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+
+                <ul>
+                    <li>
+                        <a href="{{ path('categorie_new') }}">Create a new categorie</a>
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </body>
+
 {% endblock %}

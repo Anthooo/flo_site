@@ -1,16 +1,31 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>About creation</h1>
+    <body class="admin">
 
-    {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Create" />
-    {{ form_end(form) }}
+    <div class="row">
+        {% include '@Flo/Default/navadmin.html.twig' %}
 
-    <ul>
-        <li>
-            <a href="{{ path('about_index') }}">Back to the list</a>
-        </li>
-    </ul>
+            <div class="col l10">
+                <div class="container adm">
+                    <div class="row admincontenu">
+                        <h1>Création</h1>
+
+                        {{ form_start(form) }}
+                            {{ form_widget(form) }}
+
+                            <div class="row center">
+                                <button class="adminbtn" type="submit" title="Valider"><i class="medium material-icons">check_circle</i></button>
+                                <a href="{{ path('about_index') }}"><i class="medium material-icons">cancel</i></a>
+                            </div>
+
+
+                        {{ form_end(form) }}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+
 {% endblock %}

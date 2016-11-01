@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block header %}
+    {% include '@Flo/Default/navbar.html.twig' %}
+{% endblock %}
+
+{% block body %}
+
+<body class="page about">
+    <div class="main timeline">
+        <ul class="cbp_tmtimeline">
+            {% for about in abouts %}
+                <li>
+                    <time class="cbp_tmtime"><span>{{ about.date }}</span></time>
+                    <div class="cbp_tmicon cbp_tmicon-phone"></div>
+                    <div class="cbp_tmlabel">
+                        <p>{{ about.contenu }}</p>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+
+{% endblock %}

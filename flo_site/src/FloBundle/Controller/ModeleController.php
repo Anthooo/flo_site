@@ -2,9 +2,10 @@
 
 namespace FloBundle\Controller;
 
-use FloBundle\Entity\Modele;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+
+use FloBundle\Entity\Modele;
 use FloBundle\Form\ModeleType;
 
 /**
@@ -41,9 +42,9 @@ class ModeleController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($modele);
-            $em->flush($modele);
+            $em->flush();
 
-            return $this->redirectToRoute('modele_show', array('id' => $modele->getId()));
+            return $this->redirectToRoute('modele_index', array('id' => $modele->getId()));
         }
 
         return $this->render('@Flo/Admin/modele/new.html.twig', array(
@@ -53,39 +54,25 @@ class ModeleController extends Controller
     }
 
     /**
-     * Finds and displays a modele entity.
-     *
-     */
-    public function showAction(Modele $modele)
-    {
-        $deleteForm = $this->createDeleteForm($modele);
-
-        return $this->render('@Flo/Admin/modele/show.html.twig', array(
-            'modele' => $modele,
-            'delete_form' => $deleteForm->createView(),
-        ));
-    }
-
-    /**
      * Displays a form to edit an existing modele entity.
      *
      */
     public function editAction(Request $request, Modele $modele)
     {
-        $deleteForm = $this->createDeleteForm($modele);
         $editForm = $this->createForm('FloBundle\Form\ModeleType', $modele);
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($modele);
+            $em->flush();
 
-            return $this->redirectToRoute('modele_edit', array('id' => $modele->getId()));
+            return $this->redirectToRoute('modele_index', array('id' => $modele->getId()));
         }
 
         return $this->render('@Flo/Admin/modele/edit.html.twig', array(
             'modele' => $modele,
             'edit_form' => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
         ));
     }
 
@@ -93,33 +80,49 @@ class ModeleController extends Controller
      * Deletes a modele entity.
      *
      */
-    public function deleteAction(Request $request, Modele $modele)
-    {
-        $form = $this->createDeleteForm($modele);
-        $form->handleRequest($request);
+//    public function deleteAction(Request $request, Modele $modele)
+//    {
+//        $form = $this->createDeleteForm($modele);
+//        $form->handleRequest($request);
+//
+//        if ($form->isSubmitted() && $form->isValid()) {
+//            $em = $this->getDoctrine()->getManager();
+//            $em->remove($modele);
+//            $em->flush($modele);
+//        }
+//
+//        return $this->redirectToRoute('modele_index');
+//    }
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
+    public function deleteAction($id)
+    {
+        if ($id) {
+            $em = $this->getDoctrine()->getEntityManager();
+            $modele = $em->getRepository('FloBundle:Modele')->findOneById($id);
+            $image = $em->getRepository('FloBundle:Image')->findOneById($modele->getImage()->getId());
             $em->remove($modele);
-            $em->flush($modele);
-        }
+            $em->remove($image);
+            $em->flush();
 
-        return $this->redirectToRoute('modele_index');
+            return $this->redirectToRoute('modele_index');
+        } else
+            return $this->redirectToRoute('modele_index');
+
     }
 
-    /**
-     * Creates a form to delete a modele entity.
-     *
-     * @param Modele $modele The modele entity
-     *
-     * @return \Symfony\Component\Form\Form The form
-     */
-    private function createDeleteForm(Modele $modele)
-    {
-        return $this->createFormBuilder()
-            ->setAction($this->generateUrl('modele_delete', array('id' => $modele->getId())))
-            ->setMethod('DELETE')
-            ->getForm()
-        ;
-    }
+//    /**
+//     * Creates a form to delete a modele entity.
+//     *
+//     * @param Modele $modele The modele entity
+//     *
+//     * @return \Symfony\Component\Form\Form The form
+//     */
+//    private function createDeleteForm(Modele $modele)
+//    {
+//        return $this->createFormBuilder()
+//            ->setAction($this->generateUrl('modele_delete', array('id' => $modele->getId())))
+//            ->setMethod('DELETE')
+//            ->getForm()
+//        ;
+//    }
 }

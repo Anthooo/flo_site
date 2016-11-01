@@ -1,21 +1,74 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Modele edit</h1>
 
-    {{ form_start(edit_form) }}
-        {{ form_widget(edit_form) }}
-        <input type="submit" value="Edit" />
-    {{ form_end(edit_form) }}
+    <body class="admin">
 
-    <ul>
-        <li>
-            <a href="{{ path('modele_index') }}">Back to the list</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+    <div class="row">
+        {% include '@Flo/Default/navadmin.html.twig' %}
+
+        <div class="col l10">
+            <div class="container adm">
+                <div class="row admincontenu">
+
+                    <h1>Modele edit</h1>
+
+                        {{ form_start(edit_form) }}
+
+                    <div class="row input-field">
+                        {{ form_label(edit_form.titre) }}
+                        {{ form_widget(edit_form.titre) }}
+                        {{ form_errors(edit_form.titre) }}
+                    </div>
+
+                    <div class="row textarea tinymce">
+                        <label>Contenu</label>
+                        {{ form_widget(edit_form.contenu) }}
+                        {{ form_errors(edit_form.contenu) }}
+                    </div>
+
+                    <div class="row">
+                        <label>Catégorie :</label>
+                        {{ form_widget(edit_form.categorie) }}
+                        {{ form_errors(edit_form.categorie) }}
+                    </div>
+
+                    <div class="row file-field input-field">
+                        <div class="btn">
+                            <span>Image</span>
+                            {{ form_widget(edit_form.image.file) }}
+                        </div>
+                        <div class="file-path-wrapper">
+                            <input class="file-path validate" type="text" placeholder="Cliquez pour ajouter votre image">
+                        </div>
+                        {{ form_errors(edit_form.image.file) }}
+                    </div>
+
+                    <div class="row input-field">
+                        {{ form_widget(edit_form.image.dimensions) }}
+                        {{ form_label(edit_form.image.dimensions) }}
+                        {{ form_errors(edit_form.image.dimensions) }}
+                    </div>
+
+                    <div class="row input-field">
+                        <label>Description de l'image</label>
+                        {{ form_widget(edit_form.image.alt) }}
+                        {{ form_errors(edit_form.image.alt) }}
+                    </div>
+
+
+                    <div class="row center">
+                        <button class="adminbtn" type="submit" title="Valider"><i class="medium material-icons">check_circle</i></button>
+                        <a href="{{ path('modele_index') }}" title="Annuler"><i class="medium material-icons">cancel</i></a>
+                        <a href="{{ path('modele_delete', { 'id': modele.id }) }}" title="Effacer"><i class="medium material-icons">delete</i> </a>
+                    </div>
+
+                    {{ form_end(edit_form) }}
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
+
 {% endblock %}
