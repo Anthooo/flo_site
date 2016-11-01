@@ -23,7 +23,7 @@
                         {% for about in abouts %}
                             <tr>
                                 <td>{{ about.date }}</td>
-                                <td>{{ about.contenu }}</td>
+                                <td>{{ about.contenu|raw }}</td>
                                 <td>
                                     <ul>
                                         <li>
