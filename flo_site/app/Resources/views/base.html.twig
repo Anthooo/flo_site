@@ -47,6 +47,14 @@
                         <a href="{{ path('admin_homepage') }}">© 2016 Copyright</a>
                     {% endif %}
 
+                <div class="left">
+                    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                        <a href="{{ path('admin_homepage') }}">Accéder à l'Admin</a>
+                    {% else %}
+
+                    {% endif %}
+                </div>
+
             </div>
         </footer>
 
