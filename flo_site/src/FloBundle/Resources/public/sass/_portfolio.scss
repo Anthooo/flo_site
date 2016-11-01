@@ -361,4 +361,9 @@
 	.details {
 		display: none;
 	}
+
+	.img-wrap img {
+		display: block;
+		max-width: 70%;
+	}
 }

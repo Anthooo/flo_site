@@ -12,7 +12,7 @@
         <div class="grid">
             {% for modele in modeles %}
             <div class="grid__item" data-size="{{ modele.dimensions }}">
-                <a href="{{ asset('uploads/images/') }}{{ modele.url }}" class="img-wrap"><img src="{{ asset('uploads/images/') }}{{ modele.url }}" alt="{{ modele.alt }}" />
+                <a href="{{ asset('uploads/images/') }}{{ modele.url }}" class="img-wrap"><img class="responsive-img" src="{{ asset('uploads/images/') }}{{ modele.url }}" alt="{{ modele.alt }}" />
                     <div class="description description--grid">
                         <h3>{{ modele.titre }}</h3>
                         <p>{{ modele.contenu }}</p>
