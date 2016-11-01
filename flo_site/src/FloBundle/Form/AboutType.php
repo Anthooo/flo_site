@@ -13,7 +13,13 @@ class AboutType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('date')->add('contenu')        ;
+        $builder
+            ->add('date')
+            ->add('contenu', 'textarea', array(
+                'attr' => array(
+                    'class' => 'tinymce',
+                )))
+        ;
     }
     
     /**

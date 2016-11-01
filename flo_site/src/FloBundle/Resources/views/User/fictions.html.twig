@@ -15,7 +15,7 @@
                     <a href="{{ asset('uploads/images/') }}{{ modele.url }}" class="img-wrap"><img src="{{ asset('uploads/images/') }}{{ modele.url }}" alt="{{ modele.alt }}" />
                         <div class="description description--grid">
                             <h3>{{ modele.titre }}</h3>
-                            <p>{{ modele.contenu }}</p>
+                            <p>{{ modele.contenu|raw }}</p>
                         </div>
                     </a>
                 </div>

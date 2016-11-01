@@ -7,18 +7,20 @@
 {% block body %}
 
 <body class="page about">
-    <div class="main timeline">
+    <div class="container">
+        <div class="timeline">
         <ul class="cbp_tmtimeline">
             {% for about in abouts %}
                 <li>
                     <time class="cbp_tmtime"><span>{{ about.date }}</span></time>
                     <div class="cbp_tmicon cbp_tmicon-phone"></div>
                     <div class="cbp_tmlabel">
-                        <p>{{ about.contenu }}</p>
+                        <p>{{ about.contenu|raw }}</p>
                     </div>
                 </li>
             {% endfor %}
         </ul>
+            </div>
     </div>
 </body>
 

@@ -71,3 +71,19 @@ fos_user:
     db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
     firewall_name: main
     user_class: FloBundle\Entity\User
+
+# TinyMCE Configuration
+stfalcon_tinymce:
+    selector: ".tinymce"
+    language: %locale%
+
+    theme:
+        # Simple theme: same as default theme
+        simple:
+             plugins:
+                 - "advlist autolink lists link image charmap print preview hr anchor pagebreak"
+                 - "searchreplace wordcount visualblocks visualchars code fullscreen"
+                 - "insertdatetime media nonbreaking save table contextmenu directionality"
+                 - "emoticons template paste textcolor"
+             toolbar: "undo redo | link unlink | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent"
+
