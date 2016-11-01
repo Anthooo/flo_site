@@ -1,0 +1,4 @@
+FloBundle\Entity\Image:
+    properties:
+        file:
+            - Image: ~

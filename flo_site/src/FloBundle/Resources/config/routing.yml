@@ -53,3 +53,11 @@ fos_user_change_password:
     resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
     prefix: /profile
 
+#-----------------------------------------------------------------------------------------------------
+#Route send mail
+#-----------------------------------------------------------------------------------------------------
+
+send_mail:
+    path:     /mail
+    defaults: { _controller: FloBundle:Default:send}
+    methods: [GET, POST]
