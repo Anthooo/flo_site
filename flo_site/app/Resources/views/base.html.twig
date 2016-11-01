@@ -38,7 +38,14 @@
         <footer>
             <div class="footer-copyright">
 
-                    © 2016 Copyright
+                     {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                        {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+                        <a href="{{ path('fos_user_security_logout') }}">
+                            {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                        </a>
+                    {% else %}
+                        <a href="{{ path('admin_homepage') }}">© 2016 Copyright</a>
+                    {% endif %}
 
             </div>
         </footer>

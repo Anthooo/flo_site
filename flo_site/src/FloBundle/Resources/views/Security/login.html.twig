@@ -1,0 +1,54 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+<body class="admin">
+
+<div class="container adminhome">
+    <div class="row ">
+        <h1>FLORENCE MENET-PELISSON</h1>
+
+        <div class="row adminlog">
+
+            <h1>Connexion</h1>
+
+        {% block fos_user_content %}
+
+                {% if error %}
+                <div>{{ error|trans({}, 'FOSUserBundle') }}</div>
+            {% endif %}
+
+            <form action="{{ path("fos_user_security_check") }}" method="post">
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">account_circle</i>
+                    <label for="username">{{ 'security.login.username'|trans({}, 'FOSUserBundle') }}</label>
+                    <input type="text" id="username" name="_username" required="required" />
+                </div>
+
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">vpn_key</i>
+                    <label for="password">{{ 'security.login.password'|trans({}, 'FOSUserBundle') }}</label>
+                    <input type="password" id="password" name="_password" required="required" />
+                </div>
+
+                <div class="row">
+                    <div class="col offset-l5 l4">
+                        <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+                        <label for="remember_me">{{ 'security.login.remember_me'|trans({}, 'FOSUserBundle') }}</label>
+                    </div>
+
+                    <div class="col offset-l5 l4">
+                        <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}" class="waves-effect waves-light btn">
+                    </div>
+                </div>
+            </form>
+            {% endblock fos_user_content %}
+        </div>
+
+     </div>
+    </div>
+</body>
+
+{% endblock %}
