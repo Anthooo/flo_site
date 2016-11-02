@@ -12,17 +12,17 @@
 
         <div class="row contact">
 
-            <form class="col s12" action="{{ path('send_mail') }}" method="post">
+            <form class="col s12 formvalidate" id="formvalidate" action="{{ path('send_mail') }}" method="post">
 
                 <div class="row">
 
                     <div class="input-field col s6">
-                        <input name="prenom" id="first_name" type="text" class="validate">
+                        <input name="prenom" id="first_name" type="text" class="validate" required="" aria-required="true">
                         <label for="first_name">Prénom</label>
                     </div>
 
                     <div class="input-field col s6">
-                        <input name="nom" id="last_name" type="text" class="validate">
+                        <input name="nom" id="last_name" type="text" class="validate" required="" aria-required="true">
                         <label for="last_name">Nom</label>
                     </div>
 
@@ -31,7 +31,7 @@
                 <div class="row">
 
                     <div class="input-field col s12">
-                        <input name="email" id="email" type="email" class="validate">
+                        <input name="email" id="email" type="email" class="validate" required="" aria-required="true">
                         <label for="email" data-error="Cet email n'est pas valide">Email</label>
 
                     </div>
@@ -41,7 +41,7 @@
                 <div class="row">
 
                     <div class="input-field col s12">
-                        <textarea name="msg" id="textarea" class="materialize-textarea"></textarea>
+                        <textarea name="msg" id="textarea" class="materialize-textarea" required="" aria-required="true"></textarea>
                         <label for="textarea">Votre message</label>
 
                     </div>

@@ -88,6 +88,11 @@ td, th {
   border: none;
 }
 
+.adminbtn:focus {
+  background: none;
+  border: none;
+}
+
 
 .admin .material-icons {
   color: dimgrey;
@@ -120,6 +125,10 @@ td, th {
 
 .navadm .dropdown-content {
   border-radius:15px;
+}
+
+.détails {
+  margin-top: 10%;
 }
 
 // ADMIN LOGIN

@@ -34,28 +34,43 @@
                         {{ form_errors(edit_form.categorie) }}
                     </div>
 
-                    <div class="row file-field input-field">
-                        <div class="btn">
-                            <span>Image</span>
-                            {{ form_widget(edit_form.image.file) }}
+                    <div class="row">
+                        <div class="col l5">
+                            <div class="imageupload">
+                                <img src="{{ asset('uploads/images/') }}{{ modele.image }}">
+                            </div>
                         </div>
-                        <div class="file-path-wrapper">
-                            <input class="file-path validate" type="text" placeholder="Cliquez pour ajouter votre image">
+
+                        <div class="col l7 détails">
+                            <div class="row input-field">
+                                {{ form_widget(edit_form.image.dimensions) }}
+                                {{ form_label(edit_form.image.dimensions) }}
+                                {{ form_errors(edit_form.image.dimensions) }}
+                            </div>
+                            <div class="row input-field">
+                                <label>Description de l'image</label>
+                                {{ form_widget(edit_form.image.alt) }}
+                                {{ form_errors(edit_form.image.alt) }}
+                            </div>
+                            <div class="row file-field input-field">
+                            <div class="btn">
+                                <span>Changer l'image :</span>
+                                {{ form_widget(edit_form.image.file) }}
+                            </div>
+                            <div class="file-path-wrapper">
+                                <input class="file-path validate" type="text" placeholder="Cliquez pour ajouter votre image">
+                            </div>
+                            {{ form_errors(edit_form.image.file) }}
                         </div>
-                        {{ form_errors(edit_form.image.file) }}
+                        </div>
                     </div>
 
-                    <div class="row input-field">
-                        {{ form_widget(edit_form.image.dimensions) }}
-                        {{ form_label(edit_form.image.dimensions) }}
-                        {{ form_errors(edit_form.image.dimensions) }}
-                    </div>
 
-                    <div class="row input-field">
-                        <label>Description de l'image</label>
-                        {{ form_widget(edit_form.image.alt) }}
-                        {{ form_errors(edit_form.image.alt) }}
-                    </div>
+
+
+
+
+
 
 
                     <div class="row center">

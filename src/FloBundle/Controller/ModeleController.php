@@ -59,11 +59,17 @@ class ModeleController extends Controller
      */
     public function editAction(Request $request, Modele $modele)
     {
+        $em = $this->getDoctrine()->getManager();
+        $image = $em->getRepository('FloBundle:Image')->findOneById($modele->getImage()->getId());
+
         $editForm = $this->createForm('FloBundle\Form\ModeleType', $modele);
         $editForm->handleRequest($request);
 
-        if ($editForm->isSubmitted() && $editForm->isValid()) {
+        if ($editForm->isSubmitted() or $editForm->isValid()) {
             $em = $this->getDoctrine()->getManager();
+
+            $image->preUpload();
+
             $em->persist($modele);
             $em->flush();
 
@@ -80,19 +86,6 @@ class ModeleController extends Controller
      * Deletes a modele entity.
      *
      */
-//    public function deleteAction(Request $request, Modele $modele)
-//    {
-//        $form = $this->createDeleteForm($modele);
-//        $form->handleRequest($request);
-//
-//        if ($form->isSubmitted() && $form->isValid()) {
-//            $em = $this->getDoctrine()->getManager();
-//            $em->remove($modele);
-//            $em->flush($modele);
-//        }
-//
-//        return $this->redirectToRoute('modele_index');
-//    }
 
     public function deleteAction($id)
     {

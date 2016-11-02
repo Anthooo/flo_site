@@ -55,7 +55,7 @@ footer {
   padding-right: 15px;
 }
 
-/* line 50, ../sass/_general.scss */
+/* line 48, ../sass/_general.scss */
 h1, h2 {
   font-size: 50px;
   padding-left: 15px;
@@ -71,17 +71,17 @@ h1, h2 {
   transition: all 0.3s ease-in-out;
 }
 
-/* line 65, ../sass/_general.scss */
+/* line 63, ../sass/_general.scss */
 h1 {
   text-align: center;
 }
 
-/* line 69, ../sass/_general.scss */
+/* line 67, ../sass/_general.scss */
 h1:hover, h2:hover {
   text-shadow: 0px 0px 1px #424242;
 }
 
-/* line 73, ../sass/_general.scss */
+/* line 71, ../sass/_general.scss */
 h2 {
   margin-top: 50px;
   text-align: center;
@@ -384,7 +384,7 @@ footer.page-footer {
   font-size: 0.65em;
   max-width: 80%;
   overflow: scroll;
-  height: 50%;
+  max-height: 50%;
   text-align: justify;
 }
 
@@ -1547,45 +1547,56 @@ td, th {
   border: none;
 }
 
-/* line 92, ../sass/_admin.scss */
+/* line 91, ../sass/_admin.scss */
+.adminbtn:focus {
+  background: none;
+  border: none;
+}
+
+/* line 97, ../sass/_admin.scss */
 .admin .material-icons {
   color: dimgrey;
   background: none;
   line-height: 2;
 }
 
-/* line 98, ../sass/_admin.scss */
+/* line 103, ../sass/_admin.scss */
 .admin .material-icons:hover {
   color: white;
 }
 
-/* line 104, ../sass/_admin.scss */
+/* line 109, ../sass/_admin.scss */
 .navadm {
   padding: 10px !important;
 }
 
-/* line 108, ../sass/_admin.scss */
+/* line 113, ../sass/_admin.scss */
 .navadm a {
   color: white;
   text-align: left;
 }
 
-/* line 113, ../sass/_admin.scss */
+/* line 118, ../sass/_admin.scss */
 .navadm a:hover {
   border-radius: 15px;
 }
 
-/* line 117, ../sass/_admin.scss */
+/* line 122, ../sass/_admin.scss */
 .navadm nav ul {
   width: 100%;
 }
 
-/* line 121, ../sass/_admin.scss */
+/* line 126, ../sass/_admin.scss */
 .navadm .dropdown-content {
   border-radius: 15px;
 }
 
-/* line 127, ../sass/_admin.scss */
+/* line 130, ../sass/_admin.scss */
+.détails {
+  margin-top: 10%;
+}
+
+/* line 136, ../sass/_admin.scss */
 .adminlog {
   padding: 15px;
   background: RGBA(250, 250, 250, 0.3);
