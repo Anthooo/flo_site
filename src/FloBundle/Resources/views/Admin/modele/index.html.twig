@@ -28,7 +28,7 @@
                                 <tr>
                                     <td><img class="materialboxed" src="{{ asset('uploads/images/') }}{{ modele.image }}""></td>
                                     <td>{{ modele.titre }}</td>
-                                    <td wordwrap><div class="contentmodele">{{ modele.contenu }}</div></td>
+                                    <td wordwrap><div class="contentmodele">{{ modele.contenu|raw }}</div></td>
                                     <td>{{ modele.categorie }}</td>
                                     <td>
                                         <ul>
