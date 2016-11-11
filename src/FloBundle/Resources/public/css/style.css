@@ -203,7 +203,7 @@ footer.page-footer {
   top: 0;
   left: 0;
   pointer-events: none;
-  background: #252323 url(../img/loading.svg) no-repeat 50% 75px;
+  background: transparent url(../images/loading.svg) no-repeat 50% 75px;
   background-size: 60px auto;
   -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;
@@ -1509,24 +1509,24 @@ a:hover {
   text-shadow: 0px 0px 1px #fff;
 }
 
-/* line 60, ../sass/_admin.scss */
+/* line 58, ../sass/_admin.scss */
 .admin select {
   display: block;
 }
 
-/* line 64, ../sass/_admin.scss */
+/* line 62, ../sass/_admin.scss */
 .materialboxed {
   height: 100px;
   display: initial;
 }
 
-/* line 69, ../sass/_admin.scss */
+/* line 67, ../sass/_admin.scss */
 .materialboxed.active {
   height: 100% !important;
   width: 100% !important;
 }
 
-/* line 73, ../sass/_admin.scss */
+/* line 72, ../sass/_admin.scss */
 td, th {
   text-align: center;
   border: 1px solid dimgrey;
@@ -1535,68 +1535,68 @@ td, th {
   overflow: hidden;
 }
 
-/* line 81, ../sass/_admin.scss */
+/* line 80, ../sass/_admin.scss */
 .contentmodele {
   max-height: 150px;
   overflow: scroll;
 }
 
-/* line 86, ../sass/_admin.scss */
+/* line 85, ../sass/_admin.scss */
 .adminbtn {
   background: none;
   border: none;
 }
 
-/* line 91, ../sass/_admin.scss */
+/* line 90, ../sass/_admin.scss */
 .adminbtn:focus {
   background: none;
   border: none;
 }
 
-/* line 97, ../sass/_admin.scss */
+/* line 96, ../sass/_admin.scss */
 .admin .material-icons {
   color: dimgrey;
   background: none;
   line-height: 2;
 }
 
-/* line 103, ../sass/_admin.scss */
+/* line 102, ../sass/_admin.scss */
 .admin .material-icons:hover {
   color: white;
 }
 
-/* line 109, ../sass/_admin.scss */
+/* line 108, ../sass/_admin.scss */
 .navadm {
   padding: 10px !important;
 }
 
-/* line 113, ../sass/_admin.scss */
+/* line 112, ../sass/_admin.scss */
 .navadm a {
   color: white;
   text-align: left;
 }
 
-/* line 118, ../sass/_admin.scss */
+/* line 117, ../sass/_admin.scss */
 .navadm a:hover {
   border-radius: 15px;
 }
 
-/* line 122, ../sass/_admin.scss */
+/* line 121, ../sass/_admin.scss */
 .navadm nav ul {
   width: 100%;
 }
 
-/* line 126, ../sass/_admin.scss */
+/* line 125, ../sass/_admin.scss */
 .navadm .dropdown-content {
   border-radius: 15px;
 }
 
-/* line 130, ../sass/_admin.scss */
+/* line 129, ../sass/_admin.scss */
 .détails {
   margin-top: 10%;
 }
 
-/* line 136, ../sass/_admin.scss */
+/* line 135, ../sass/_admin.scss */
 .adminlog {
   padding: 15px;
   background: RGBA(250, 250, 250, 0.3);
