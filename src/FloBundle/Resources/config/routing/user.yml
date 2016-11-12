@@ -14,6 +14,18 @@ flo_cours:
     path:     /cours
     defaults: { _controller: FloBundle:Default:cours}
 
+flo_cours_adultes:
+    path:     /cours_adultes_ados
+    defaults: { _controller: FloBundle:Default:coursadultes}
+
+flo_cours_enfants:
+    path:     /cours_enfants
+    defaults: { _controller: FloBundle:Default:coursenfants}
+
+flo_stages:
+    path:     /stages
+    defaults: { _controller: FloBundle:Default:stages}
+
 flo_about:
     path:     /a-propos
     defaults: { _controller: FloBundle:Default:about }

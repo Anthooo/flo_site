@@ -38,7 +38,38 @@ class DefaultController extends Controller
 
     public function coursAction()
     {
-        return $this->render('@Flo/User/cours.html.twig');
+        $em = $this->getDoctrine()->getManager();
+        $modeles = $em->getRepository("FloBundle:Categorie")->getModeleByCateg('Cours');
+        return $this->render('@Flo/User/cours.html.twig', array(
+            'modeles'=>$modeles
+        ));
+    }
+
+    public function coursadultesAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $modeles = $em->getRepository("FloBundle:Categorie")->getModeleByCateg('Cours adultes');
+        return $this->render('@Flo/User/cours_adultes.html.twig', array(
+            'modeles'=>$modeles
+        ));
+    }
+
+    public function coursenfantssAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $modeles = $em->getRepository("FloBundle:Categorie")->getModeleByCateg('Cours enfants');
+        return $this->render('@Flo/User/cours_enfants.html.twig', array(
+            'modeles'=>$modeles
+        ));
+    }
+
+    public function stagesAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $modeles = $em->getRepository("FloBundle:Categorie")->getModeleByCateg('Stages');
+        return $this->render('@Flo/User/stages.html.twig', array(
+            'modeles'=>$modeles
+        ));
     }
 
     public function aboutAction()

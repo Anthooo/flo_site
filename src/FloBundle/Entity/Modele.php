@@ -139,4 +139,33 @@ class Modele
     {
         return $this->image;
     }
+    /**
+     * @var string
+     */
+    private $liengaleriecours;
+
+
+    /**
+     * Set liengaleriecours
+     *
+     * @param string $liengaleriecours
+     *
+     * @return Modele
+     */
+    public function setLiengaleriecours($liengaleriecours)
+    {
+        $this->liengaleriecours = $liengaleriecours;
+
+        return $this;
+    }
+
+    /**
+     * Get liengaleriecours
+     *
+     * @return string
+     */
+    public function getLiengaleriecours()
+    {
+        return $this->liengaleriecours;
+    }
 }

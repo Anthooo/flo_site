@@ -14,6 +14,9 @@ FloBundle\Entity\Modele:
             length: 255
         contenu:
             type: text
+        liengaleriecours:
+            type: string
+            length: 255
 
     manyToOne:
         categorie:

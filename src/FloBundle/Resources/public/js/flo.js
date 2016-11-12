@@ -1,3 +1,8 @@
+$(document).ready(function(){
+    $('.parallax').parallax();
+    $('.tooltipped').tooltip({delay: 50});
+});
+
 (function() {
     var support = { transitions: Modernizr.csstransitions },
         // transition end event name
@@ -54,5 +59,6 @@
         }
     });
 })();
+
 
 

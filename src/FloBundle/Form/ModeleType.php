@@ -5,6 +5,8 @@ namespace FloBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+
 
 class ModeleType extends AbstractType
 {
@@ -21,6 +23,15 @@ class ModeleType extends AbstractType
                     'data-theme' => 'bbcode' // Skip it if you want to use default theme
                 )))
             ->add('categorie')
+            ->add('liengaleriecours', ChoiceType::class, array(
+                'required' => false,
+                'placeholder' => 'Choisir une galerie',
+                'choices'  => array(
+                    'cours_adultes_ados' => 'adultes',
+                    'cours_enfants' => 'enfants',
+                    'stages' => 'stages',
+                        ),
+                    ))
             ->add('image', ImageType::class)
         ;
     }

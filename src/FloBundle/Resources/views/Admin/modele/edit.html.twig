@@ -37,7 +37,7 @@
                     <div class="row">
                         <div class="col l5 center">
                             <div class="imageupload">
-                                <img src="{{ asset('uploads/images/') }}{{ modele.image }}">
+                                <img class="imageupload" src="{{ asset('uploads/images/') }}{{ modele.image }}">
                             </div>
                         </div>
 
@@ -62,6 +62,13 @@
                             </div>
                             {{ form_errors(edit_form.image.file) }}
                         </div>
+
+                                <label>Lien galerie cours</label>
+
+                            <div class="row input-field">
+                                {{ form_widget(edit_form.liengaleriecours) }}
+                                {{ form_errors(edit_form.liengaleriecours) }}
+                            </div>
                         </div>
                     </div>
 

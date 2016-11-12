@@ -1,13 +1,27 @@
 // COURS
 
+.cours {
+	margin-bottom: 50px;
+	margin-top: 50px;
+}
+
 .white {
 	padding: 15px;
 	background: RGBA(250, 250, 250, 0.3) !important;
 	border-radius: 15px;
 }
 
+.parallax img {
+	display: block;
+}
+
 .parallax-container {
 	height: 300px;
+}
+
+.imgcours {
+	max-width: 450px;
+	border-radius: 15px;
 }
 
 .horaires {
