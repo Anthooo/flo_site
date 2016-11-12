@@ -54,7 +54,7 @@ class DefaultController extends Controller
         ));
     }
 
-    public function coursenfantssAction()
+    public function coursenfantsAction()
     {
         $em = $this->getDoctrine()->getManager();
         $modeles = $em->getRepository("FloBundle:Categorie")->getModeleByCateg('Cours enfants');

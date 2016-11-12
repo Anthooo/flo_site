@@ -73,3 +73,24 @@ h2 {
 	text-align: center;
 }
 
+//ERROR PAGE
+
+.error {
+	margin-top: 20%;
+	padding-left: 15px;
+	color: transparent;
+	display: block;
+	text-transform: uppercase;
+	text-shadow: 0px 0px 5px #fff;
+	letter-spacing: 1px;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+
+.errorfont {
+	margin-top: 10px;
+	font-size: 100px;
+}
