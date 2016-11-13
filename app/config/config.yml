@@ -118,3 +118,35 @@ lexik_maintenance:
     response:
         code: 503
         status: "Service Temporarily Unavailable"
+
+# Sonata SEO Configuration
+sonata_seo:
+    encoding:         UTF-8
+    page:
+        title:            Florence Menet-Pélisson
+        default:          sonata.seo.page.default
+        metas:
+            name:
+                keywords:             florence, menet, pélisson, dessin, contemporain, crayon, gravure sur bois, xylogravure, graphisme, gravure taille-douce, aquatinte, eau-forte, hybride, pointe sèche, encre, estampe, crayon, dessin d'art, art, pastels, pastels secs, oeuvres sur papier, lecture, livres, romans, écriture, fiction, arts plastiques, dessins d'enfants, cours 77, cours de dessin, seine et marne, stage de dessin, contraste, gouache, collage, couleurs
+                description:          Le site de Florence Menet-Pélisson donne à voir les oeuvres sur papier (dessins au crayon, au pastel sec, gravures sur bois, gravures sur cuivre) de l'artiste ainsi que les travaux de ses élèves. La rubrique fiction présente ses lectures et les textes qu'elle-même écrit.
+                robots:               index, follow
+
+            property:
+                # Open Graph information
+                # see http://developers.facebook.com/docs/opengraphprotocol/#types or http://ogp.me/
+                'og:site_name':       Florence Menet-Pélisson
+                'og:description':     Le site de Florence Menet-Pélisson donne à voir les oeuvres sur papier (dessins au crayon, au pastel sec, gravures sur bois, gravures sur cuivre) de l'artiste ainsi que les travaux de ses élèves. La rubrique fiction présente ses lectures et les textes qu'elle-même écrit.
+
+            http-equiv:
+                'Content-Type':         text/html; charset=utf-8
+                #'X-Ua-Compatible':      IE=EmulateIE7
+
+            charset:
+                UTF-8:    ''
+
+        head:
+            'xmlns':              http://www.w3.org/1999/xhtml
+            'xmlns:og':           http://opengraphprotocol.org/schema/
+            #'xmlns:fb':           "http://www.facebook.com/2008/fbml"
+
+
