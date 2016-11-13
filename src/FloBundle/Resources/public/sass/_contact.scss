@@ -18,6 +18,10 @@ input[type=text]:focus {
 		color: #FFF;
 }
 
+.input-field .prefix {
+	color: white;
+	margin-top: 10px;
+}
 
 /* label color */
 .input-field label, label, input[type=text], input[type=email], textarea {

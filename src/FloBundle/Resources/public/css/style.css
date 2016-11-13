@@ -1103,28 +1103,34 @@ input[type=text]:focus {
   color: #FFF;
 }
 
+/* line 21, ../sass/_contact.scss */
+.input-field .prefix {
+  color: white;
+  margin-top: 10px;
+}
+
 /* label color */
-/* line 23, ../sass/_contact.scss */
+/* line 27, ../sass/_contact.scss */
 .input-field label, label, input[type=text], input[type=email], textarea {
   color: #FFF;
   font-size: 20px;
 }
 
 /* label focus color */
-/* line 28, ../sass/_contact.scss */
+/* line 32, ../sass/_contact.scss */
 .input-field input[type=text]:focus + label {
   color: #737270;
 }
 
 /* label underline focus color */
-/* line 32, ../sass/_contact.scss */
+/* line 36, ../sass/_contact.scss */
 .input-field input[type=text]:focus {
   border-bottom: 1px solid #737270;
   box-shadow: 0 1px 0 0 #737270;
 }
 
 /* valid color */
-/* line 37, ../sass/_contact.scss */
+/* line 41, ../sass/_contact.scss */
 .input-field input[type=text].valid {
   color: #737270;
   border-bottom: 1px solid #FFF;
@@ -1132,56 +1138,56 @@ input[type=text]:focus {
 }
 
 /* invalid color */
-/* line 43, ../sass/_contact.scss */
+/* line 47, ../sass/_contact.scss */
 .input-field input[type=text].invalid {
   border-bottom: 1px solid #000;
   box-shadow: 0 1px 0 0 #000;
 }
 
 /* icon prefix focus color */
-/* line 48, ../sass/_contact.scss */
+/* line 52, ../sass/_contact.scss */
 .input-field .prefix.active {
   color: #737270;
 }
 
 /* label focus color */
-/* line 53, ../sass/_contact.scss */
+/* line 57, ../sass/_contact.scss */
 .input-field input[type=email]:focus + label {
   color: #737270;
 }
 
 /* label underline focus color */
-/* line 59, ../sass/_contact.scss */
+/* line 63, ../sass/_contact.scss */
 .input-field input[type=email]:focus {
   border-bottom: 1px solid #737270;
   box-shadow: 0 1px 0 0 #737270;
 }
 
 /* valid color */
-/* line 64, ../sass/_contact.scss */
+/* line 68, ../sass/_contact.scss */
 .input-field input[type=email].valid {
   color: #737270;
   border-bottom: 1px solid #FFF;
   box-shadow: 0 1px 0 0 #FFF;
 }
 
-/* line 70, ../sass/_contact.scss */
+/* line 74, ../sass/_contact.scss */
 .input-field textarea[class=materialize-textarea] + label {
   color: #FFF;
 }
 
-/* line 74, ../sass/_contact.scss */
+/* line 78, ../sass/_contact.scss */
 .input-field textarea[class=materialize-textarea]:focus + label {
   color: #737270;
 }
 
-/* line 78, ../sass/_contact.scss */
+/* line 82, ../sass/_contact.scss */
 .input-field textarea[class=materialize-textarea]:focus {
   border-bottom: 1px solid #737270;
   box-shadow: 0 1px 0 0 #737270;
 }
 
-/* line 83, ../sass/_contact.scss */
+/* line 87, ../sass/_contact.scss */
 .confirm {
   margin-top: 15%;
   background: RGBA(238, 238, 239, 0.3);
@@ -1189,12 +1195,12 @@ input[type=text]:focus {
   padding-bottom: 30px !important;
 }
 
-/* line 90, ../sass/_contact.scss */
+/* line 94, ../sass/_contact.scss */
 .btnconfirm {
   margin-top: 5%;
 }
 
-/* line 94, ../sass/_contact.scss */
+/* line 98, ../sass/_contact.scss */
 .btn-large {
   border-radius: 15px;
 }
@@ -1296,8 +1302,8 @@ input[type=text]:focus {
 /* The icons */
 /* line 88, ../sass/_about.scss */
 .cbp_tmtimeline > li .cbp_tmicon {
-  width: 40px;
-  height: 40px;
+  width: 20px;
+  height: 20px;
   font-family: 'ecoico';
   speak: none;
   font-style: normal;
@@ -1315,55 +1321,50 @@ input[type=text]:focus {
   text-align: center;
   left: 20%;
   top: 0;
-  margin: 0 0 0 -25px;
+  margin: 0 0 0 -15px;
 }
 
-/* line 111, ../sass/_about.scss */
-.cbp_tmicon-phone:before {
-  content: "\e901";
-}
-
-/* line 115, ../sass/_about.scss */
+/* line 113, ../sass/_about.scss */
 .cbp_tmicon-screen:before {
   content: "\e001";
 }
 
-/* line 119, ../sass/_about.scss */
+/* line 117, ../sass/_about.scss */
 .cbp_tmicon-mail:before {
   content: "\e002";
 }
 
-/* line 123, ../sass/_about.scss */
+/* line 121, ../sass/_about.scss */
 .cbp_tmicon-earth:before {
   content: "\e003";
 }
 
 /* Example Media Queries */
 @media screen and (max-width: 65.375em) {
-  /* line 130, ../sass/_about.scss */
+  /* line 128, ../sass/_about.scss */
   .cbp_tmtimeline > li .cbp_tmtime span:last-child {
     font-size: 1.5em;
   }
 }
 @media screen and (max-width: 47.2em) {
-  /* line 136, ../sass/_about.scss */
+  /* line 134, ../sass/_about.scss */
   .cbp_tmtimeline:before {
     display: none;
   }
 
-  /* line 140, ../sass/_about.scss */
+  /* line 138, ../sass/_about.scss */
   .cbp_tmtimeline > li .cbp_tmtime {
     width: 100%;
     position: relative;
     padding: 0 0 20px 0;
   }
 
-  /* line 146, ../sass/_about.scss */
+  /* line 144, ../sass/_about.scss */
   .cbp_tmtimeline > li .cbp_tmtime span {
     text-align: center;
   }
 
-  /* line 150, ../sass/_about.scss */
+  /* line 148, ../sass/_about.scss */
   .cbp_tmtimeline > li .cbp_tmlabel {
     margin: 0 0 30px 0;
     padding: 1em;
@@ -1371,7 +1372,7 @@ input[type=text]:focus {
     font-size: 95%;
   }
 
-  /* line 157, ../sass/_about.scss */
+  /* line 155, ../sass/_about.scss */
   .cbp_tmtimeline > li .cbp_tmlabel:after {
     right: auto;
     left: 20px;
@@ -1380,13 +1381,13 @@ input[type=text]:focus {
     top: -20px;
   }
 
-  /* line 165, ../sass/_about.scss */
+  /* line 163, ../sass/_about.scss */
   .cbp_tmtimeline > li:nth-child(odd) .cbp_tmlabel:after {
     border-right-color: transparent;
     border-bottom-color: #6cbfee;
   }
 
-  /* line 170, ../sass/_about.scss */
+  /* line 168, ../sass/_about.scss */
   .cbp_tmtimeline > li .cbp_tmicon {
     display: none;
   }
@@ -1399,14 +1400,14 @@ input[type=text]:focus {
   font-weight: normal;
   font-style: normal;
 }
-/* line 189, ../sass/_about.scss */
+/* line 187, ../sass/_about.scss */
 *, *:after, *:before {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-/* line 190, ../sass/_about.scss */
+/* line 188, ../sass/_about.scss */
 body, html {
   font-size: 100%;
   padding: 0;
@@ -1414,34 +1415,34 @@ body, html {
 }
 
 /* Clearfix hack by Nicolas Gallagher: http://nicolasgallagher.com/micro-clearfix-hack/ */
-/* line 193, ../sass/_about.scss */
+/* line 191, ../sass/_about.scss */
 .clearfix:before, .clearfix:after {
   content: " ";
   display: table;
 }
 
-/* line 194, ../sass/_about.scss */
+/* line 192, ../sass/_about.scss */
 .clearfix:after {
   clear: both;
 }
 
-/* line 196, ../sass/_about.scss */
+/* line 194, ../sass/_about.scss */
 body {
   font-family: 'Lato', Calibri, Arial, sans-serif;
 }
 
-/* line 200, ../sass/_about.scss */
+/* line 198, ../sass/_about.scss */
 a {
   color: #f0f0f0;
   text-decoration: none;
 }
 
-/* line 205, ../sass/_about.scss */
+/* line 203, ../sass/_about.scss */
 a:hover {
   color: #000;
 }
 
-/* line 209, ../sass/_about.scss */
+/* line 207, ../sass/_about.scss */
 .main {
   width: 95%;
   max-width: 69em;
@@ -1451,7 +1452,7 @@ a:hover {
   flex: 1 0 auto;
 }
 
-/* line 219, ../sass/_about.scss */
+/* line 217, ../sass/_about.scss */
 .icon-drop:before,
 .icon-arrow-left:before {
   font-family: 'fontawesome';
@@ -1470,12 +1471,12 @@ a:hover {
   padding-left: 8px;
 }
 
-/* line 238, ../sass/_about.scss */
+/* line 236, ../sass/_about.scss */
 .icon-drop:before {
   content: "\e000";
 }
 
-/* line 242, ../sass/_about.scss */
+/* line 240, ../sass/_about.scss */
 .icon-arrow-left:before {
   content: "\f060";
 }
