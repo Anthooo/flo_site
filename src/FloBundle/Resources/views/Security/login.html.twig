@@ -21,25 +21,25 @@
             <form action="{{ path("fos_user_security_check") }}" method="post">
                 <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
 
-                <div class="input-field col s6">
+                <div class="input-field col l6 s12">
                     <i class="material-icons prefix">account_circle</i>
                     <label for="username">{{ 'security.login.username'|trans({}, 'FOSUserBundle') }}</label>
                     <input type="text" id="username" name="_username" required="required" />
                 </div>
 
-                <div class="input-field col s6">
+                <div class="input-field col l6 s12">
                     <i class="material-icons prefix">vpn_key</i>
                     <label for="password">{{ 'security.login.password'|trans({}, 'FOSUserBundle') }}</label>
                     <input type="password" id="password" name="_password" required="required" />
                 </div>
 
                 <div class="row">
-                    <div class="col offset-l5 l4">
+                    <div class="col offset-l5 l4 s12">
                         <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
                         <label for="remember_me">{{ 'security.login.remember_me'|trans({}, 'FOSUserBundle') }}</label>
                     </div>
 
-                    <div class="col offset-l5 l4">
+                    <div class="col offset-l5 l4 s12">
                         <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}" class="waves-effect waves-light btn">
                     </div>
                 </div>
@@ -51,4 +51,11 @@
     </div>
 </body>
 
+{% endblock %}
+
+{% block javascripts %}
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+    <script src="{{ asset('bundles/flo/js/flo.js') }}"></script>
 {% endblock %}

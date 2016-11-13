@@ -264,7 +264,7 @@ footer.page-footer {
   max-width: 100%;
 }
 
-/* line 56, ../sass/_portfolio.scss */
+/* line 55, ../sass/_portfolio.scss */
 .preview {
   position: fixed;
   z-index: 1000;
@@ -287,7 +287,7 @@ footer.page-footer {
   pointer-events: none;
 }
 
-/* line 78, ../sass/_portfolio.scss */
+/* line 77, ../sass/_portfolio.scss */
 .preview::before {
   content: '';
   position: fixed;
@@ -301,17 +301,17 @@ footer.page-footer {
   transition: opacity 0.6s;
 }
 
-/* line 91, ../sass/_portfolio.scss */
+/* line 90, ../sass/_portfolio.scss */
 .preview--open {
   pointer-events: auto;
 }
 
-/* line 95, ../sass/_portfolio.scss */
+/* line 94, ../sass/_portfolio.scss */
 .preview--open::before {
   opacity: 1;
 }
 
-/* line 99, ../sass/_portfolio.scss */
+/* line 98, ../sass/_portfolio.scss */
 .clone {
   position: fixed;
   z-index: 110;
@@ -320,7 +320,7 @@ footer.page-footer {
   -webkit-backface-visibility: hidden;
 }
 
-/* line 107, ../sass/_portfolio.scss */
+/* line 106, ../sass/_portfolio.scss */
 .original {
   position: relative;
   z-index: 120;
@@ -331,31 +331,31 @@ footer.page-footer {
   -webkit-backface-visibility: hidden;
 }
 
-/* line 117, ../sass/_portfolio.scss */
+/* line 116, ../sass/_portfolio.scss */
 .preview--open .animate {
   /* open */
   -webkit-transition: -webkit-transform 0.6s, opacity 0.2s;
   transition: transform 0.6s, opacity 0.2s;
 }
 
-/* line 123, ../sass/_portfolio.scss */
+/* line 122, ../sass/_portfolio.scss */
 .animate {
   /* close */
   -webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
   transition: transform 0.3s, opacity 0.2s;
 }
 
-/* line 129, ../sass/_portfolio.scss */
+/* line 128, ../sass/_portfolio.scss */
 .description {
   color: #fff;
 }
 
-/* line 133, ../sass/_portfolio.scss */
+/* line 132, ../sass/_portfolio.scss */
 .js .description--grid {
   display: none;
 }
 
-/* line 137, ../sass/_portfolio.scss */
+/* line 136, ../sass/_portfolio.scss */
 .description--preview {
   font-size: 2em;
   position: absolute;
@@ -386,7 +386,7 @@ footer.page-footer {
   transform: translate3d(0, 30px, 0);
 }
 
-/* line 167, ../sass/_portfolio.scss */
+/* line 166, ../sass/_portfolio.scss */
 .preview--open .description--preview {
   opacity: 1;
   -webkit-transition-delay: 0.2s;
@@ -395,13 +395,13 @@ footer.page-footer {
   transform: translate3d(0, 0, 0);
 }
 
-/* line 175, ../sass/_portfolio.scss */
+/* line 174, ../sass/_portfolio.scss */
 .description--preview h3 {
   font-weight: normal;
   margin: 0;
 }
 
-/* line 180, ../sass/_portfolio.scss */
+/* line 179, ../sass/_portfolio.scss */
 .description--preview p {
   font-size: 0.65em;
   max-width: 80%;
@@ -410,7 +410,7 @@ footer.page-footer {
   text-align: justify;
 }
 
-/* line 188, ../sass/_portfolio.scss */
+/* line 187, ../sass/_portfolio.scss */
 .description--preview p em {
   color: #5D5D5D;
   display: block;
@@ -418,13 +418,13 @@ footer.page-footer {
 }
 
 /* Details */
-/* line 197, ../sass/_portfolio.scss */
+/* line 196, ../sass/_portfolio.scss */
 .details {
   max-width: 100%;
   /* IE 10-11 bug flexbox */
 }
 
-/* line 202, ../sass/_portfolio.scss */
+/* line 201, ../sass/_portfolio.scss */
 .details ul {
   line-height: 1;
   position: relative;
@@ -433,7 +433,7 @@ footer.page-footer {
   list-style: none;
 }
 
-/* line 210, ../sass/_portfolio.scss */
+/* line 209, ../sass/_portfolio.scss */
 .details ul li {
   font-size: 0.5em;
   position: relative;
@@ -451,50 +451,50 @@ footer.page-footer {
   transform: translate3d(0, 20px, 0);
 }
 
-/* line 227, ../sass/_portfolio.scss */
+/* line 226, ../sass/_portfolio.scss */
 .preview--open .details ul li {
   opacity: 1;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
 
-/* line 233, ../sass/_portfolio.scss */
+/* line 232, ../sass/_portfolio.scss */
 .preview--open .details ul li:nth-child(1) {
   -webkit-transition-delay: 0.2s;
   transition-delay: 0.2s;
 }
 
-/* line 238, ../sass/_portfolio.scss */
+/* line 237, ../sass/_portfolio.scss */
 .preview--open .details ul li:nth-child(2) {
   -webkit-transition-delay: 0.3s;
   transition-delay: 0.3s;
 }
 
-/* line 243, ../sass/_portfolio.scss */
+/* line 242, ../sass/_portfolio.scss */
 .preview--open .details ul li:nth-child(3) {
   -webkit-transition-delay: 0.4s;
   transition-delay: 0.4s;
 }
 
-/* line 248, ../sass/_portfolio.scss */
+/* line 247, ../sass/_portfolio.scss */
 .preview--open .details ul li:nth-child(4) {
   -webkit-transition-delay: 0.5s;
   transition-delay: 0.5s;
 }
 
-/* line 253, ../sass/_portfolio.scss */
+/* line 252, ../sass/_portfolio.scss */
 .preview--open .details ul li:nth-child(5) {
   -webkit-transition-delay: 0.6s;
   transition-delay: 0.6s;
 }
 
-/* line 258, ../sass/_portfolio.scss */
+/* line 257, ../sass/_portfolio.scss */
 .details ul li:first-child {
   font-weight: bold;
   color: #909090;
 }
 
-/* line 263, ../sass/_portfolio.scss */
+/* line 262, ../sass/_portfolio.scss */
 .icon {
   font-family: 'camera-icons';
   font-weight: normal;
@@ -510,45 +510,45 @@ footer.page-footer {
   speak: none;
 }
 
-/* line 278, ../sass/_portfolio.scss */
+/* line 277, ../sass/_portfolio.scss */
 .icon + span {
   margin-left: 5px;
   vertical-align: middle;
 }
 
-/* line 283, ../sass/_portfolio.scss */
+/* line 282, ../sass/_portfolio.scss */
 .icon-focal_length:before {
   content: '\e600';
 }
 
-/* line 287, ../sass/_portfolio.scss */
+/* line 286, ../sass/_portfolio.scss */
 .icon-exposure_time:before {
   content: '\e601';
 }
 
-/* line 291, ../sass/_portfolio.scss */
+/* line 290, ../sass/_portfolio.scss */
 .icon-iso:before {
   content: '\e602';
 }
 
-/* line 295, ../sass/_portfolio.scss */
+/* line 294, ../sass/_portfolio.scss */
 .icon-camera:before {
   content: '\e603';
 }
 
-/* line 299, ../sass/_portfolio.scss */
+/* line 298, ../sass/_portfolio.scss */
 .icon-aperture:before {
   content: '\e604';
 }
 
-/* line 303, ../sass/_portfolio.scss */
+/* line 302, ../sass/_portfolio.scss */
 .details .icon {
   margin-right: 5px;
   color: #77d45b;
 }
 
 /* Close button */
-/* line 311, ../sass/_portfolio.scss */
+/* line 310, ../sass/_portfolio.scss */
 .action {
   font-size: 1.5em;
   margin: 0;
@@ -560,14 +560,14 @@ footer.page-footer {
   background: none;
 }
 
-/* line 322, ../sass/_portfolio.scss */
+/* line 321, ../sass/_portfolio.scss */
 .action:hover,
 .action:focus {
   color: #FFF;
   outline: none;
 }
 
-/* line 328, ../sass/_portfolio.scss */
+/* line 327, ../sass/_portfolio.scss */
 .action--close {
   position: fixed;
   z-index: 150;
@@ -581,14 +581,14 @@ footer.page-footer {
   transform: scale3d(0.6, 0.6, 1);
 }
 
-/* line 341, ../sass/_portfolio.scss */
+/* line 340, ../sass/_portfolio.scss */
 .preview--image-loaded .action--close {
   opacity: 1;
   -webkit-transform: scale3d(1, 1, 1);
   transform: scale3d(1, 1, 1);
 }
 
-/* line 347, ../sass/_portfolio.scss */
+/* line 346, ../sass/_portfolio.scss */
 .text-hidden {
   position: absolute;
   display: block;
@@ -599,18 +599,18 @@ footer.page-footer {
 }
 
 @media screen and (max-width: 40em) {
-  /* line 357, ../sass/_portfolio.scss */
+  /* line 356, ../sass/_portfolio.scss */
   .description--preview h3 {
     font-size: 0.5em;
   }
 
-  /* line 360, ../sass/_portfolio.scss */
+  /* line 359, ../sass/_portfolio.scss */
   .description--preview p,
   .details {
     display: none;
   }
 
-  /* line 365, ../sass/_portfolio.scss */
+  /* line 364, ../sass/_portfolio.scss */
   .img-wrap img {
     display: block;
     max-width: 70%;
@@ -641,27 +641,28 @@ footer.page-footer {
 
 /* line 22, ../sass/_cours.scss */
 .imgcours {
+  width: 100%;
   max-width: 450px;
   border-radius: 15px;
 }
 
-/* line 27, ../sass/_cours.scss */
+/* line 28, ../sass/_cours.scss */
 .horaires {
   color: grey;
   font-size: 20px;
 }
 
-/* line 32, ../sass/_cours.scss */
+/* line 33, ../sass/_cours.scss */
 .hbold {
   font-weight: bold;
 }
 
-/* line 36, ../sass/_cours.scss */
+/* line 37, ../sass/_cours.scss */
 ul.listecours {
   padding-left: 50px !important;
 }
 
-/* line 40, ../sass/_cours.scss */
+/* line 41, ../sass/_cours.scss */
 ul li.listecours {
   list-style: circle !important;
   list-style-position: outside;
@@ -1099,38 +1100,43 @@ table {
 }
 
 /* line 17, ../sass/_contact.scss */
+.iconame {
+  display: none;
+}
+
+/* line 21, ../sass/_contact.scss */
 input[type=text]:focus {
   color: #FFF;
 }
 
-/* line 21, ../sass/_contact.scss */
+/* line 25, ../sass/_contact.scss */
 .input-field .prefix {
   color: white;
   margin-top: 10px;
 }
 
 /* label color */
-/* line 27, ../sass/_contact.scss */
+/* line 31, ../sass/_contact.scss */
 .input-field label, label, input[type=text], input[type=email], textarea {
   color: #FFF;
   font-size: 20px;
 }
 
 /* label focus color */
-/* line 32, ../sass/_contact.scss */
+/* line 36, ../sass/_contact.scss */
 .input-field input[type=text]:focus + label {
   color: #737270;
 }
 
 /* label underline focus color */
-/* line 36, ../sass/_contact.scss */
+/* line 40, ../sass/_contact.scss */
 .input-field input[type=text]:focus {
   border-bottom: 1px solid #737270;
   box-shadow: 0 1px 0 0 #737270;
 }
 
 /* valid color */
-/* line 41, ../sass/_contact.scss */
+/* line 45, ../sass/_contact.scss */
 .input-field input[type=text].valid {
   color: #737270;
   border-bottom: 1px solid #FFF;
@@ -1138,56 +1144,56 @@ input[type=text]:focus {
 }
 
 /* invalid color */
-/* line 47, ../sass/_contact.scss */
+/* line 51, ../sass/_contact.scss */
 .input-field input[type=text].invalid {
   border-bottom: 1px solid #000;
   box-shadow: 0 1px 0 0 #000;
 }
 
 /* icon prefix focus color */
-/* line 52, ../sass/_contact.scss */
+/* line 56, ../sass/_contact.scss */
 .input-field .prefix.active {
   color: #737270;
 }
 
 /* label focus color */
-/* line 57, ../sass/_contact.scss */
+/* line 61, ../sass/_contact.scss */
 .input-field input[type=email]:focus + label {
   color: #737270;
 }
 
 /* label underline focus color */
-/* line 63, ../sass/_contact.scss */
+/* line 67, ../sass/_contact.scss */
 .input-field input[type=email]:focus {
   border-bottom: 1px solid #737270;
   box-shadow: 0 1px 0 0 #737270;
 }
 
 /* valid color */
-/* line 68, ../sass/_contact.scss */
+/* line 72, ../sass/_contact.scss */
 .input-field input[type=email].valid {
   color: #737270;
   border-bottom: 1px solid #FFF;
   box-shadow: 0 1px 0 0 #FFF;
 }
 
-/* line 74, ../sass/_contact.scss */
+/* line 78, ../sass/_contact.scss */
 .input-field textarea[class=materialize-textarea] + label {
   color: #FFF;
 }
 
-/* line 78, ../sass/_contact.scss */
+/* line 82, ../sass/_contact.scss */
 .input-field textarea[class=materialize-textarea]:focus + label {
   color: #737270;
 }
 
-/* line 82, ../sass/_contact.scss */
+/* line 86, ../sass/_contact.scss */
 .input-field textarea[class=materialize-textarea]:focus {
   border-bottom: 1px solid #737270;
   box-shadow: 0 1px 0 0 #737270;
 }
 
-/* line 87, ../sass/_contact.scss */
+/* line 91, ../sass/_contact.scss */
 .confirm {
   margin-top: 15%;
   background: RGBA(238, 238, 239, 0.3);
@@ -1195,12 +1201,12 @@ input[type=text]:focus {
   padding-bottom: 30px !important;
 }
 
-/* line 94, ../sass/_contact.scss */
+/* line 98, ../sass/_contact.scss */
 .btnconfirm {
   margin-top: 5%;
 }
 
-/* line 98, ../sass/_contact.scss */
+/* line 102, ../sass/_contact.scss */
 .btn-large {
   border-radius: 15px;
 }
@@ -1481,6 +1487,51 @@ a:hover {
   content: "\f060";
 }
 
+@media screen and (max-width: 640px) {
+  /* line 2, ../sass/_media.scss */
+  .detailscours {
+    margin-bottom: 25px;
+  }
+
+  /* line 5, ../sass/_media.scss */
+  .iconame {
+    display: initial;
+  }
+}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
+  /* line 14, ../sass/_media.scss */
+  .detailscours {
+    margin-bottom: 25px;
+  }
+
+  /* line 17, ../sass/_media.scss */
+  .bmenu {
+    float: right;
+  }
+
+  /* line 20, ../sass/_media.scss */
+  .iconame {
+    display: initial;
+  }
+}
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+  /* line 29, ../sass/_media.scss */
+  .detailscours {
+    margin-bottom: 25px;
+  }
+}
+@media screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 3) {
+  /* line 38, ../sass/_media.scss */
+  .detailscours {
+    margin-bottom: 25px;
+  }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
+  /* line 47, ../sass/_media.scss */
+  .detailscours {
+    margin-bottom: 25px;
+  }
+}
 /* line 1, ../sass/_admin.scss */
 .admin {
   padding: 10px;
@@ -1563,12 +1614,6 @@ a:hover {
 .materialboxed {
   height: 100px;
   display: initial;
-}
-
-/* line 71, ../sass/_admin.scss */
-.materialboxed.active {
-  height: 100% !important;
-  width: 100% !important;
 }
 
 /* line 76, ../sass/_admin.scss */

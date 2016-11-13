@@ -20,6 +20,7 @@
 }
 
 .imgcours {
+	width: 100%;
 	max-width: 450px;
 	border-radius: 15px;
 }
@@ -39,7 +40,5 @@ ul.listecours {
 
 ul li.listecours {
 	list-style: circle !important;
-	// padding-left: 50px;
 	list-style-position: outside;
-
 }
