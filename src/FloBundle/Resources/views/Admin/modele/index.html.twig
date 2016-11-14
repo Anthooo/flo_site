@@ -10,9 +10,17 @@
             <div class="container adm">
                 <div class="row admincontenu">
 
-                    <h1><a href="{{ path('modele_new') }}">Créer un modèle</a></h1>
+                    <div class="row">
+                        <div class="col l11">
+                            <h1>Créer un modèle</h1>
+                        </div>
+                        <div class="col l1">
+                            <a href="{{ path('modele_new') }}"><i class="medium material-icons">note_add</i></a>
+                        </div>
 
-                    <table>
+                    </div>
+
+                    <table id="modeles" class="cell-border highlight" cellspacing="0" width="100%">
                         <thead>
                             <tr>
                                 <th>Image</th>
@@ -43,9 +51,7 @@
                         </tbody>
                     </table>
 
-                   <div class="row center">
-                        <a href="{{ path('modele_new') }}"><i class="medium material-icons">note_add</i></a>
-                   </div>
+
 
                 </div>
 
@@ -55,4 +61,34 @@
     </div>
 
 </body>
+{% endblock %}
+
+{% block javascripts %}
+
+    {{ parent() }}
+    <script>
+        $(document).ready(function() {
+
+            $('#modeles').DataTable({
+                "dom": '<lf<t>ip>',
+                "pageLength": 5,
+                "lengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]],
+                "language": {
+                    "lengthMenu": "_MENU_ ",
+                    "zeroRecords": "Rien ne correspond à votre recherche désolé",
+                    "info": "Page _PAGE_ / _PAGES_",
+                    "search": "Rechercher:",
+                    "infoFiltered":   "(parmi _MAX_ modèles)",
+                    "paginate": {
+                        "first":      "Premier",
+                        "last":       "Dernier",
+                        "next":       "Suivant",
+                        "previous":   "Précédent"
+                    }
+                    }}
+            );
+
+        } );
+    </script>
+    <script src="{{ asset('bundles/flo/js/jquery.dataTables.js') }}"></script>
 {% endblock %}

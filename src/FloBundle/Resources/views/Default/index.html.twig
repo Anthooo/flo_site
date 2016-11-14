@@ -16,6 +16,11 @@
                 <li><a href="{{ path('flo_cours') }}">Cours</a></li>
                 <li><a href="{{ path('flo_about') }}">A propos</a></li>
                 <li><a href="{{ path('flo_contact') }}">Contact</a></li>
+                {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                    <li><a class="item" href="{{ path('admin_homepage') }}">Admin</a> </li>
+                {% else %}
+
+                {% endif %}
             </ul>
         </div>
     </div>

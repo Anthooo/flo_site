@@ -87,7 +87,7 @@ stfalcon_tinymce:
                  - "searchreplace wordcount visualblocks visualchars code fullscreen"
                  - "insertdatetime media nonbreaking save table contextmenu directionality"
                  - "emoticons template paste textcolor"
-             toolbar: "undo redo | link unlink | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent"
+             toolbar: "undo redo | link unlink | bold italic underline | alignleft aligncenter alignright alignjustify removeformat  | bullist numlist outdent indent"
 
 # Lexik Maintenance configuration
 lexik_maintenance:
