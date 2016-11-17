@@ -30,7 +30,6 @@ class DefaultController extends Controller
     public function fictionsAction()
     {
         $em = $this->getDoctrine()->getManager();
-
         $modeles = $em->getRepository('FloBundle:Categorie')->getModeleByCateg('Fictions');
         return $this->render('@Flo/User/fictions.html.twig', array(
             'modeles' => $modeles

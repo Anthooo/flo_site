@@ -1,7 +1,5 @@
 <?php
 
-use FloBundle\Entity\Image;
-
 namespace FloBundle\Entity;
 
 /**
