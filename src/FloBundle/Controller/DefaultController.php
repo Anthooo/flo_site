@@ -22,7 +22,7 @@ class DefaultController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $modeles = $em->getRepository("FloBundle:Categorie")->getModeleByCateg('Oeuvres');
-        return $this->render('@Flo/User/oeuvres.html.twig', array(
+        return $this->render('@Flo/user/oeuvres.html.twig', array(
             'modeles'=>$modeles
         ));
     }
@@ -31,7 +31,7 @@ class DefaultController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $modeles = $em->getRepository('FloBundle:Categorie')->getModeleByCateg('Fictions');
-        return $this->render('@Flo/User/fictions.html.twig', array(
+        return $this->render('@Flo/user/fictions.html.twig', array(
             'modeles' => $modeles
         ));
     }
@@ -40,7 +40,7 @@ class DefaultController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $modeles = $em->getRepository("FloBundle:Categorie")->getModeleByCateg('Cours');
-        return $this->render('@Flo/User/cours.html.twig', array(
+        return $this->render('@Flo/user/cours.html.twig', array(
             'modeles'=>$modeles
         ));
     }
@@ -49,7 +49,7 @@ class DefaultController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $modeles = $em->getRepository("FloBundle:Categorie")->getModeleByCateg('Cours adultes');
-        return $this->render('@Flo/User/cours_adultes.html.twig', array(
+        return $this->render('@Flo/user/cours_adultes.html.twig', array(
             'modeles'=>$modeles
         ));
     }
@@ -58,7 +58,7 @@ class DefaultController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $modeles = $em->getRepository("FloBundle:Categorie")->getModeleByCateg('Cours enfants');
-        return $this->render('@Flo/User/cours_enfants.html.twig', array(
+        return $this->render('@Flo/user/cours_enfants.html.twig', array(
             'modeles'=>$modeles
         ));
     }
@@ -67,7 +67,7 @@ class DefaultController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $modeles = $em->getRepository("FloBundle:Categorie")->getModeleByCateg('Stages');
-        return $this->render('@Flo/User/stages.html.twig', array(
+        return $this->render('@Flo/user/stages.html.twig', array(
             'modeles'=>$modeles
         ));
     }
@@ -83,12 +83,12 @@ class DefaultController extends Controller
 
     public function contactAction()
     {
-        return $this->render('@Flo/User/contact.html.twig');
+        return $this->render('@Flo/user/contact.html.twig');
     }
 
     public function mailAction()
     {
-        return $this->render('@Flo/User/confirm.html.twig');
+        return $this->render('@Flo/user/confirm.html.twig');
     }
 
     public function sendAction(Request $request)
@@ -106,7 +106,7 @@ class DefaultController extends Controller
             ->setTo($from)
             ->setBody(
                 $this->renderView(
-                    '@Flo/User/mail.html.twig',
+                    '@Flo/user/mail.html.twig',
                     array(
                         'nom' => $name,
                         'prenom' => $firstname,
@@ -119,7 +119,7 @@ class DefaultController extends Controller
             );
 
         $this->get('mailer')->send($message);
-        return $this->render('@Flo/User/confirm.html.twig');
+        return $this->render('@Flo/user/confirm.html.twig');
 
     }
 }
