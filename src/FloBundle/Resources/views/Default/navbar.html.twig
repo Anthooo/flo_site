@@ -20,7 +20,7 @@
                 <ul class="side-nav" id="mobile-demo">
                     <li><a href="{{ path('flo_oeuvres') }}">Oeuvres</a></li>
                     <li><a href="{{ path('flo_fictions') }}">Fictions</a></li>
-                    <li><a href="cours.php">Cours</a></li>
+                    <li><a href="{{ path('flo_cours') }}">Cours</a></li>
                     <li><a href="{{ path('flo_about') }}">A propos</a></li>
                     <li><a class="item" href="{{ path('flo_contact') }}">Contact</a></li>
                     {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}

@@ -93,7 +93,7 @@ stfalcon_tinymce:
 lexik_maintenance:
     authorized:
         path: /                                                             # Optional. Authorized path, accepts regexs
-        ips: ['78.205.106.82']                                              # Optional. Authorized ip addresses
+        ips: ['78.205.106.82', ]                                              # Optional. Authorized ip addresses
 
     driver:
 

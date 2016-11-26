@@ -28,7 +28,7 @@ flo_stages:
 
 flo_about:
     path:     /a-propos
-    defaults: { _controller: FloBundle:Default:about }
+    defaults: { _controller: FloBundle:About:index }
 
 flo_contact:
     path:     /contact
