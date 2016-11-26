@@ -27,6 +27,7 @@ class ModeleType extends AbstractType
                 'required' => false,
                 'placeholder' => 'Choisir une galerie',
                 'choices'  => array(
+                    'default' => 'galerie',
                     'cours_adultes_ados' => 'adultes',
                     'cours_enfants' => 'enfants',
                     'stages' => 'stages',
