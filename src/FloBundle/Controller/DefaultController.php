@@ -54,11 +54,20 @@ class DefaultController extends Controller
         ));
     }
 
+    public function coursadosAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $modeles = $em->getRepository("FloBundle:Categorie")->getModeleByCateg('Cours ados');
+        return $this->render('@Flo/user/cours_enfants.html.twig', array(
+            'modeles'=>$modeles
+        ));
+    }
+
     public function coursenfantsAction()
     {
         $em = $this->getDoctrine()->getManager();
         $modeles = $em->getRepository("FloBundle:Categorie")->getModeleByCateg('Cours enfants');
-        return $this->render('@Flo/user/cours_enfants.html.twig', array(
+        return $this->render('@Flo/user/cours_ados.html.twig', array(
             'modeles'=>$modeles
         ));
     }
