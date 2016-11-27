@@ -10,4 +10,8 @@ namespace FloBundle\Repository;
  */
 class ModeleRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function findAll()
+    {
+        return $this->findBy(array(), array('id' => 'DESC'));
+    }
 }
