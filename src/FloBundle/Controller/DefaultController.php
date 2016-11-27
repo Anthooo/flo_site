@@ -67,7 +67,7 @@ class DefaultController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $modeles = $em->getRepository("FloBundle:Categorie")->getModeleByCateg('Cours enfants');
-        return $this->render('@Flo/user/cours_ados.html.twig', array(
+        return $this->render('@Flo/user/cours_enfants.html.twig', array(
             'modeles'=>$modeles
         ));
     }
