@@ -29,7 +29,7 @@ class ModeleType extends AbstractType
                 'choices'  => array(
                     'default' => 'galerie',
                     'cours_adultes_ados' => 'adultes',
-                    'cours ados' => 'ados',
+                    'cours_ados' => 'ados',
                     'cours_enfants' => 'enfants',
                     'stages' => 'stages',
                         ),
