@@ -7,31 +7,30 @@
 {% block body %}
 
     <body class="page">
-<div class="container">
-    <div class="content oeuvres">
-        <div class="grid">
-            {% for modele in modeles %}
-                <div class="grid__item" data-size="{{ modele.dimensions }}">
-                    <a href="{{ asset('uploads/images/') }}{{ modele.url }}" class="img-wrap"><img src="{{ asset('uploads/images/') }}{{ modele.url }}" alt="{{ modele.alt }}" />
-                        <div class="description description--grid">
-                            <h3>{{ modele.titre }}</h3>
-                            <p>{{ modele.contenu|raw }}</p>
+        <div class="container">
+            <div class="content oeuvres">
+                <div class="grid">
+                    {% for modele in modeles %}
+                        <div class="grid__item" data-size="{{ modele.dimensions }}">
+                            <a href="{{ asset('uploads/images/') }}{{ modele.url }}" class="img-wrap"><img src="{{ asset('uploads/images/') }}{{ modele.url }}" alt="{{ modele.alt }}" /></a>
+                                <div class="description description--grid">
+                                    <h3>{{ modele.titre }}</h3>
+                                    <p>{{ modele.contenu|raw }}</p>
+                                </div>
                         </div>
-                    </a>
+                    {% endfor %}
+
                 </div>
-            {% endfor %}
+
+                <!-- /grid -->
+                <div class="preview">
+                    <button class="action action--close"><i class="fa fa-times"></i><span class="text-hidden">Close</span></button>
+                    <div class="description description--preview"></div>
+                </div>
+                <!-- /preview -->
+            </div>
 
         </div>
-
-        <!-- /grid -->
-        <div class="preview">
-            <button class="action action--close"><i class="fa fa-times"></i><span class="text-hidden">Close</span></button>
-            <div class="description description--preview"></div>
-        </div>
-        <!-- /preview -->
-    </div>
-
-</div>
 <!-- /container -->
 
 {% endblock %}
