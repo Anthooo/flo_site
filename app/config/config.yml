@@ -139,7 +139,7 @@ sonata_seo:
                 'og:description':     Le site de Florence Menet-Pelisson donne a voir les oeuvres sur papier (dessins au crayon, au pastel sec, gravures sur bois, gravures sur cuivre) de l'artiste ainsi que les travaux de ses eleves. La rubrique fiction presente ses lectures et les textes qu'elle-meme ecrit.
 
             http-equiv:
-                'Content-Type':         text/html; name=viewport; content=width=device-width, initial-scale=1.0
+                'Content-Type':         text/html;
                 #'X-Ua-Compatible':      IE=EmulateIE7
 
             charset:
