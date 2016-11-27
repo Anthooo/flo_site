@@ -1109,7 +1109,7 @@ a:hover {
 
   /* line 32, ../sass/_media.scss */
   .bmenu li a {
-    line-height: 3em;
+    line-height: 2em;
   }
 }
 @media screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 3) {
@@ -1120,7 +1120,7 @@ a:hover {
 
   /* line 44, ../sass/_media.scss */
   .bmenu li a {
-    line-height: 3em;
+    line-height: 2em;
   }
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
@@ -1131,7 +1131,7 @@ a:hover {
 
   /* line 56, ../sass/_media.scss */
   .bmenu li a {
-    line-height: 3em;
+    line-height: 2em;
   }
 }
 /* line 1, ../sass/_admin.scss */
