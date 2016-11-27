@@ -615,6 +615,11 @@ footer.page-footer {
     max-width: 70%;
   }
 }
+/* line 1, ../sass/_fictions.scss */
+.fictions {
+  width: 95%;
+}
+
 /* line 3, ../sass/_cours.scss */
 .cours {
   margin-bottom: 50px;
