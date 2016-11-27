@@ -171,6 +171,7 @@ nav ul a {
   text-transform: uppercase;
   text-shadow: 0px 0px 5px #fff;
   letter-spacing: 1px;
+  line-height: 2em;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
@@ -178,19 +179,19 @@ nav ul a {
   transition: all 0.3s ease-in-out;
 }
 
-/* line 22, ../sass/_index.scss */
+/* line 23, ../sass/_index.scss */
 .bmenu:hover li a {
   text-shadow: 0px 0px 5px #424242;
 }
 
-/* line 25, ../sass/_index.scss */
+/* line 26, ../sass/_index.scss */
 .bmenu li a:hover {
   color: #fff;
   text-shadow: 0px 0px 1px #fff;
   padding-left: 10px;
 }
 
-/* line 31, ../sass/_index.scss */
+/* line 32, ../sass/_index.scss */
 .name {
   text-align: left;
 }
@@ -1105,17 +1106,32 @@ a:hover {
   .detailscours {
     margin-bottom: 25px;
   }
+
+  /* line 32, ../sass/_media.scss */
+  .bmenu li a {
+    line-height: 3em;
+  }
 }
 @media screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 3) {
-  /* line 38, ../sass/_media.scss */
+  /* line 41, ../sass/_media.scss */
   .detailscours {
     margin-bottom: 25px;
   }
+
+  /* line 44, ../sass/_media.scss */
+  .bmenu li a {
+    line-height: 3em;
+  }
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
-  /* line 47, ../sass/_media.scss */
+  /* line 53, ../sass/_media.scss */
   .detailscours {
     margin-bottom: 25px;
+  }
+
+  /* line 56, ../sass/_media.scss */
+  .bmenu li a {
+    line-height: 3em;
   }
 }
 /* line 1, ../sass/_admin.scss */

@@ -29,6 +29,9 @@ and (-webkit-min-device-pixel-ratio: 2) {
   .detailscours {
     margin-bottom: 25px;
   }
+  .bmenu li a{
+    line-height: 3em;
+  }
 }
 
 @media screen
@@ -38,6 +41,9 @@ and (-webkit-device-pixel-ratio: 3) {
   .detailscours {
     margin-bottom: 25px;
   }
+  .bmenu li a{
+    line-height: 3em;
+  }
 }
 
 @media only screen
@@ -46,5 +52,8 @@ and (max-device-width: 568px)
 and (-webkit-min-device-pixel-ratio: 2) {
   .detailscours {
     margin-bottom: 25px;
+  }
+  .bmenu li a{
+    line-height: 3em;
   }
 }
