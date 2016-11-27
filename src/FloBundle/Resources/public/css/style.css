@@ -616,6 +616,12 @@ footer.page-footer {
     max-width: 70%;
   }
 }
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: landscape) {
+  /* line 374, ../sass/_portfolio.scss */
+  .fictions {
+    font-size: 1.5rem;
+  }
+}
 /* line 1, ../sass/_fictions.scss */
 .fictions {
   width: 95%;

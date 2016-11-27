@@ -366,3 +366,12 @@
 		max-width: 70%;
 	}
 }
+
+@media only screen
+and (min-device-width : 375px)
+and (max-device-width : 667px)
+and (orientation : landscape) {
+	.fictions {
+		font-size: 1.5rem ;
+	}
+}
