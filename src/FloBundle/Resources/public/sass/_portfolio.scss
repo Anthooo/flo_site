@@ -357,7 +357,8 @@
 	}
 	.description--preview p,
 	.details {
-		display: none;
+		display: initial;
+		font-size: initial;
 	}
 
 	.img-wrap img {

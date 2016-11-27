@@ -606,10 +606,11 @@ footer.page-footer {
   /* line 358, ../sass/_portfolio.scss */
   .description--preview p,
   .details {
-    display: none;
+    display: initial;
+    font-size: initial;
   }
 
-  /* line 363, ../sass/_portfolio.scss */
+  /* line 364, ../sass/_portfolio.scss */
   .img-wrap img {
     display: block;
     max-width: 70%;
