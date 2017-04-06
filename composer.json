@@ -25,6 +25,7 @@
         "swiftmailer/swiftmailer": "@stable",
         "lexik/maintenance-bundle": "dev-master",
         "stfalcon/tinymce-bundle": "1.0",
+        "nomaya/social-bundle": "dev-master",
         "sonata-project/seo-bundle": "^2.0"
     },
     "require-dev": {

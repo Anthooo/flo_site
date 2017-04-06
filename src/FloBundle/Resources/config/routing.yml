@@ -30,6 +30,10 @@ flo_about:
     resource: "@FloBundle/Resources/config/routing/about.yml"
     prefix:   /admin/about
 
+flo_actualites:
+    resource: "@FloBundle/Resources/config/routing/actualites.yml"
+    prefix:   /admin/actualites
+
 #-----------------------------------------------------------------------------------------------------
 #Route FosUserBundle
 #-----------------------------------------------------------------------------------------------------

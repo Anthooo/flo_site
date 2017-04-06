@@ -2,6 +2,7 @@ $(document).ready(function(){
     $(".button-collapse").sideNav();
     $('.parallax').parallax();
     $('.tooltipped').tooltip({delay: 50});
+
 });
 
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -11,4 +12,6 @@ $(document).ready(function(){
 
 ga('create', 'UA-8638374-1', 'auto');
 ga('send', 'pageview');
+
+
 

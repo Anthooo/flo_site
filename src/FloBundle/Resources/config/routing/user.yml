@@ -36,4 +36,8 @@ flo_about:
 
 flo_contact:
     path:     /contact
-    defaults: { _controller: FloBundle:Default:contact}
+    defaults: { _controller: FloBundle:Default:contact }
+
+flo_actu:
+    path:     /actualites
+    defaults: { _controller: FloBundle:Default:Actu }

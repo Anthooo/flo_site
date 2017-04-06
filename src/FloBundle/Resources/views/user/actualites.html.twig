@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block header %}
+    {% include '@Flo/Default/navbar.html.twig' %}
+{% endblock %}
+
+{% block body %}
+
+    <body class="page">
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v2.8&appId=134656409942479";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+<div class="container">
+    <div class="content oeuvres titre_actu">
+        <div class="row">
+            <h1>Actualités</h1>
+            {% for actualite in actualites %}
+
+                <div class="col s12">
+                    <div class="card horizontal actu_card darken-3">
+
+                        <div class="card-stacked">
+                            <div class="card-content contenu_actu">
+                                <span class="card-title activator">
+                                {{ actualite.titre }}
+                                    {#<i class="material-icons right">more_vert</i>#}
+                                </span>
+                                <p>
+                                    {{ actualite.contenu | truncate(600) | raw}}
+                                </p>
+                            </div>
+                                <p class="activator actu_next">Lire la suite...</p>
+                        </div>
+                        <div class="card-image">
+                            <img class="actu" src="{{ asset('uploads/images/') }}{{ actualite.image.url }}" alt="{{ actualite.image.alt }}" />
+                        </div>
+                        <div class="card-reveal contenu_actu contenu_paddingdarken-3">
+                            <span class="card-title ">{{ actualite.titre }}<i class="material-icons right">close</i></span>
+                            <p>{{ actualite.contenu | raw }}</p>
+                            <div class="fb-share-button right" data-href="http://www.florence-pelisson.fr/actualites" data-layout="button" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.florence-pelisson.fr%2Factualites&amp;src=sdkpreparse">Partager</a></div>                        </div>
+                    </div>
+                </div>
+
+            {% endfor %}
+
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

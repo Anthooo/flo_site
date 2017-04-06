@@ -1,0 +1,74 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {{ tinymce_init({'theme': {'simple': {'menubar': false}}}) }}
+
+<body class="admin">
+
+<div class="row">
+    {% include '@Flo/Default/navadmin.html.twig' %}
+
+    <div class="col l10">
+        <div class="container adm">
+            <div class="row admincontenu">
+
+                <div class="row">
+                    <div class="col s12">
+
+                        <h1>Actualite edit</h1>
+
+                        {{ form_start(edit_form) }}
+                        <div class="row input-field">
+                            {{ form_label(edit_form.titre) }}
+                            {{ form_widget(edit_form.titre) }}
+                            {{ form_errors(edit_form.titre) }}
+                        </div>
+
+                        <div class="row textarea tinymce">
+                            <label>Contenu</label>
+                            {{ form_widget(edit_form.contenu) | raw }}
+                            {{ form_errors(edit_form.contenu) }}
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col l5 center">
+                                <div class="imageupload">
+                                    <img class="imageupload" src="{{ asset('uploads/images/') }}{{ actualite.image }}">
+                                </div>
+                            </div>
+
+                            <div class="col l7 détails">
+                                {% do edit_form.image.alt.setRendered %}
+                                {% do edit_form.image.dimensions.setRendered %}
+
+                                <div class="row file-field input-field">
+                                    <div class="btn">
+                                        <span>Changer l'image :</span>
+                                        {{ form_widget(edit_form.image.file) }}
+                                    </div>
+                                    <div class="file-path-wrapper">
+                                        <input class="file-path validate" type="text" placeholder="Cliquez pour ajouter votre image">
+                                    </div>
+                                    {{ form_errors(edit_form.image.file) }}
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                            <div class="row center">
+                                <button class="adminbtn" type="submit" title="Valider"><i class="medium material-icons">check_circle</i></button>
+                                <a href="{{ path('actualites_index') }}" title="Annuler"><i class="medium material-icons">cancel</i></a>
+                                <a href="{{ path('actualites_delete', { 'id': actualite.id }) }}" title="Effacer"><i class="medium material-icons">delete</i> </a>
+                            </div>
+                            {{ form_end(edit_form) }}
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}

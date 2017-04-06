@@ -17,6 +17,7 @@ FloBundle\Entity\Modele:
         liengaleriecours:
             type: string
             length: 255
+            nullable: true
 
     manyToOne:
         categorie:

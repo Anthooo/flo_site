@@ -154,4 +154,40 @@ sonata_seo:
 
 
 
+services:
+    twig.extension.text:
+       class: Twig_Extensions_Extension_Text
+       tags:
+           - { name: twig.extension }
+
+
+nomaya_social:
+    buttons:
+        facebook:
+            url:            "http://www.florence-pelisson.fr/actualites"
+            locale:         "fr_FR"
+            send:           false
+            width:          300
+            showFaces:      true
+            layout:         "button_count"
+        twitter:
+            url:            "http://www.florence-pelisson.fr/actualites"
+            locale:         "fr"
+            message:        "Je veux partager ça avec vous"
+            text:           "Tweet"
+            via:            null
+            tag:            "art, expo"
+        googleplus:
+            url:            null
+            locale :        "fr"
+            size :          "medium"
+            annotation :    "bubble"
+            width :         300
+        linkedin:
+            url:            null
+            locale:         "fr_FR"
+            counter:        "right"
+        pinterest:
+            url:            null
+    theme:                  'default' # optional
 

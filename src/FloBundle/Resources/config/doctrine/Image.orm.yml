@@ -14,9 +14,11 @@ FloBundle\Entity\Image:
         dimensions:
             type: string
             length: 255
+            nullable: true
         alt:
             type: string
             length: 255
+            nullable: true
 
     lifecycleCallbacks:
         prePersist: [ preUpload ]

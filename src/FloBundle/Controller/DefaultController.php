@@ -81,6 +81,15 @@ class DefaultController extends Controller
         ));
     }
 
+    public function ActuAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $actualites = $em->getRepository("FloBundle:Actualites")->findAll();
+        return $this->render('@Flo/user/actualites.html.twig', array(
+            'actualites'=>$actualites
+        ));
+    }
+
     public function aboutAction()
     {
         $em = $this->getDoctrine()->getManager();

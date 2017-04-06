@@ -1,0 +1,24 @@
+actualites_index:
+    path:     /
+    defaults: { _controller: "FloBundle:Actualites:index" }
+    methods:  GET
+
+actualites_show:
+    path:     /{id}/show
+    defaults: { _controller: "FloBundle:Actualites:show" }
+    methods:  GET
+
+actualites_new:
+    path:     /new
+    defaults: { _controller: "FloBundle:Actualites:new" }
+    methods:  [GET, POST]
+
+actualites_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "FloBundle:Actualites:edit" }
+    methods:  [GET, POST]
+
+actualites_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "FloBundle:Actualites:delete" }
+    methods:  DELETE

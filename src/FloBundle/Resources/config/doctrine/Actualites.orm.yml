@@ -1,0 +1,22 @@
+FloBundle\Entity\Actualites:
+    type: entity
+    table: null
+    repositoryClass: FloBundle\Repository\ActualitesRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        titre:
+            type: string
+            length: 255
+        contenu:
+            type: text
+    lifecycleCallbacks: {  }
+
+    manyToOne:
+            image:
+                targetEntity: FloBundle\Entity\Image
+                cascade: ["persist", "remove"]
