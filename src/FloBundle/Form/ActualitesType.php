@@ -5,7 +5,8 @@ namespace FloBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Ivory\CKEditorBundle\Form\Type\CKEditorType;
+
 
 
 class ActualitesType extends AbstractType
@@ -17,11 +18,9 @@ class ActualitesType extends AbstractType
     {
         $builder
             ->add('titre')
-            ->add('contenu', 'textarea', array(
-                'attr' => array(
-                    'class' => 'tinymce',
-                    'data-theme' => 'bbcode' // Skip it if you want to use default theme
-                )))
+            ->add('contenu', CKEditorType::class, array(
+                'config_name' => 'my_config',
+            ))
             ->add('image', ImageType::class)
         ;
     }

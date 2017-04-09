@@ -74,21 +74,6 @@ fos_user:
     firewall_name: main
     user_class: FloBundle\Entity\User
 
-# TinyMCE Configuration
-stfalcon_tinymce:
-    selector: ".tinymce"
-    language: %locale%
-
-    theme:
-        # Simple theme: same as default theme
-        simple:
-             plugins:
-                 - "advlist autolink lists link image charmap print preview hr anchor pagebreak"
-                 - "searchreplace wordcount visualblocks visualchars code fullscreen"
-                 - "insertdatetime media nonbreaking save table contextmenu directionality"
-                 - "emoticons template paste textcolor"
-             toolbar: "undo redo | link unlink | bold italic underline | alignleft aligncenter alignright alignjustify removeformat  | bullist numlist outdent indent"
-
 # Lexik Maintenance configuration
 lexik_maintenance:
     authorized:
@@ -191,3 +176,10 @@ nomaya_social:
             url:            null
     theme:                  'default' # optional
 
+# CK Editor configuration
+ivory_ck_editor:
+    default_config:    my_config
+    configs:
+        my_config:
+            toolbar:                   [ [ 'Bold','Italic','Underline','Strike', 'Blockquote','Subscript','Superscript' ], [ 'BulletedList', 'NumberedList','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock' ], [ 'Link','Unlink' ], [ 'Cut','Copy','Paste','PasteText','PasteFromWord','-','Undo','Redo' ], ['SpellChecker', 'Scayt' ], [ 'Font','FontSize' ], [ 'TextColor','BGColor' ], [ 'RemoveFormat' ], [ 'Maximize' ] ]
+            language: %locale%
