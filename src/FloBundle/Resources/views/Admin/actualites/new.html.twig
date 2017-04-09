@@ -1,7 +1,6 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-{{ tinymce_init({'theme': {'simple': {'menubar': false}}}) }}
 
 <body class="admin">
 
@@ -41,17 +40,8 @@
                             {{ form_errors(form.image.file) }}
                         </div>
 
-                        <div class="row input-field">
-                            {{ form_widget(form.image.dimensions) }}
-                            {{ form_label(form.image.dimensions) }}
-                            {{ form_errors(form.image.dimensions) }}
-                        </div>
-
-                        <div class="row input-field">
-                            <label>Description de l'image</label>
-                            {{ form_widget(form.image.alt) }}
-                            {{ form_errors(form.image.alt) }}
-                        </div>
+                        {% do form.image.alt.setRendered %}
+                        {% do form.image.dimensions.setRendered %}
 
                         <div class="row center">
                             <button class="adminbtn" type="submit" title="Valider"><i class="medium material-icons">check_circle</i></button>

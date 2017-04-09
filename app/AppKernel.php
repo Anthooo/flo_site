@@ -16,10 +16,10 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new FOS\UserBundle\FOSUserBundle(),
-            new Stfalcon\Bundle\TinymceBundle\StfalconTinymceBundle(),
             new Lexik\Bundle\MaintenanceBundle\LexikMaintenanceBundle(),
             new Sonata\SeoBundle\SonataSeoBundle(),
             new Nomaya\SocialBundle\NomayaSocialBundle(),
+            new Ivory\CKEditorBundle\IvoryCKEditorBundle(),
             new FloBundle\FloBundle(),
         );
 

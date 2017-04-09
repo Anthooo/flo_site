@@ -5,6 +5,8 @@ namespace FloBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Ivory\CKEditorBundle\Form\Type\CKEditorType;
+
 
 class AboutType extends AbstractType
 {
@@ -15,10 +17,9 @@ class AboutType extends AbstractType
     {
         $builder
             ->add('date')
-            ->add('contenu', 'textarea', array(
-                'attr' => array(
-                    'class' => 'tinymce',
-                )))
+            ->add('contenu', CKEditorType::class, array(
+                'config_name' => 'my_config',
+            ))
         ;
     }
     
