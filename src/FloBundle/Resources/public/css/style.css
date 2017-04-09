@@ -26,7 +26,7 @@ body {
 
 /* line 22, ../sass/_general.scss */
 .home {
-  background: url("../images/pattern.png"), url("../images/photo.jpg");
+  background: url("../images/pattern.png"), url("../images/backg.jpg");
   background-repeat: repeat, no-repeat;
   background-position: 0 0;
   background-size: 10px 10px, cover;
