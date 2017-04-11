@@ -16,4 +16,5 @@ categorie_edit:
 categorie_delete:
     path:     /{id}/delete
     defaults: { _controller: "FloBundle:Categorie:delete" }
-    methods:  DELETE
+    requirements:
+      id: \d+

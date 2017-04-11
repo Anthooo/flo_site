@@ -1,62 +1,27 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-
-<body class="admin">
-
-<div class="row">
     {% include '@Flo/Default/navadmin.html.twig' %}
 
-    <div class="col l10">
-        <div class="container adm">
-            <div class="row admincontenu">
-
-                <div class="row">
-                    <div class="col l11">
-                        <h1>Actualite creation</h1>
+    <div id="admin">
+        <div class="container">
+                        <h1>Actualite - Création</h1>
 
                         {{ form_start(form) }}
+                        {{ form_widget(form) }}
 
-                        <div class="row">
-                            <label>Titre</label>
-                            {{ form_widget(form.titre) }}
-                            {{ form_errors(form.titre) }}
-                        </div>
-
-                        <div class="row textarea tinymce">
-                            <label>Contenu</label>
-                            {{ form_widget(form.contenu) }}
-                            {{ form_errors(form.contenu) }}
-                        </div>
-
-                        <div class="row file-field input-field">
-                            <div class="btn">
-                                <span>Image</span>
-                                {{ form_widget(form.image.file) }}
-                            </div>
-                            <div class="file-path-wrapper">
-                                <input class="file-path validate" type="text" placeholder="Cliquez pour ajouter votre image" required>
-                            </div>
-                            {{ form_errors(form.image.file) }}
-                        </div>
-
-                        {% do form.image.alt.setRendered %}
-                        {% do form.image.dimensions.setRendered %}
-
-                        <div class="row center">
-                            <button class="adminbtn" type="submit" title="Valider"><i class="medium material-icons">check_circle</i></button>
-                            <a href="{{ path('actualites_index') }}"><i class="medium material-icons">cancel</i></a>
+                        <div class="boutons text-center">
+                            <button class="btn btn-default" type="submit" title="Valider">Valider</button>
+                            <a class="btn btn-default" href="{{ path('actualites_index') }}">Annuler</a>
                         </div>
 
                         {{ form_end(form) }}
 
 
-                    </div>
-                </div>
-            </div>
         </div>
+
     </div>
-</div>
+
+    {% include '@Flo/Default/footer.html.twig' %}
 
 {% endblock %}
-

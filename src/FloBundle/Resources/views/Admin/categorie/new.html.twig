@@ -1,30 +1,33 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+    {% include '@Flo/Default/navadmin.html.twig' %}
 
-    <body class="admin">
+    <div id="admin">
+        <div class="container">
 
-        <div class="container admin">
+            <h1>Categorie - Création</h1>
 
-            <div class="row admincontenu">
-
-                <h1>Categorie creation</h1>
-
+            <div class="text-center">
                 {{ form_start(form) }}
-                {{ form_widget(form) }}
-                <input type="submit" value="Create" />
+
+                <div class="form-group">
+
+                    {{ form_label(form.nom) }}
+                    {{ form_widget(form.nom) }}
+                    {{ form_errors(form.nom) }}
+
+                </div>
+
+                <div class="boutons text-center">
+                    <input class="btn btn-default" type="submit" value="Créer" />
+                    <a class="btn btn-default" href="{{ path('categorie_index') }}">Annuler</a>
+                </div>
                 {{ form_end(form) }}
-
-                <ul>
-                    <li>
-                        <a href="{{ path('categorie_index') }}">Back to the list</a>
-                    </li>
-                </ul>
-
             </div>
-
         </div>
 
-    </body>
+    </div>
+
 
 {% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% include '@Flo/Default/navadmin.html.twig' %}
+
+    <div id="admin">
+        <h1>Cour - Création</h1>
+
+        <div class="container">
+
+            <div clas="row">
+                {{ form_start(form) }}
+
+                <div class="col-xs-12">
+                    {{ form_label(form.categorie) }}
+                    {{ form_widget(form.categorie) }}
+                    {{ form_errors(form.categorie) }}
+                    <hr>
+
+                </div>
+
+                <div class="col-xs-12">
+
+                    {{ form_label(form.image) }}
+                    {{ form_widget(form.image) }}
+                    {{ form_errors(form.image) }}
+                    <hr>
+
+                </div>
+
+                <div class="col-xs-12 boutons text-center">
+                    <input class="btn btn-default" type="submit" value="Créer" />
+                    <a class="btn btn-default" href="{{ path('cours_index') }}">Annuler</a>
+                </div>
+
+                {{ form_end(form) }}
+
+            </div>
+        </div>
+    </div>
+    {% include '@Flo/Default/footer.html.twig' %}
+
+{% endblock %}

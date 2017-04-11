@@ -1,0 +1,20 @@
+FloBundle\Entity\Galerie:
+    type: entity
+    table: null
+    repositoryClass: FloBundle\Repository\GalerieRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        contenu:
+            type: text
+            nullable: true
+    lifecycleCallbacks: {  }
+
+    manyToOne:
+        image:
+            targetEntity: FloBundle\Entity\Image
+            cascade: ["persist", "remove"]

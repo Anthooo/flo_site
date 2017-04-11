@@ -1,29 +1,12 @@
+body, html {
+	padding:0px;
+	margin:0px;
+	height: 100vh;
+	min-height: 100%;
+}
+
 body {
-  	margin: 0;
-  	min-height: 100vh;
-  	display: flex;
-  	flex-direction: column;
-}
-
-.container, .row {
-	flex: 1 0 auto;
-}
-
-.row {
-	width: 100%;
-	height: 100%;
-	margin-bottom: 0;
-}
-
-.container {
-	width: 70%;
-}
-
-.home {
-	background: url('../images/pattern.png'), url('../images/backg.jpg');
-	background-repeat: repeat, no-repeat;
-    background-position: 0 0;
-    background-size: 10px 10px, cover;
+	background-color: transparent;
 }
 
 .page {
@@ -36,13 +19,6 @@ body {
 .about {
 	font-family: 'Lato', Calibri, Arial, sans-serif;
     color: #47a3da;
-}
-
-footer {
-	background: RGBA(238, 238, 239, 0.1);
-	text-align: right;
-	color: dimgrey;
-  	padding-right: 15px;
 }
 
 h1, h2{
@@ -71,6 +47,10 @@ h1:hover, h2:hover {
 h2 {
 	margin-top: 50px;
 	text-align: center;
+}
+
+a:hover {
+	text-decoration: none;
 }
 
 //ERROR PAGE

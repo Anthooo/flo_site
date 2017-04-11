@@ -1,36 +1,28 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+    {% include '@Flo/Default/navadmin.html.twig' %}
 
-    <body class="admin">
+    <div id="admin">
+        <div class="container">
+            <h1>A propos - Edition</h1>
 
-        <div class="row">
-            {% include '@Flo/Default/navadmin.html.twig' %}
+            {{ form_start(edit_form) }}
+            {{ form_widget(edit_form) }}
 
-
-            <div class="col l10">
-                <div class="container adm">
-                    <div class="row admincontenu">
-                        <h1>Edition</h1>
-
-                        {{ form_start(edit_form) }}
-                            {{ form_widget(edit_form) }}
-                                <div class="row center">
-                                    <button class="adminbtn" type="submit" title="Valider"><i class="medium material-icons">check_circle</i></button>
-                                    <a href="{{ path('about_index') }}" title="Annuler"><i class="medium material-icons">cancel</i></a>
-                                    <a href="{{ path('about_delete', { 'id': about.id }) }}" title="Effacer"><i class="medium material-icons">delete</i> </a>
-                                </div>
-
-
-                        {{ form_end(edit_form) }}
-
-                    </div>
-
-                </div>
-
+            <div class="boutons text-center">
+                <button class="btn btn-default" type="submit" title="Valider">Valider</button>
+                <a class="btn btn-default" href="{{ path('about_index') }}" title="Annuler">Annuler</a>
+                <a class="btn btn-default" href="{{ path('about_delete', { 'id': about.id }) }}" title="Effacer">Supprimer</a>
             </div>
+
+
+            {{ form_end(edit_form) }}
+
         </div>
 
-    </body>
+    </div>
+
+    {% include '@Flo/Default/footer.html.twig' %}
 
 {% endblock %}

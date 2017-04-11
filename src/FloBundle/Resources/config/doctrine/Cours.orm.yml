@@ -1,0 +1,18 @@
+FloBundle\Entity\Cours:
+    type: entity
+    table: null
+    repositoryClass: FloBundle\Repository\CoursRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    lifecycleCallbacks: {  }
+
+    manyToOne:
+        categorie:
+            targetEntity: FloBundle\Entity\Categorie
+        image:
+            targetEntity: FloBundle\Entity\Image
+            cascade: ["persist", "remove"]

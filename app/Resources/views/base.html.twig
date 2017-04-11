@@ -1,77 +1,70 @@
 <!DOCTYPE html>
 <html {{ sonata_seo_html_attributes() }} >
 
-    <head {{ sonata_seo_head_attributes() }}>
+<head {{ sonata_seo_head_attributes() }}>
 
-        {{ sonata_seo_title() }}
+    {{ sonata_seo_title() }}
 
-        {{ sonata_seo_metadatas() }}
+    {{ sonata_seo_metadatas() }}
 
-        <meta name=viewport content="width=device-width, initial-scale=1">
+    <meta name=viewport content="width=device-width, initial-scale=1">
 
-        {% block stylesheets %}
-            <!-- Compiled and minified CSS -->
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
-            <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.material.min.css">
+    {% block stylesheets %}
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.material.min.css">
 
-            <!-- Icônes -->
-            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-            <link rel="stylesheet" type="text/css" href="{{ asset('bundles/flo/fonts/font-awesome-4.3.0/css/font-awesome.min.css') }}" />
+        <!-- Icônes -->
+        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/flo/fonts/font-awesome-4.3.0/css/font-awesome.min.css') }}" />
 
-            <!-- Appel CSS personnalisé -->
-            <link rel="stylesheet" type="text/css" href="{{ asset('bundles/flo/css/style.css') }}"/>
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/dataTables.bootstrap.min.css">
 
-            <script src="{{ asset('bundles/flo/js/modernizr-custom.js') }}"></script>
+        <!-- CSS Lightbox -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.1.1/ekko-lightbox.css">
 
-        {% endblock %}
+        <!-- Appel CSS personnalisé -->
+        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/flo/css/style.css') }}"/>
 
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-
-    </head>
-
-    {% block header %}
     {% endblock %}
 
-    <body>
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
 
-        {% block body %}{% endblock %}
-
-        {% block footer %}{% endblock %}
-        <footer>
-            <div class="footer-copyright">
-
-                     {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                        {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
-                        <a href="{{ path('fos_user_security_logout') }}">
-                            {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
-                        </a>
-                    {% else %}
-                        <a href="{{ path('admin_homepage') }}">© 2016 Copyright</a>
-                    {% endif %}
-
-                <div class="left">
-                    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                        <a href="{{ path('admin_homepage') }}">Accéder à l'Admin</a>
-                    {% else %}
-
-                    {% endif %}
-                </div>
-
-            </div>
-        </footer>
-
-        {% block javascripts %}
-            <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-            <!-- Compiled and minified JavaScript -->
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
-            <script src="{{ asset('bundles/flo/js/imagesloaded.pkgd.min.js') }}"></script>
-            <script src="{{ asset('bundles/flo/js/masonry.pkgd.min.js') }}"></script>
-            <script src="{{ asset('bundles/flo/js/classie.js') }}"></script>
-            <script src="{{ asset('bundles/flo/js/main.js') }}"></script>
-            <script src="{{ asset('bundles/flo/js/flogrid.js') }}"></script>
-            <script src="{{ asset('bundles/flo/js/flo.js') }}"></script>
-        {% endblock %}
+</head>
 
 
-    </body>
+
+<body>
+
+{% block body %}{% endblock %}
+
+
+{% block javascripts %}
+
+    <!-- Appel Jquery CDN -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!-- Appel CDN Datatables -->
+    <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+
+
+    <script src="https://cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
+
+
+
+    <!-- Appel CDN Lightbox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.1.1/ekko-lightbox.js"></script>
+
+    <!-- Appel Isotope -->
+    <script src="{{ asset('bundles/flo/js/isotope.pkgd.min.js') }}"></script>
+
+    <!-- JS Perso -->
+    <script src="{{ asset('bundles/flo/js/flo.js') }}"></script>
+{% endblock %}
+
+
+</body>
+
 </html>

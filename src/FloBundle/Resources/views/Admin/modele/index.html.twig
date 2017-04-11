@@ -63,32 +63,32 @@
 </body>
 {% endblock %}
 
-{% block javascripts %}
+{#{% block javascripts %}#}
 
-    {{ parent() }}
-    <script>
-        $(document).ready(function() {
+    {#{{ parent() }}#}
+    {#<script>#}
+        {#$(document).ready(function() {#}
 
-            $('#modeles').DataTable({
-                "dom": '<lf<t>ip>',
-                "pageLength": 10,
-                "lengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]],
-                "language": {
-                    "lengthMenu": "_MENU_ ",
-                    "zeroRecords": "Rien ne correspond à votre recherche désolé",
-                    "info": "Page _PAGE_ / _PAGES_",
-                    "search": "Rechercher:",
-                    "infoFiltered":   "(parmi _MAX_ modèles)",
-                    "paginate": {
-                        "first":      "Premier",
-                        "last":       "Dernier",
-                        "next":       "Suivant",
-                        "previous":   "Précédent"
-                    }
-                    }}
-            );
+            {#$('#modeles').DataTable({#}
+                {#"dom": '<lf<t>ip>',#}
+                {#"pageLength": 10,#}
+                {#"lengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]],#}
+                {#"language": {#}
+                    {#"lengthMenu": "_MENU_ ",#}
+                    {#"zeroRecords": "Rien ne correspond à votre recherche désolé",#}
+                    {#"info": "Page _PAGE_ / _PAGES_",#}
+                    {#"search": "Rechercher:",#}
+                    {#"infoFiltered":   "(parmi _MAX_ modèles)",#}
+                    {#"paginate": {#}
+                        {#"first":      "Premier",#}
+                        {#"last":       "Dernier",#}
+                        {#"next":       "Suivant",#}
+                        {#"previous":   "Précédent"#}
+                    {#}#}
+                    {#}}#}
+            {#);#}
 
-        } );
-    </script>
-    <script src="{{ asset('bundles/flo/js/jquery.dataTables.js') }}"></script>
-{% endblock %}
+        {#} );#}
+    {#</script>#}
+    {#<script src="{{ asset('bundles/flo/js/jquery.dataTables.js') }}"></script>#}
+{#{% endblock %}#}

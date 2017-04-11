@@ -7,32 +7,17 @@
 {% block body %}
 
 <body class="page">
-<div class="container size">
-    <div class="content oeuvres">
-        <div class="grid">
-            {% for modele in modeles %}
-            <div class="grid__item" data-size="{{ modele.dimensions }}">
-                <a href="{{ asset('uploads/images/') }}{{ modele.url }}" class="img-wrap"><img class="responsive-img" src="{{ asset('uploads/images/') }}{{ modele.url }}" alt="{{ modele.alt }}" /></a>
-                    <div class="description description--grid">
-                        <h3>{{ modele.titre }}</h3>
-                        <p>{{ modele.contenu|raw }}</p>
-                    </div>
+    <div class="grid">
+        {% for galerie in galeries %}
+            <div class="grid-item">
+                <a href="{{ asset('uploads/images/') }}{{ galerie.image }}" data-toggle="lightbox" data-gallery="example-gallery" data-footer="{{ galerie.contenu }}">
+                    <img class="img-rounded thumbnail_galerie" src="{{ asset('uploads/images/') }}{{ galerie.image }}" />
+                </a>
+
             </div>
-            {% endfor %}
+        {% endfor %}
 
-        </div>
-
-        <!-- /grid -->
-        <div class="preview">
-            <button class="action action--close"><i class="fa fa-times"></i><span class="text-hidden">Close</span></button>
-            <div class="description description--preview"></div>
-        </div>
-        <!-- /preview -->
     </div>
-
-</div>
-<!-- /container -->
-
 
 
 {% endblock %}

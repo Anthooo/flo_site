@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% include '@Flo/Default/navadmin.html.twig' %}
+
+    <div id="admin">
+
+        <div class="container">
+            <div class="row">
+
+                <h1>Galerie creation</h1>
+
+                {{ form_start(form) }}
+                {{ form_widget(form) }}
+
+                <div class="boutons text-center">
+                    <input class="btn btn-default" type="submit" value="Valider" />
+                    <a class="btn btn-default" href="{{ path('galerie_index') }}">Annuler</a>
+                </div>
+                {{ form_end(form) }}
+
+            </div>
+        </div>
+    </div>
+    {% include '@Flo/Default/footer.html.twig' %}
+
+{% endblock %}

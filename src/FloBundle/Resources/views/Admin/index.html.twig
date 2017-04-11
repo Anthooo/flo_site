@@ -1,24 +1,79 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <body class="admin">
+    {% include '@Flo/Default/navadmin.html.twig' %}
 
-        <div class="row">
-            <div>
-                {% include '@Flo/Default/navadmin.html.twig' %}
-            </div>
+    <div id="admin">
 
-            <div class="col l10">
-                <div class="container adminhome">
-                    <h1>FLORENCE MENET-PELISSON</h1>
+        <div class="container">
 
-                    <div class="row adminmenu">
-                        <a href="{{ path('modele_index') }}"><div class="col l5 modeleadmin">Modèles</div></a>
-                        <a href="{{ path('about_index') }}"><div class="col offset-l2 l5 aboutadmin">A propos</div></a>
+            <div class="row admin_index">
+
+                <div class="col-xs-6">
+
+                    <div class="panel panel-primary text-center">
+                        <div class="panel-heading">Galerie</div>
+                        <div class="panel-body ">
+                            <a class="btn btn-default" href="{{ path('galerie_index') }}" role="button">Accueil</a>
+                            <a class="btn btn-default" href="{{ path('galerie_new') }}" role="button">Nouveau</a>
+                        </div>
                     </div>
+
+                </div>
+
+                <div class="col-xs-6">
+
+                    <div class="panel panel-success text-center">
+                        <div class="panel-heading">Cours</div>
+                        <div class="panel-body ">
+                            <a class="btn btn-default" href="{{ path('cours_index') }}" role="button">Accueil</a>
+                            <a class="btn btn-default" href="{{ path('cours_new') }}" role="button">Nouveau</a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-xs-6">
+
+                    <div class="panel panel-info text-center">
+                        <div class="panel-heading">Actualités</div>
+                        <div class="panel-body ">
+                            <a class="btn btn-default" href="{{ path('actualites_index') }}" role="button">Accueil</a>
+                            <a class="btn btn-default" href="{{ path('actualites_new') }}" role="button">Nouveau</a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-xs-6">
+
+                    <div class="panel panel-warning text-center">
+                        <div class="panel-heading">A propos</div>
+                        <div class="panel-body ">
+                            <a class="btn btn-default" href="{{ path('about_index') }}" role="button">Accueil</a>
+                            <a class="btn btn-default" href="{{ path('about_new') }}" role="button">Nouveau</a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-xs-6">
+
+                    <div class="panel panel-danger text-center">
+                        <div class="panel-heading">Catégorie</div>
+                        <div class="panel-body ">
+                            <a class="btn btn-default" href="{{ path('categorie_index') }}" role="button">Accueil</a>
+                            <a class="btn btn-default" href="{{ path('categorie_new') }}" role="button">Nouveau</a>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
-    </body>
+
+    </div>
+    {% include '@Flo/Default/footer.html.twig' %}
+
+
 
 {% endblock %}

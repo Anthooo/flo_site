@@ -76,7 +76,6 @@ class Image
 
     // GENERATED CODE //
 
-    
    
     /**
      * @var integer
@@ -87,16 +86,6 @@ class Image
      * @var string
      */
     private $url;
-
-    /**
-     * @var string
-     */
-    private $dimensions;
-
-    /**
-     * @var string
-     */
-    private $alt;
 
 
     /**
@@ -131,53 +120,5 @@ class Image
     public function getUrl()
     {
         return $this->url;
-    }
-
-    /**
-     * Set dimensions
-     *
-     * @param string $dimensions
-     *
-     * @return Image
-     */
-    public function setDimensions($dimensions)
-    {
-        $this->dimensions = $dimensions;
-
-        return $this;
-    }
-
-    /**
-     * Get dimensions
-     *
-     * @return string
-     */
-    public function getDimensions()
-    {
-        return $this->dimensions;
-    }
-
-    /**
-     * Set alt
-     *
-     * @param string $alt
-     *
-     * @return Image
-     */
-    public function setAlt($alt)
-    {
-        $this->alt = $alt;
-
-        return $this;
-    }
-
-    /**
-     * Get alt
-     *
-     * @return string
-     */
-    public function getAlt()
-    {
-        return $this->alt;
     }
 }

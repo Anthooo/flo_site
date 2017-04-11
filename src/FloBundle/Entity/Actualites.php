@@ -29,6 +29,7 @@ class Actualites
     private $image;
 
 
+
     /**
      * Get id
      *

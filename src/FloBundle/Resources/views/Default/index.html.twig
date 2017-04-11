@@ -1,38 +1,33 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-<body class="home">
+    <div class="home">
+        <div class="row">
+            <div class="col-md-7 col-xs-12">
+                <h1 class="name">FLORENCE MENET-PELISSON</h1>
+            </div>
 
-<div class="row">
-    <div class="col l7 s12">
-        <h1 class="name">FLORENCE MENET-PELISSON</h1>
-    </div>
+            <div class="col-md-4 col-md-offset-8 col-xs-12 ">
+                <div class="content">
+                    <ul class="bmenu">
+                        <li><a href="{{ path('flo_oeuvres') }}">Oeuvres</a></li>
+                        <li><a href="{{ path('flo_fictions') }}">Fictions</a></li>
+                        <li><a href="{{ path('flo_cours') }}">Cours</a></li>
+                        <li><a href="{{ path('flo_actu') }}">Actualités</a></li>
+                        <li><a href="{{ path('flo_about') }}">A propos</a></li>
+                        <li><a href="{{ path('flo_contact') }}">Contact</a></li>
+                        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                            <li><a class="item" href="{{ path('admin_homepage') }}">Admin</a> </li>
+                        {% else %}
 
-    <div class="col l5 offset-m6 m6 s12 ">
-        <div class="content">
-            <ul class="bmenu">
-                <li><a href="{{ path('flo_oeuvres') }}">Oeuvres</a></li>
-                <li><a href="{{ path('flo_fictions') }}">Fictions</a></li>
-                <li><a href="{{ path('flo_cours') }}">Cours</a></li>
-                <li><a href="{{ path('flo_actu') }}">Actualités</a></li>
-                <li><a href="{{ path('flo_about') }}">A propos</a></li>
-                <li><a href="{{ path('flo_contact') }}">Contact</a></li>
-                {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                    <li><a class="item" href="{{ path('admin_homepage') }}">Admin</a> </li>
-                {% else %}
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
 
-                {% endif %}
-            </ul>
         </div>
+        {% include '@Flo/Default/footer.html.twig' %}
+
     </div>
 
-</div>
-
-{% endblock %}
-
-{% block javascripts %}
-<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-<!-- Compiled and minified JavaScript -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
-<script src="{{ asset('bundles/flo/js/flo.js') }}"></script>
 {% endblock %}

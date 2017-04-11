@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% include '@Flo/Default/navadmin.html.twig' %}
+
+    <div id="admin">
+        <h1>Cour - édition</h1>
+
+        <div class="container">
+
+            {{ form_start(edit_form) }}
+
+
+
+            <div class="col-xs-5">
+                <label>Image actuelle: </label>
+                <a href="{{ asset('uploads/images/') }}{{ cour.image }}" data-toggle="lightbox" data-gallery="example-gallery">
+                    <img class="thumbnail" src="{{ asset('uploads/images/') }}{{ cour.image }}">
+                </a>
+
+            </div>
+            <div class="col-xs-7">
+                {{ form_label(edit_form.image) }}
+                {{ form_widget(edit_form.image) }}
+                {{ form_errors(edit_form.image) }}
+            </div>
+
+            <div class="col-xs-12">
+                <hr>
+
+                {{ form_label(edit_form.categorie) }}
+                {{ form_widget(edit_form.categorie) }}
+                {{ form_errors(edit_form.categorie) }}
+
+            </div>
+
+            <div class="col-xs-12 boutons text-center">
+
+                <input class="btn btn-default" type="submit" value="Editer" />
+                <a class="btn btn-default" href="{{ path('cours_index') }}">Retour</a>
+                <a class="btn btn-default" href="{{ path('cours_delete', { 'id': cour.id }) }}" title="Effacer">Effacer</a>
+            </div>
+            {{ form_end(edit_form) }}
+        </div>
+    </div>
+{% endblock %}

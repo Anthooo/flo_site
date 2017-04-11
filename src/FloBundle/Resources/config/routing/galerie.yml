@@ -1,0 +1,20 @@
+galerie_index:
+    path:     /
+    defaults: { _controller: "FloBundle:Galerie:index" }
+    methods:  GET
+
+galerie_new:
+    path:     /new
+    defaults: { _controller: "FloBundle:Galerie:new" }
+    methods:  [GET, POST]
+
+galerie_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "FloBundle:Galerie:edit" }
+    methods:  [GET, POST]
+
+galerie_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "FloBundle:Galerie:delete" }
+    requirements:
+      id: \d+

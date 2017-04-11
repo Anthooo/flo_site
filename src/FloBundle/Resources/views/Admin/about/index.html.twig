@@ -1,49 +1,46 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+    {% include '@Flo/Default/navadmin.html.twig' %}
 
-    <body class="admin">
+    <div id="admin">
+        <div class="container">
+            <h1>A propos - Accueil</h1>
 
-    <div class="row">
-        {% include '@Flo/Default/navadmin.html.twig' %}
+            <hr>
 
-        <div class="col l10">
-            <div class="container adm">
-                <div class="row admincontenu">
-                    <a href="{{ path('about_new') }}"><h1>A propos</h1></a>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Date</th>
-                                <th>Contenu</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        {% for about in abouts %}
-                            <tr>
-                                <td>{{ about.date }}</td>
-                                <td>{{ about.contenu|raw }}</td>
-                                <td>
-                                    <ul>
-                                        <li>
-                                            <a href="{{ path('about_edit', { 'id': about.id }) }}"><i class="material-icons">mode_edit</i></a>
-                                            <a href="{{ path('about_delete', { 'id': about.id }) }}"><i class="material-icons">delete</i></a>
-                                        </li>
-                                    </ul>
-                                </td>
-                            </tr>
-                        {% endfor %}
-                        </tbody>
-                    </table>
-
-                   <div class="row center">
-                        <a href="{{ path('about_new') }}"><i class="medium material-icons">note_add</i></a>
-                   </div>
-
-                </div>
+            <div class="text-center">
+                <a class="btn btn-default" href="{{ path('about_new') }}">Nouveau</a>
             </div>
+
+            <hr>
+
+            <table id="modeles" class="table table-bordered" cellspacing="0" width="100%">
+                <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Contenu</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for about in abouts %}
+                    <tr>
+                        <td>{{ about.date }}</td>
+                        <td>{{ about.contenu|raw }}</td>
+                        <td>
+                            <a class="btn btn-default" href="{{ path('about_edit', { 'id': about.id }) }}">Editer</a>
+                            <a class="btn btn-default" href="{{ path('about_delete', { 'id': about.id }) }}">Supprimer</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+
+
         </div>
     </div>
-    </body>
+    {% include '@Flo/Default/footer.html.twig' %}
+
 {% endblock %}

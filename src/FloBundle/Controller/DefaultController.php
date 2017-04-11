@@ -18,12 +18,12 @@ class DefaultController extends Controller
         return $this->render('@Flo/Admin/index.html.twig');
     }
 
-    public function oeuvresAction()
+    public function GalerieAction()
     {
         $em = $this->getDoctrine()->getManager();
-        $modeles = $em->getRepository("FloBundle:Categorie")->getModeleByCateg('Oeuvres');
+        $galeries = $em->getRepository("FloBundle:Galerie")->findAll();
         return $this->render('@Flo/user/oeuvres.html.twig', array(
-            'modeles'=>$modeles
+            'galeries'=>$galeries
         ));
     }
 
@@ -39,36 +39,9 @@ class DefaultController extends Controller
     public function coursAction()
     {
         $em = $this->getDoctrine()->getManager();
-        $modeles = $em->getRepository("FloBundle:Categorie")->getModeleByCateg('Cours');
+        $cours = $em->getRepository("FloBundle:Cours")->findAll();
         return $this->render('@Flo/user/cours.html.twig', array(
-            'modeles'=>$modeles
-        ));
-    }
-
-    public function coursadultesAction()
-    {
-        $em = $this->getDoctrine()->getManager();
-        $modeles = $em->getRepository("FloBundle:Categorie")->getModeleByCateg('Cours adultes');
-        return $this->render('@Flo/user/cours_adultes.html.twig', array(
-            'modeles'=>$modeles
-        ));
-    }
-
-    public function coursadosAction()
-    {
-        $em = $this->getDoctrine()->getManager();
-        $modeles = $em->getRepository("FloBundle:Categorie")->getModeleByCateg('Cours ados');
-        return $this->render('@Flo/user/cours_ados.html.twig', array(
-            'modeles'=>$modeles
-        ));
-    }
-
-    public function coursenfantsAction()
-    {
-        $em = $this->getDoctrine()->getManager();
-        $modeles = $em->getRepository("FloBundle:Categorie")->getModeleByCateg('Cours enfants');
-        return $this->render('@Flo/user/cours_enfants.html.twig', array(
-            'modeles'=>$modeles
+            'cours'=>$cours
         ));
     }
 

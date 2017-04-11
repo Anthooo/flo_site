@@ -18,6 +18,14 @@ admin_homepage:
 #Appel route admin
 #-----------------------------------------------------------------------------------------------------
 
+flo_galerie:
+    resource: "@FloBundle/Resources/config/routing/galerie.yml"
+    prefix:   /admin/galerie
+
+flo_cours:
+    resource: "@FloBundle/Resources/config/routing/cours.yml"
+    prefix:   /admin/cours
+
 flo_modele:
     resource: "@FloBundle/Resources/config/routing/modele.yml"
     prefix:   /admin/modele
