@@ -3,47 +3,71 @@
 	background-repeat: repeat, no-repeat;
 	background-position: 0 0;
 	background-size: 10px 10px, cover;
-	height: 100%;
+	height: 100vh;
+	min-height:100%;
+
+	.menu_flo {
+		padding: 40% 0 0 0;
+		position: relative;
+		li {
+			font-size: 30px;
+			a {
+				color: transparent;
+				display: block;
+				text-transform: uppercase;
+				text-shadow: 0px 0px 5px #fff;
+				letter-spacing: 1px;
+				line-height: 2em;
+				-webkit-transition: all 0.3s ease-in-out;
+				-moz-transition: all 0.3s ease-in-out;
+				-o-transition: all 0.3s ease-in-out;
+				-ms-transition: all 0.3s ease-in-out;
+				transition: all 0.3s ease-in-out;
+			}
+		}
+	}
+
+	.menu_flo:hover li a {
+		text-shadow: 0px 0px 5px #424242;
+	}
+
+	.menu_flo li a:hover {
+		color: #fff;
+		text-shadow: 0px 0px 1px #fff;
+		padding-left: 10px;
+	}
+	.name {
+		h1 {
+			margin-top: 0;
+			a {
+				text-align: left;
+				font-size: 3vw;
+				color: transparent;
+				display: block;
+				text-transform: uppercase;
+				text-shadow: 0px 0px 5px #fff;
+				letter-spacing: 1px;
+				line-height: 2em;
+				-webkit-transition: all 0.3s ease-in-out;
+				-moz-transition: all 0.3s ease-in-out;
+				-o-transition: all 0.3s ease-in-out;
+				-ms-transition: all 0.3s ease-in-out;
+				transition: all 0.3s ease-in-out;
+			}
+		}
+
+	}
+	.name:hover h1 a  {
+		text-shadow: 0px 0px 5px #424242;
+	}
+
+	.name h1 a:hover {
+		color: #fff;
+		text-shadow: 0px 0px 1px #fff;
+	}
 }
 
-.bmenu{
-    padding: 0px;
-    margin: 15% 0 10px 0;
-    position: relative;
-}
-.bmenu li{
-    font-size: 50px;
-    display: block;
-}
-.bmenu li a{
-	color: transparent;
-	display: block;
-	text-transform: uppercase;
-	text-shadow: 0px 0px 5px #fff;
-	letter-spacing: 1px;
-	line-height: 2em;
-	-webkit-transition: all 0.3s ease-in-out;
-	-moz-transition: all 0.3s ease-in-out;
-	-o-transition: all 0.3s ease-in-out;
-	-ms-transition: all 0.3s ease-in-out;
-	transition: all 0.3s ease-in-out;
-}
-.bmenu:hover li a{
-	text-shadow: 0px 0px 5px #424242;
-	text-decoration: none;
-}
-.bmenu li a:hover{
-	color: #fff;
-	text-shadow: 0px 0px 1px #fff;
-	padding-left: 10px;
-}
 
-.name {
-	text-align: left;
-}
 
-//.home {
-//	.row {
-//		height: 95vh;
-//	}
-//}
+
+

@@ -1,23 +1,25 @@
 {% extends 'base.html.twig' %}
 
-{% block header %}
-    {% include '@Flo/Default/navbar.html.twig' %}
-{% endblock %}
-
 {% block body %}
+    <div id="page">
+        <div class="container">
+            {% include '@Flo/Default/navbar.html.twig' %}
 
-<body class="page">
-    <div class="grid">
-        {% for galerie in galeries %}
-            <div class="grid-item">
-                <a href="{{ asset('uploads/images/') }}{{ galerie.image }}" data-toggle="lightbox" data-gallery="example-gallery" data-footer="{{ galerie.contenu }}">
-                    <img class="img-rounded thumbnail_galerie" src="{{ asset('uploads/images/') }}{{ galerie.image }}" />
-                </a>
+
+            <div class="grid">
+                {% for galerie in galeries %}
+                    <div class="grid-item">
+                        <a href="{{ asset('uploads/images/') }}{{ galerie.image }}" data-toggle="lightbox" data-gallery="example-gallery" data-footer="{{ galerie.contenu }}">
+                            <img class="img-rounded thumbnail_galerie" src="{{ asset('uploads/images/') }}{{ galerie.image }}" />
+                        </a>
+
+                    </div>
+                {% endfor %}
 
             </div>
-        {% endfor %}
+        </div>
+
+        {% include '@Flo/Default/footer.html.twig' %}
 
     </div>
-
-
 {% endblock %}

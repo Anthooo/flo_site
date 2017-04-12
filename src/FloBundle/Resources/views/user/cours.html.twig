@@ -1,79 +1,80 @@
 {% extends 'base.html.twig' %}
 
-{% block header %}
-    {% include '@Flo/Default/navbar.html.twig' %}
-{% endblock %}
-
 {% block body %}
-<body class="page">
+<div id="page">
 
-<div class="container">
-
-    <div class="text-center">
-
-        <div class="button-group filters-button-group">
-            <button class="button_galerie button-style button-style-dark-galerie button-style-color-2 is-checked" data-filter="*">Tout</button>
-
-            {% set newArray = [] %}
-
-            {% for cour in cours|reverse %}
-                {% if cour.categorie not in newArray %}
-                    <button class="button_galerie button-style button-style-dark-galerie button-style-color-2" data-filter="#{{ cour.categorie }}">{{ cour.categorie }}</button>
-                    {% set newArray = newArray|merge([cour.categorie]) %}
-                {% endif %}
-
-            {% endfor %}
+    {% include '@Flo/Default/navbar.html.twig' %}
 
 
+    <div class="container">
 
-        </div>
+        <div class="text-center">
 
-    <div id="coursadultes" class="hidden">
-        <p>
-            Cours hebdomadaires
+            <div class="button-group filters-button-group">
+                <button class="button_galerie button-style button-style-dark-galerie button-style-color-2 is-checked" data-filter="*">Tout</button>
 
-            mercredi 19h30-22h / jeudi 14h-16h30
+                {% set newArray = [] %}
 
-            Tarifs saison 2016-2017 : 100 à 119 euros par trimestre selon le lieu de résidence
+                {% for cour in cours|reverse %}
+                    {% if cour.categorie not in newArray %}
+                        <button class="button_galerie button-style button-style-dark-galerie button-style-color-2" data-filter="#{{ cour.categorie }}">{{ cour.categorie }}</button>
+                        {% set newArray = newArray|merge([cour.categorie]) %}
+                    {% endif %}
 
-            Cours mensuels (autour du 15 du mois)
-
-            Jeudi 10h-12h30
-
-            Tarifs saison 2016-2017 : 100 à 119 euros l'année selon le lieu de résidence
-
-            Des frais annuels d'inscription de 20 euros sont demandés
-        </p>
+                {% endfor %}
 
 
-    </div>
 
-        <div id="coursenfants" class="hidden">
-                <p>
+            </div>
+
+            <div id="coursadultes" class="hidden">
+                <p class="infos_cours">
+                    Cours hebdomadaires
+
+                    mercredi 19h30-22h / jeudi 14h-16h30
+
+                    Tarifs saison 2016-2017 : 100 à 119 euros par trimestre selon le lieu de résidence
+
+                    Cours mensuels (autour du 15 du mois)
+
+                    Jeudi 10h-12h30
+
+                    Tarifs saison 2016-2017 : 100 à 119 euros l'année selon le lieu de résidence
+
+                    Des frais annuels d'inscription de 20 euros sont demandés
+                </p>
+
+
+            </div>
+
+            <div id="coursenfants" class="hidden">
+                <p class="infos_cours">
                     plop
                 </p>
+            </div>
+
+            <div id="stages" class="hidden">
+                <p class="infos_cours">
+                    plip
+                </p>
+            </div>
+
+
+            <div class="grid_cours">
+
+                {% for cour in cours %}
+                    <div class="grid-item" id="{{ cour.categorie }}">
+                        <a href="{{ asset('uploads/images/') }}{{ cour.image }}" data-toggle="lightbox" data-gallery="cours">
+                            <img class="img-rounded thumbnail_galerie " src="{{ asset('uploads/images/') }}{{ cour.image }}">
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+
         </div>
-
-        <div id="stages" class="hidden">
-            <p>
-                plip
-            </p>
-        </div>
-
-
-        <div class="grid_cours">
-
-            {% for cour in cours %}
-                <div class="grid-item" id="{{ cour.categorie }}">
-                    <a href="{{ asset('uploads/images/') }}{{ cour.image }}" data-toggle="lightbox" data-gallery="cours">
-                        <img class="img-rounded thumbnail_galerie " src="{{ asset('uploads/images/') }}{{ cour.image }}">
-                    </a>
-                </div>
-            {% endfor %}
-        </div>
-
     </div>
-</div>
+
+    {% include '@Flo/Default/footer.html.twig' %}
 
 
 {% endblock %}

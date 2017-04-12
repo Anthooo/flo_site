@@ -13,38 +13,47 @@
             </div>
             <hr>
 
-            <table id="modeles" class="table table-bordered" cellspacing="0" width="100%">
-                <thead>
-                <tr>
-                    <th>Image</th>
-                    <th>Titre</th>
-                    <th>Contenu</th>
-                    <th>Actions</th>
-                </tr>
-                </thead>
-                <tbody>
-                {% for actualite in actualites %}
-                    <tr>
+            <div class="table-responsive">
 
-                        <td>
-                            <a href="{{ asset('uploads/images/') }}{{ actualite.image }}" data-toggle="lightbox" data-gallery="example-gallery">
-                                <img class="thumbnail" src="{{ asset('uploads/images/') }}{{ actualite.image }}">
-                            </a>
-                        </td>
-                        <td>{{ actualite.titre }}</td>
-                        <td>{{ actualite.contenu | truncate(600) | raw }}</td>
-                        <td class="text-center">
-                            <a class="btn btn-default" href="{{ path('actualites_edit', { 'id': actualite.id }) }}">Editer</a>
-                            <a class="btn btn-default" href="{{ path('actualites_delete', { 'id': actualite.id }) }}">Supprimer</a>
-                        </td>
+                <table id="modeles" class="table table-bordered" cellspacing="0" width="100%">
+                    <thead>
+                    <tr>
+                        <th>Image</th>
+                        <th>Titre</th>
+                        <th>Contenu</th>
+                        <th>Catégories</th>
+                        <th>Actions</th>
                     </tr>
-                {% endfor %}
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                    {% for actualite in actualites %}
+                        <tr>
+
+                            <td>
+                                <a href="{{ asset('uploads/images/') }}{{ actualite.image }}" data-toggle="lightbox" data-gallery="example-gallery">
+                                    <img class="thumbnail" src="{{ asset('uploads/images/') }}{{ actualite.image }}">
+                                </a>
+                            </td>
+                            <td>{{ actualite.titre }}</td>
+                            <td>{{ actualite.contenu | truncate(600) | raw }}</td>
+                            <td>
+                                {% for categorie in actualite.categorie %}
+                                    {{ categorie }}
+                                {% endfor %}
+                            </td>
+                            <td class="text-center">
+                                <a class="btn btn-default" href="{{ path('actualites_edit', { 'id': actualite.id }) }}">Editer</a>
+                                <a class="btn btn-default" href="{{ path('actualites_delete', { 'id': actualite.id }) }}">Supprimer</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
 
         </div>
     </div>
-    {% include '@Flo/Default/footer.html.twig' %}
+    {% include '@Flo/Default/footer_admin.html.twig' %}
 
 {% endblock %}
 

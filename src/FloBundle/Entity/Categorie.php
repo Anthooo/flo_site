@@ -13,8 +13,9 @@ class Categorie
     }
 
     // GENERATED CODE //
+
     /**
-     * @var int
+     * @var integer
      */
     private $id;
 
@@ -27,7 +28,7 @@ class Categorie
     /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {

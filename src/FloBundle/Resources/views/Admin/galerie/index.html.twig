@@ -11,42 +11,44 @@
             <div class="row">
 
 
-            <div class="text-center">
-                <a class="btn btn-default" href="{{ path('galerie_new') }}">Nouveau</a>
-            </div>
+                <div class="text-center">
+                    <a class="btn btn-default" href="{{ path('galerie_new') }}">Nouveau</a>
+                </div>
 
+                <div class="table-responsive">
 
-            <table id="modeles" class="table table-bordered" cellspacing="0" width="100%">
-                <thead>
-                <tr>
-                    <th>Image</th>
-                    <th>Contenu</th>
-                    <th>Actions</th>
-                </tr>
-                </thead>
-                <tbody>
-                {% for galerie in galeries %}
-                    <tr>
-                        <td>
-                            <a href="{{ asset('uploads/images/') }}{{ galerie.image }}" data-toggle="lightbox" data-gallery="example-gallery">
-                                <img class="thumbnail" src="{{ asset('uploads/images/') }}{{ galerie.image }}">
-                            </a>
-                        </td>
-                        <td>{{ galerie.contenu | raw }}</td>
+                    <table id="modeles" class="table table-bordered" cellspacing="0" width="100%">
+                        <thead>
+                        <tr>
+                            <th>Image</th>
+                            <th>Contenu</th>
+                            <th>Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for galerie in galeries %}
+                            <tr>
+                                <td>
+                                    <a href="{{ asset('uploads/images/') }}{{ galerie.image }}" data-toggle="lightbox" data-gallery="example-gallery">
+                                        <img class="thumbnail" src="{{ asset('uploads/images/') }}{{ galerie.image }}">
+                                    </a>
+                                </td>
+                                <td>{{ galerie.contenu | raw }}</td>
 
-                        <td>
-                            <a class="btn btn-default" href="{{ path('galerie_edit', { 'id': galerie.id }) }}">Editer</a>
-                        </td>
-                    </tr>
-                {% endfor %}
-                </tbody>
-            </table>
+                                <td>
+                                    <a class="btn btn-default" href="{{ path('galerie_edit', { 'id': galerie.id }) }}">Editer</a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
 
             </div>
         </div>
 
 
     </div>
-    {% include '@Flo/Default/footer.html.twig' %}
+    {% include '@Flo/Default/footer_admin.html.twig' %}
 
 {% endblock %}

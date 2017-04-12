@@ -15,33 +15,36 @@
                     <a class="btn btn-default" href="{{ path('cours_new') }}">Nouveau</a>
                 </div>
 
-                <table id="modeles" class="table table-bordered" cellspacing="0" width="100%">
-                    <thead>
-                    <tr>
-                        <th>Image</th>
-                        <th>Catégorie</th>
-                        <th>Actions</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {% for cour in cours %}
+                <div class="table-responsive">
+
+                    <table id="modeles" class="table table-bordered" cellspacing="0" width="100%">
+                        <thead>
                         <tr>
-                            <td>
-                                <a href="{{ asset('uploads/images/') }}{{ cour.image }}" data-toggle="lightbox" data-gallery="example-gallery">
-                                    <img class="thumbnail" src="{{ asset('uploads/images/') }}{{ cour.image }}">
-                                </a>
-                            </td>
-                            <td>{{ cour.categorie }}</td>
-                            <td>
-                                <a class="btn btn-default" href="{{ path('cours_edit', { 'id': cour.id }) }}">Editer</a>
-                            </td>
+                            <th>Image</th>
+                            <th>Catégorie</th>
+                            <th>Actions</th>
                         </tr>
-                    {% endfor %}
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                        {% for cour in cours %}
+                            <tr>
+                                <td>
+                                    <a href="{{ asset('uploads/images/') }}{{ cour.image }}" data-toggle="lightbox" data-gallery="example-gallery">
+                                        <img class="thumbnail" src="{{ asset('uploads/images/') }}{{ cour.image }}">
+                                    </a>
+                                </td>
+                                <td>{{ cour.categorie }}</td>
+                                <td>
+                                    <a class="btn btn-default" href="{{ path('cours_edit', { 'id': cour.id }) }}">Editer</a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
-    {% include '@Flo/Default/footer.html.twig' %}
+    {% include '@Flo/Default/footer_admin.html.twig' %}
 
 {% endblock %}

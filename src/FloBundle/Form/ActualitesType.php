@@ -3,6 +3,7 @@
 namespace FloBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Ivory\CKEditorBundle\Form\Type\CKEditorType;
@@ -22,6 +23,9 @@ class ActualitesType extends AbstractType
                 'config_name' => 'my_config',
             ))
             ->add('image', ImageType::class)
+            ->add('categorie')
+
+
         ;
     }
     

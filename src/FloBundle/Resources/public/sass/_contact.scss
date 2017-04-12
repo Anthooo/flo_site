@@ -1,16 +1,20 @@
-label {
-  margin: 20px 0 0 0;
+.contactpage {
+  label {
+    margin: 20px 0 0 0;
+  }
+
+  textarea {
+    margin: 0 0 20px 0;
+  }
+
+  .well {
+    background-color: RGBA(255,255,255,0.5);
+    border-radius: 0.5em;
+  }
+
+  .contactform {
+    margin-top: 5em;
+  }
 }
 
-textarea {
-  margin: 0 0 20px 0;
-}
 
-.well {
-  background-color: RGBA(255,255,255,0.5);
-  border-radius: 0.5em;
-}
-
-.contactform {
-  margin-top: 5em;
-}

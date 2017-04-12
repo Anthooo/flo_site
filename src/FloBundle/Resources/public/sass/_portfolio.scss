@@ -1,5 +1,7 @@
 .grid-item {
-  width: 190px;
+  float: left;
+  width: 250px;
+  height: auto;
   padding-right: 3px;
 }
 .grid-item--width2 { width: 400px; }
@@ -22,10 +24,6 @@
   background: RGBA(250, 250, 250, 0.3);
   border-radius: 15px;
   padding: 3.5em 4em;
-}
-
-.grid {
-  margin-top: 5em;
 }
 
 .ekko-lightbox .modal-footer {

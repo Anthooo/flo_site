@@ -9,6 +9,11 @@ var $grid = $('.grid').isotope({
     layoutMode: 'masonry'
 });
 
+var $gridactu = $('.grid_actu').isotope({
+    itemSelector: '.grid-item',
+    layoutMode: 'masonry'
+});
+
 var $gridcours = $('.grid_cours').isotope({
     itemSelector: '.grid-item',
     layoutMode: 'masonry',
@@ -26,6 +31,7 @@ $('.filters-button-group').on( 'click', 'button', function() {
     filterValue = filterFns[ filterValue ] || filterValue;
     $grid.isotope({ filter: filterValue });
     $gridcours.isotope({ filter: filterValue });
+    $gridactu.isotope({ filter: filterValue });
 
 
     if ($( this).attr('data-filter') === "#Adultes") {
@@ -63,10 +69,14 @@ $('.button-group').each( function( i, buttonGroup ) {
     });
 });
 
+// JS Datatable
 $(document).ready(function() {
+
 
     $('#modeles').DataTable({
         "pageLength": 10,
+        "responsive": true,
+        "scrollX": true,
         "lengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]],
         "language": {
             "lengthMenu": "_MENU_ ",
@@ -81,6 +91,29 @@ $(document).ready(function() {
                 "previous":   "Précédent"
             }
         }}
-    );
+    )
+
 
 } );
+
+// Modal Actualités
+$('#myModal').on('show.bs.modal', function (event) {
+    var button = $(event.relatedTarget); // Button that triggered the modal
+    var recipient = button.data('whatever'); // Extract info from data-* attributes
+    // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+    // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+    var modal = $(this);
+    modal.find('.modal-title').text('New message to ' + recipient);
+    modal.find('.modal-body input').val(recipient)
+});
+
+// Changement icône menu au clic
+$("#nav_icon").parent().on("click","#nav_icon", function () {
+    $("#nav_icon").removeClass("glyphicon-menu-hamburger").addClass("glyphicon-chevron-right");
+    $("#nav_icon").attr("id", "nav_icon2");
+});
+$("#nav_icon").parent().on("click","#nav_icon2",function () {
+    $("#nav_icon2").removeClass("glyphicon-chevron-right").addClass("glyphicon-menu-hamburger");
+    $("#nav_icon2").attr("id", "nav_icon");
+});
+

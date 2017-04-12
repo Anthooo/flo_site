@@ -26,10 +26,6 @@ flo_cours:
     resource: "@FloBundle/Resources/config/routing/cours.yml"
     prefix:   /admin/cours
 
-flo_modele:
-    resource: "@FloBundle/Resources/config/routing/modele.yml"
-    prefix:   /admin/modele
-
 flo_categorie:
     resource: "@FloBundle/Resources/config/routing/categorie.yml"
     prefix:   /admin/categorie

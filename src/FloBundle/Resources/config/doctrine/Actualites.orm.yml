@@ -14,9 +14,17 @@ FloBundle\Entity\Actualites:
             length: 255
         contenu:
             type: text
+        date:
+            type: date
     lifecycleCallbacks: {  }
 
     manyToOne:
             image:
                 targetEntity: FloBundle\Entity\Image
                 cascade: ["persist", "remove"]
+
+    manyToMany:
+            categorie:
+                targetEntity: FloBundle\Entity\Categorie
+                joinTable:
+                        name: actu_cat

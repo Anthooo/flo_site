@@ -26,11 +26,17 @@
 
 .navbar_admin {
   margin-bottom: 0;
+
   li {
+
     a{
       color: #3C3F41 !important;
     }
+
+  }
+
+  .navbar-nav {
+    width: auto;
   }
 }
-
 

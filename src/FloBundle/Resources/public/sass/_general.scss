@@ -1,28 +1,32 @@
-body, html {
-	padding:0px;
-	margin:0px;
-	height: 100vh;
+html {
+	height: 100%;
+}
+
+body {
 	min-height: 100%;
+}
+
+body, html {
+	padding:0;
+	margin:0;
+	//height: 100vh;
+	//min-height: 100%;
 }
 
 body {
 	background-color: transparent;
 }
 
-.page {
+#page {
 	background: url('../images/pattern.png') #BEBAB9;
 	background-repeat: repeat, no-repeat;
     background-position: 0 0;
     background-size: 10px 10px, cover;
-}
-
-.about {
-	font-family: 'Lato', Calibri, Arial, sans-serif;
-    color: #47a3da;
+	min-height: 100vh;
 }
 
 h1, h2{
-	font-size: 50px;
+	font-size: 5vw;
 	padding-left: 15px;
 	color: transparent;
 	display: block;

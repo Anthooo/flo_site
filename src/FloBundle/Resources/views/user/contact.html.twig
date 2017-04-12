@@ -1,48 +1,42 @@
 {% extends 'base.html.twig' %}
 
-{% block header %}
-    {% include '@Flo/Default/navbar.html.twig' %}
-{% endblock %}
-
 {% block body %}
 
-<body class="page">
+    <div id="page">
+        {% include '@Flo/Default/navbar.html.twig' %}
+        <div class="container contactpage">
 
-        <div class="row">
-            <div class="col-xs-12 well contactform">
-                <form class="form-horizontal" id="formvalidate" action="{{ path('send_mail') }}" method="post">
-                    <div class="col-md-6">
-                        <label for="first_name">Prénom</label>
-                        <input  name="prenom" id="first_name"  required="" aria-required="true" class="form-control input-lg validate" placeholder="Votre prénom" type="text">
+            <div class="row">
+                <div class="col-xs-12 well contactform">
+                    <form class="form-horizontal" id="formvalidate" action="{{ path('send_mail') }}" method="post">
+                        <div class="col-md-6">
+                            <label for="first_name">Prénom</label>
+                            <input  name="prenom" id="first_name"  required="" aria-required="true" class="form-control input-lg validate" placeholder="Votre prénom" type="text">
 
-                        <label for="last_name">Nom</label>
-                        <input class="form-control input-lg validate" placeholder="Votre nom" name="nom" id="last_name" type="text" required="" aria-required="true">
+                            <label for="last_name">Nom</label>
+                            <input class="form-control input-lg validate" placeholder="Votre nom" name="nom" id="last_name" type="text" required="" aria-required="true">
 
-                        <label for="email" data-error="Cet email n'est pas valide">Email</label>
-                        <input class="form-control input-lg validate" placeholder="Votre adresse mail" type="email" name="email" id="email" required="" aria-required="true">
+                            <label for="email" data-error="Cet email n'est pas valide">Email</label>
+                            <input class="form-control input-lg validate" placeholder="Votre adresse mail" type="email" name="email" id="email" required="" aria-required="true">
 
 
-                    </div>
-                    <div class="col-md-6">
-                        <label for="textarea">Message:</label>
-                        <textarea name="msg" id="textarea" required="" aria-required="true" class="form-control input-lg" rows="10"></textarea>
-                    </div>
-                    <div class="col-md-12 text-center">
-                        <button class="btn btn-default btn-lg" type= "submit" name="action">Envoyer</button>
-                    </div>
-                </form>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="textarea">Message:</label>
+                            <textarea name="msg" id="textarea" required="" aria-required="true" class="form-control input-lg" rows="10"></textarea>
+                        </div>
+                        <div class="col-md-12 text-center">
+                            <button class="btn btn-default btn-lg" type= "submit" name="action">Envoyer</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
+        {% include '@Flo/Default/footer.html.twig' %}
+
+    </div>
 
 
 
 
-
-{% endblock %}
-
-{% block javascripts %}
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
-    <script src="{{ asset('bundles/flo/js/flo.js') }}"></script>
 {% endblock %}

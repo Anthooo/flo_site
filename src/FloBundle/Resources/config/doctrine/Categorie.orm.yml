@@ -13,3 +13,4 @@ FloBundle\Entity\Categorie:
             type: string
             length: 255
     lifecycleCallbacks: {  }
+
