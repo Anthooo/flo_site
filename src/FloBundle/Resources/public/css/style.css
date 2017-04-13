@@ -1114,27 +1114,135 @@ a:hover {
   padding-top: 20%;
 }
 /* line 13, ../sass/_admin.scss */
+#admin h1 {
+  font-size: 3vw;
+}
+/* line 17, ../sass/_admin.scss */
 #admin .thumbnail {
   height: 150px;
 }
-/* line 17, ../sass/_admin.scss */
+/* line 21, ../sass/_admin.scss */
 #admin .boutons {
   margin-top: 5px;
 }
-/* line 21, ../sass/_admin.scss */
+/* line 25, ../sass/_admin.scss */
 #admin .modeles_wrapper {
   height: 100vh;
 }
+/* line 29, ../sass/_admin.scss */
+#admin .view {
+  height: 100%;
+  width: 100%;
+  max-width: 200px;
+  max-height: 200px;
+  margin: 10px;
+  float: left;
+  border: 10px solid #fff;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  box-shadow: 1px 1px 2px #e6e6e6;
+  cursor: default;
+  background: #fff;
+}
+/* line 44, ../sass/_admin.scss */
+#admin .view .mask, #admin .view .content {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+}
+/* line 52, ../sass/_admin.scss */
+#admin .view img {
+  display: block;
+  position: relative;
+}
+/* line 56, ../sass/_admin.scss */
+#admin .view h2 {
+  text-transform: uppercase;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  font-size: 17px;
+  padding: 10px;
+  margin: 20px 0 0 0;
+}
+/* line 65, ../sass/_admin.scss */
+#admin .view p {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 12px;
+  position: relative;
+  color: #fff;
+  padding: 10px 20px 20px;
+  text-align: center;
+}
+/* line 74, ../sass/_admin.scss */
+#admin .view a.info {
+  margin-top: 40%;
+}
+/* line 87, ../sass/_admin.scss */
+#admin .view-first img {
+  transition: all 0.2s linear;
+}
+/* line 90, ../sass/_admin.scss */
+#admin .view-first .mask {
+  opacity: 0;
+  background-color: RGBA(152, 152, 152, 0.7);
+  transition: all 0.4s ease-in-out;
+}
+/* line 95, ../sass/_admin.scss */
+#admin .view-first h2 {
+  transform: translateY(-100px);
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+}
+/* line 100, ../sass/_admin.scss */
+#admin .view-first p {
+  transform: translateY(100px);
+  opacity: 0;
+  transition: all 0.2s linear;
+}
+/* line 105, ../sass/_admin.scss */
+#admin .view-first a.info {
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+}
+/* line 110, ../sass/_admin.scss */
+#admin .view-first:hover img {
+  transform: scale(1.1);
+}
+/* line 113, ../sass/_admin.scss */
+#admin .view-first:hover .mask {
+  opacity: 1;
+}
+/* line 116, ../sass/_admin.scss */
+#admin .view-first:hover h2,
+#admin .view-first:hover p,
+#admin .view-first:hover a.info {
+  opacity: 1;
+  transform: translateY(0px);
+}
+/* line 122, ../sass/_admin.scss */
+#admin .view-first:hover p {
+  transition-delay: 0.1s;
+}
+/* line 125, ../sass/_admin.scss */
+#admin .view-first:hover a.info {
+  transition-delay: 0.2s;
+}
 
-/* line 27, ../sass/_admin.scss */
+/* line 131, ../sass/_admin.scss */
 .navbar_admin {
   margin-bottom: 0;
 }
-/* line 32, ../sass/_admin.scss */
+/* line 136, ../sass/_admin.scss */
 .navbar_admin li a {
   color: #3C3F41 !important;
 }
-/* line 38, ../sass/_admin.scss */
+/* line 142, ../sass/_admin.scss */
 .navbar_admin .navbar-nav {
   width: auto;
 }

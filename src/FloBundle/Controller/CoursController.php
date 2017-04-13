@@ -113,4 +113,6 @@ class CoursController extends Controller
         $em->flush();
         return $this->redirectToRoute('cours_index');
     }
+
+
 }
