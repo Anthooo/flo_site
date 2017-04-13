@@ -34,7 +34,11 @@
                             <div class="panel panel-default">
                                 <div class="panel-body">
                                     <div>
-                                        <img class="thumbnail_actu " src="{{ asset('uploads/images/') }}{{ actualite.image }}">
+                                    {% for image in actualite.image.urls %}
+
+                                    <img class="thumbnail_actu " src="{{ asset('uploads/images/') }}{{ image }}">
+
+                                    {% endfor %}
                                     </div>
                                     <div class="actu_contenu">
                                         {{ actualite.contenu | truncate(300) |raw }}
