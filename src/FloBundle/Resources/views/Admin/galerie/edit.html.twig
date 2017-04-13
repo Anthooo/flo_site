@@ -19,9 +19,13 @@
 
                 <div class="col-xs-5">
                     <label>Image actuelle: </label>
-                    <a href="{{ asset('uploads/images/') }}{{ galerie.image }}" data-toggle="lightbox" data-gallery="example-gallery">
-                        <img class="thumbnail" src="{{ asset('uploads/images/') }}{{ galerie.image }}">
+                    {% for image in galerie.image.urls %}
+
+                    <a href="{{ asset('uploads/images/' ~ image) }}" data-toggle="lightbox" data-gallery="example-gallery">
+                        <img class="thumbnail" src="{{ asset('uploads/images/' ~ image) }}">
                     </a>
+
+                    {% endfor %}
                 </div>
                 <div class="col-xs-7">
                     {{ form_label(edit_form.image) }}

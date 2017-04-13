@@ -27,11 +27,14 @@
                         </thead>
                         <tbody>
                         {% for galerie in galeries %}
+
                             <tr>
                                 <td>
-                                    <a href="{{ asset('uploads/images/') }}{{ galerie.image }}" data-toggle="lightbox" data-gallery="example-gallery">
-                                        <img class="thumbnail" src="{{ asset('uploads/images/') }}{{ galerie.image }}">
+                                    {% for image in galerie.image.urls %}
+                                    <a href="{{ asset('uploads/images/') }}{{ image }}" data-toggle="lightbox" data-gallery="example-gallery">
+                                        <img class="thumbnail" src="{{ asset('uploads/images/') }}{{ image }}">
                                     </a>
+                                    {% endfor %}
                                 </td>
                                 <td>{{ galerie.contenu | raw }}</td>
 

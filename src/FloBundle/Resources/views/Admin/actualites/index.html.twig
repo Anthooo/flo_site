@@ -28,12 +28,15 @@
                     <tbody>
                     {% for actualite in actualites %}
                         <tr>
+                            {% for image in actualite.image.urls %}
 
                             <td>
-                                <a href="{{ asset('uploads/images/') }}{{ actualite.image }}" data-toggle="lightbox" data-gallery="example-gallery">
-                                    <img class="thumbnail" src="{{ asset('uploads/images/') }}{{ actualite.image }}">
+                                <a href="{{ asset('uploads/images/' ~ image) }}" data-toggle="lightbox" data-gallery="example-gallery">
+                                    <img class="thumbnail" src="{{ asset('uploads/images/' ~ image) }}">
                                 </a>
                             </td>
+
+                            {% endfor  %}
                             <td>{{ actualite.titre }}</td>
                             <td>{{ actualite.contenu | truncate(600) | raw }}</td>
                             <td>

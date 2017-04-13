@@ -39,6 +39,9 @@ class GalerieController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+
+            $galerie->getImage()->upload($galerie->getImage()->files);
+
             $em->persist($galerie);
             $em->flush();
 
@@ -66,7 +69,7 @@ class GalerieController extends Controller
         if ($editForm->isSubmitted() or $editForm->isValid()) {
             $em = $this->getDoctrine()->getManager();
 
-            $image->preUpload();
+            $cour->getImage()->upload($cour->getImage()->files);
 
             $em->persist($galerie);
             $em->flush();
