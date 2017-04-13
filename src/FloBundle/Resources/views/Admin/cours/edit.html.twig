@@ -14,9 +14,12 @@
 
             <div class="col-xs-5">
                 <label>Image actuelle: </label>
-                <a href="{{ asset('uploads/images/') }}{{ cour.image }}" data-toggle="lightbox" data-gallery="example-gallery">
-                    <img class="thumbnail" src="{{ asset('uploads/images/') }}{{ cour.image }}">
-                </a>
+                {% for image in cour.image.urls %}
+                    <a href="{{ asset('uploads/images/' ~ image) }}" data-toggle="lightbox" data-gallery="example-gallery">
+                        <img class="thumbnail" src="{{ asset('uploads/images/' ~ image) }}">
+                    </a>
+                    <a href="{{ path('delete_img', {'id': cour.image.id, 'name': image }) }}">delete</a>
+                {% endfor %}
 
             </div>
             <div class="col-xs-7">

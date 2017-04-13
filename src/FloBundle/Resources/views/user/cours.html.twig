@@ -63,11 +63,15 @@
             <div class="grid_cours">
 
                 {% for cour in cours %}
+
+                    {% for image in cour.image.urls %}
+
                     <div class="grid-item" id="{{ cour.categorie }}">
-                        <a href="{{ asset('uploads/images/') }}{{ cour.image }}" data-toggle="lightbox" data-gallery="cours">
-                            <img class="img-rounded thumbnail_galerie " src="{{ asset('uploads/images/') }}{{ cour.image }}">
+                        <a href="{{ asset('uploads/images/' ~ image) }}" data-toggle="lightbox" data-gallery="cours">
+                            <img class="img-rounded thumbnail_galerie " src="{{ asset('uploads/images/' ~ image) }}">
                         </a>
                     </div>
+                    {% endfor %}
                 {% endfor %}
             </div>
 

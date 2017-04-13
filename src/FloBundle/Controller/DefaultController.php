@@ -40,6 +40,7 @@ class DefaultController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $cours = $em->getRepository("FloBundle:Cours")->findAll();
+        $img = $em->getRepository("FloBundle:Image")->findAll();
         return $this->render('@Flo/user/cours.html.twig', array(
             'cours'=>$cours
         ));

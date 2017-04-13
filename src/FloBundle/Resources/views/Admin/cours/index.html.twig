@@ -28,11 +28,11 @@
                         <tbody>
                         {% for cour in cours %}
                             <tr>
-                                <td>
-                                    <a href="{{ asset('uploads/images/') }}{{ cour.image }}" data-toggle="lightbox" data-gallery="example-gallery">
-                                        <img class="thumbnail" src="{{ asset('uploads/images/') }}{{ cour.image }}">
-                                    </a>
-                                </td>
+                                {#<td>#}
+                                    {#<a href="{{ asset('uploads/images/') }}{{ cour.image }}" data-toggle="lightbox" data-gallery="example-gallery">#}
+                                        {#<img class="thumbnail" src="{{ asset('uploads/images/') }}{{ cour.image }}">#}
+                                    {#</a>#}
+                                {#</td>#}
                                 <td>{{ cour.categorie }}</td>
                                 <td>
                                     <a class="btn btn-default" href="{{ path('cours_edit', { 'id': cour.id }) }}">Editer</a>

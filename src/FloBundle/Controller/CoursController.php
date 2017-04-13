@@ -39,6 +39,9 @@ class CoursController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+
+            $cour->getImage()->upload($cour->getImage()->files);
+
             $em->persist($cour);
             $em->flush();
 
@@ -61,7 +64,11 @@ class CoursController extends Controller
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
+            $em = $this->getDoctrine()->getManager();
+
+            $cour->getImage()->upload($cour->getImage()->files);
+
+            $em->flush();
 
             return $this->redirectToRoute('cours_edit', array('id' => $cour->getId()));
         }
@@ -80,10 +87,10 @@ class CoursController extends Controller
     {
         if ($id) {
             $em = $this->getDoctrine()->getManager();
-            $cours = $em->getRepository('FloBundle:Cours')->findOneById($id);
-            $image = $em->getRepository('FloBundle:Image')->findOneById($cours->getImage()->getId());
+            $cours = $em->getRepository('FloBundle:Cours')->findOneBy(array('id' => $id));
+            $image = $em->getRepository('FloBundle:Image')->findOneBy(array('id' => $cours->getImage()->getId()));
             $em->remove($cours);
-            $em->remove($image);
+            $cours->getImage()->removeUpload($image->getUrls());
             $em->flush();
 
             return $this->redirectToRoute('cours_index');
@@ -92,4 +99,18 @@ class CoursController extends Controller
 
     }
 
+    /**
+     * Deletes a image entity.
+     *
+     */
+    public function deleteImgAction($id, $name)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $image = $em->getRepository('FloBundle:Image')->findOneBy(array('id' => $id));
+
+        $image->removeUpload($name);
+
+        $em->flush();
+        return $this->redirectToRoute('cours_index');
+    }
 }

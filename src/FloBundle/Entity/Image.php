@@ -2,19 +2,48 @@
 
 namespace FloBundle\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Image
  */
 class Image
 {
-    public function __toString()
+    /**
+     * @var array
+     */
+    private $urls = array();
+
+
+    /**
+     * Set urls
+     *
+     * @param array $urls
+     *
+     * @return Image
+     */
+    public function setUrls($urls)
     {
-        return $this->url;
+        foreach ($urls as $url){
+            array_push($this->urls, $url);
+        }
+        return $this;
     }
 
-    public $file;
+    /**
+     * Get urls
+     *
+     * @return array
+     */
+    public function getUrls()
+    {
+        $urls = array();
+        foreach ($this->urls as $url){
+            array_push($urls, $url);
+        }
+        return $urls;
+    }
+
+    public $files;
 
     protected function getUploadDir()
     {
@@ -26,53 +55,39 @@ class Image
         return __DIR__.'/../../../web/'.$this->getUploadDir();
     }
 
-    public function getWebPath()
-    {
-        return null === $this->url ? null : $this->getUploadDir().'/'.$this->url;
-    }
 
-    public function getAbsolutePath()
+    public function upload($files)
     {
-        return null === $this->url ? null : $this->getUploadRootDir().'/'.$this->url;
-    }
-
-    /**
-     * @ORM\PrePersist
-     */
-    public function preUpload()
-    {
-        if (null !== $this->file) {
-            // do whatever you want to generate a unique name
-            $this->url = uniqid().'.'.$this->file->guessExtension();
+        if ($files){
+            foreach($files as $file)
+            {
+                $url = uniqid() . "." . $file->guessExtension();
+                array_push($this->urls, $url);
+                $file->move($this->getUploadRootDir(), $url);
+                unset($file);
+            }
         }
     }
 
-    /**
-     * @ORM\PostPersist
-     */
-    public function upload()
+
+    public function removeUpload($files)
     {
-        if (null === $this->file) {
-            return;
+        if (gettype($files) == 'array'){
+            foreach ($files as $file){
+                if ($file = $this->getUploadRootDir().'/'.$file) {
+                    unlink($file);
+                }
+            }
         }
-        // if there is an error when moving the file, an exception will
-        // be automatically thrown by move(). This will properly prevent
-        // the entity from being persisted to the database on error
-        $this->file->move($this->getUploadRootDir(), $this->url);
-
-        unset($this->file);
-    }
-
-    /**
-     * @ORM\PostRemove
-     */
-    public function removeUpload()
-    {
-        if ($file = $this->getAbsolutePath()) {
-            unlink($file);
+        else{
+            if (false !== $key = array_search($files, $this->urls, true)) {
+                unset($this->urls[$key]);
+                $this->urls = array_values($this->urls);
+                unlink($this->getUploadRootDir().'/'.$files);
+            }
         }
-    }
 
+    }
 
     // GENERATED CODE //
 
@@ -81,11 +96,6 @@ class Image
      * @var integer
      */
     private $id;
-
-    /**
-     * @var string
-     */
-    private $url;
 
 
     /**
@@ -98,27 +108,5 @@ class Image
         return $this->id;
     }
 
-    /**
-     * Set url
-     *
-     * @param string $url
-     *
-     * @return Image
-     */
-    public function setUrl($url)
-    {
-        $this->url = $url;
 
-        return $this;
-    }
-
-    /**
-     * Get url
-     *
-     * @return string
-     */
-    public function getUrl()
-    {
-        return $this->url;
-    }
 }

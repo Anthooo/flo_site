@@ -18,3 +18,12 @@ cours_delete:
     defaults: { _controller: "FloBundle:Cours:delete" }
     requirements:
       id: \d+
+
+#-----------------------------------------------------------------------------------------------------
+#RDelete One Image
+#-----------------------------------------------------------------------------------------------------
+
+delete_img:
+    path:     /{id}/{name}/deleteImg
+    defaults: { _controller: FloBundle:Cours:deleteImg}
+    methods: [GET, POST]
