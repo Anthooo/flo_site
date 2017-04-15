@@ -5,26 +5,25 @@
         <div class="container">
             {% include '@Flo/Default/navbar.html.twig' %}
 
-
             <div class="grid">
                 {% for galerie in galeries %}
 
-                {% for image in galerie.image.urls %}
+                    {% for image in galerie.image.urls %}
 
-                    <div class="grid-item">
-                        <a href="{{ asset('uploads/images/') }}{{ image }}" data-toggle="lightbox" data-gallery="example-gallery" data-footer="{{ galerie.contenu }}">
-                            <img class="img-rounded thumbnail_galerie" src="{{ asset('uploads/images/') }}{{ image }}" />
-                        </a>
+                        <div class="grid-item">
+                            <a href="{{ asset('uploads/images/') }}{{ image }}" data-toggle="lightbox" data-gallery="example-gallery" data-footer="{{ galerie.contenu }}">
+                                <img class="img-rounded thumbnail_galerie" src="{{ asset('uploads/images/') }}{{ image }}" />
+                            </a>
 
-                    </div>
+                        </div>
 
                     {% endfor %}
                 {% endfor %}
-
             </div>
         </div>
-
-        {% include '@Flo/Default/footer.html.twig' %}
-
     </div>
+{% endblock %}
+
+{% block footer %}
+    {% include '@Flo/Default/footer.html.twig' %}
 {% endblock %}

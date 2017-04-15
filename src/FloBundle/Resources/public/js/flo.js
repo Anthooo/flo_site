@@ -6,20 +6,29 @@ $(document).ready(function() {
     });
 
 // init Isotope
-    var $grid = $('.grid').isotope({
-        itemSelector: '.grid-item',
-        layoutMode: 'masonry'
+    var $grid = $('.grid').imagesLoaded( function() {
+        $('.grid').isotope({
+            itemSelector: '.grid-item',
+            transitionDuration: '0.5s',
+            layoutMode: 'masonry'
+        });
     });
 
-    var $gridactu = $('.grid_actu').isotope({
-        itemSelector: '.grid-item',
-        layoutMode: 'masonry'
+    var $gridactu = $('.grid_actu').imagesLoaded( function() {
+        $('.grid_actu').isotope({
+            itemSelector: '.grid-item',
+            transitionDuration: '0.5s',
+            layoutMode: 'masonry'
+        });
     });
 
-    var $gridcours = $('.grid_cours').isotope({
-        itemSelector: '.grid-item',
-        layoutMode: 'masonry',
-        sortBy : 'random'
+    var $gridcours = $('.grid_cours').imagesLoaded( function() {
+        $('.grid_cours').isotope({
+            itemSelector: '.grid-item',
+            transitionDuration: '0.5s',
+            layoutMode: 'masonry',
+            sortBy : 'random'
+        });
     });
 
 // filter functions
@@ -38,23 +47,34 @@ $(document).ready(function() {
 
         if ($( this).attr('data-filter') === "#Adultes") {
             $('#coursadultes').removeClass('hidden');
+            $('#coursados').addClass('hidden');
             $('#coursenfants').addClass('hidden');
             $('#stages').addClass('hidden');
         }
         else if ($( this).attr('data-filter') === "#Enfants") {
             $('#coursenfants').removeClass('hidden');
+            $('#coursados').addClass('hidden');
+            $('#coursadultes').addClass('hidden');
+            $('#stages').addClass('hidden');
+
+        }
+        else if ($( this).attr('data-filter') === "#Ados") {
+            $('#coursados').removeClass('hidden');
+            $('#coursenfants').addClass('hidden');
             $('#coursadultes').addClass('hidden');
             $('#stages').addClass('hidden');
 
         }
         else if ($( this).attr('data-filter') === "#Stages") {
             $('#stages').removeClass('hidden');
+            $('#coursados').addClass('hidden');
             $('#coursenfants').addClass('hidden');
             $('#coursadultes').addClass('hidden');
 
         }
         else if ($( this).attr('data-filter') === "*") {
             $('#stages').addClass('hidden');
+            $('#coursados').addClass('hidden');
             $('#coursenfants').addClass('hidden');
             $('#coursadultes').addClass('hidden')
         }

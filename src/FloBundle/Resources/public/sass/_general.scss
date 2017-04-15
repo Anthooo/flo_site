@@ -14,16 +14,20 @@ body, html {
 }
 
 body {
-	background-color: transparent;
-}
-
-#page {
 	background: url('../images/pattern.png') #BEBAB9;
 	background-repeat: repeat, no-repeat;
-    background-position: 0 0;
-    background-size: 10px 10px, cover;
+	background-position: 0 0;
+	background-size: 10px 10px, cover;
 	min-height: 100vh;
 }
+
+//#page {
+//	background: url('../images/pattern.png') #BEBAB9;
+//	background-repeat: repeat, no-repeat;
+//    background-position: 0 0;
+//    background-size: 10px 10px, cover;
+//	min-height: 100vh;
+//}
 
 h1, h2{
 	font-size: 5vw;
