@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% include '@Flo/Default/navadmin.html.twig' %}
+
+    <div id="admin">
+        <h1>Cour - édition</h1>
+
+        <div class="container">
+
+            {{ form_start(edit_form) }}
+
+            <div class="col-xs-12">
+                <h5>Images actuelles : </h5>
+
+            {% for image in cour.image.urls %}
+
+            <div class="view view-first">
+                <img src="{{ asset('uploads/images/' ~ image) }}" />
+                <div class="mask">
+                    {#<h2>Title</h2>#}
+                    {#<p>Your Text</p>#}
+                    <a class="info btn btn-default" href="{{ asset('uploads/images/' ~ image) }}" data-toggle="lightbox" data-gallery="example-gallery"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                    </a>
+                    <a class="info btn btn-default" href="{{ path('delete_img', {'id': cour.image.id, 'name': image }) }}"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                    </a>
+                </div>
+            </div>
+
+            {% endfor %}
+            </div>
+
+
+            <div class="col-xs-12">
+                {{ form_label(edit_form.image) }}
+                {{ form_widget(edit_form.image) }}
+                {{ form_errors(edit_form.image) }}
+            </div>
+
+            <div class="col-xs-12">
+                <hr>
+
+                {{ form_label(edit_form.categorie) }}
+                {{ form_widget(edit_form.categorie) }}
+                {{ form_errors(edit_form.categorie) }}
+
+            </div>
+
+            <div class="col-xs-12 boutons text-center">
+
+                <input class="btn btn-default" type="submit" value="Editer" />
+                <a class="btn btn-default" href="{{ path('cours_index') }}">Retour</a>
+                <a class="btn btn-default" href="{{ path('cours_delete', { 'id': cour.id }) }}" title="Effacer">Effacer</a>
+            </div>
+            {{ form_end(edit_form) }}
+        </div>
+    </div>
+    {% include '@Flo/Default/footer_admin.html.twig' %}
+
+{% endblock %}

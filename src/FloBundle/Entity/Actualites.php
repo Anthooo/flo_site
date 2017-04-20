@@ -7,7 +7,7 @@ namespace FloBundle\Entity;
  */
 class Actualites
 {
-    
+
     /**
      * @var integer
      */
@@ -24,10 +24,27 @@ class Actualites
     private $contenu;
 
     /**
+     * @var \DateTime
+     */
+    private $date;
+
+    /**
      * @var \FloBundle\Entity\Image
      */
     private $image;
 
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $categorie;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->categorie = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
@@ -88,6 +105,30 @@ class Actualites
     }
 
     /**
+     * Set date
+     *
+     * @param \DateTime $date
+     *
+     * @return Actualites
+     */
+    public function setDate($date)
+    {
+        $this->date = $date;
+
+        return $this;
+    }
+
+    /**
+     * Get date
+     *
+     * @return \DateTime
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
+
+    /**
      * Set image
      *
      * @param \FloBundle\Entity\Image $image
@@ -109,5 +150,39 @@ class Actualites
     public function getImage()
     {
         return $this->image;
+    }
+
+    /**
+     * Add categorie
+     *
+     * @param \FloBundle\Entity\Categorie $categorie
+     *
+     * @return Actualites
+     */
+    public function addCategorie(\FloBundle\Entity\Categorie $categorie)
+    {
+        $this->categorie[] = $categorie;
+
+        return $this;
+    }
+
+    /**
+     * Remove categorie
+     *
+     * @param \FloBundle\Entity\Categorie $categorie
+     */
+    public function removeCategorie(\FloBundle\Entity\Categorie $categorie)
+    {
+        $this->categorie->removeElement($categorie);
+    }
+
+    /**
+     * Get categorie
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getCategorie()
+    {
+        return $this->categorie;
     }
 }

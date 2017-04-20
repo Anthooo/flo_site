@@ -1,0 +1,12 @@
+<?php
+
+namespace FloBundle\Entity;
+
+/**
+ * Cours
+ */
+class Cours
+{
+    
+}
+

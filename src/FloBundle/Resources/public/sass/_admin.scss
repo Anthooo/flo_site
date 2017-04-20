@@ -1,153 +1,146 @@
-.admin {
+#admin {
   padding: 10px;
   background: url('../images/pattern.png') #BEBAB9;
   background-repeat: repeat, no-repeat;
   background-position: 0 0;
   background-size: 10px 10px, cover;
-}
+  min-height: calc(100vh - 90px);
 
-.row .adm {
-  width: 100%;
-}
+  .admin_index {
+    padding-top: 20%;
+  }
 
-.container .row {
-  padding: 15px;
-}
+  h1 {
+    font-size: 3vw;
+  }
 
-.imageupload {
-  max-width: 100%;
-}
+  .thumbnail {
+    height: 150px;
+  }
 
-.admincontenu, .modeleadmin, .aboutadmin {
-  padding: 15px;
-  background: RGBA(250, 250, 250, 0.3);
-  border-radius: 15px;
-  font-size: 20px;
-  min-height: 100vh;
-}
+  .boutons {
+    margin-top: 5px;
+  }
 
-.modeleadmin, .aboutadmin {
-  height: 300px;
-  padding-top: 10% !important;
-}
-.adminhome {
-  margin-top: 7%;
-  padding-top: 45px;
-}
+  .modeles_wrapper {
+    height:100vh;
+  }
 
-.adminmenu {
-  margin-top: 50px;
-  padding-top: 50px;
-}
+  .view {
+    height: 100%;
+    width: 100%;
+    max-width: 200px;
+    max-height: 200px;
+    margin: 10px;
+    float: left;
+    border: 10px solid #fff;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    box-shadow: 1px 1px 2px #e6e6e6;
+    cursor: default;
+    background: #fff;
+  }
+  .view .mask, .view .content {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0
+  }
+  .view img {
+    display: block;
+    position: relative
+  }
+  .view h2 {
+    text-transform: uppercase;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    font-size: 17px;
+    padding: 10px;
+    margin: 20px 0 0 0
+  }
+  .view p {
+    font-family: Georgia, serif;
+    font-style: italic;
+    font-size: 12px;
+    position: relative;
+    color: #fff;
+    padding: 10px 20px 20px;
+    text-align: center
+  }
+  .view a.info {
+    margin-top: 40%;
+    //display: inline-block;
+    //text-decoration: none;
+    //padding: 7px 14px;
+    //color: #fff;
+    //text-transform: uppercase;
+    //box-shadow: 0 0 1px #000
+  }
+  //.view a.info:hover {
+  //  box-shadow: 0 0 5px #000
+  //}
 
-.adminmenu a{
-  color: transparent;
-  display: block;
-  text-transform: uppercase;
-  text-shadow: 0px 0px 5px #fff;
-  letter-spacing: 1px;
-  font-size: 25px;
-  text-align: center;
-}
+  .view-first img {
+    transition: all 0.2s linear;
+  }
+  .view-first .mask {
+    opacity: 0;
+    background-color: RGBA(152, 152, 152, 0.7);
+    transition: all 0.4s ease-in-out;
+  }
+  .view-first h2 {
+    transform: translateY(-100px);
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+  }
+  .view-first p {
+    transform: translateY(100px);
+    opacity: 0;
+    transition: all 0.2s linear;
+  }
+  .view-first a.info{
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+  }
 
-.adminmenu:hover a{
-  text-shadow: 0px 0px 5px #424242;
-}
-
-.adminmenu a:hover{
-  color: #fff;
-  text-shadow: 0px 0px 1px #fff;
-}
-
-.admin select{
-  display: block;
-}
-
-.materialboxed{
-  height: 100px;
-  display: initial;
-}
-
-//.materialboxed.active {
-//  height: 100% !important;
-//  width: 100% !important;
-//}
-
-td, th {
-  text-align: center;
-  border: 1px solid dimgrey;
-  color: dimgrey;
-  max-height: 150px;
-  overflow: hidden;
-}
-
-.contentmodele {
-  max-height: 150px;
-  overflow: scroll;
-}
-
-.adminbtn {
-  background: none;
-  border: none;
-}
-
-.adminbtn:focus {
-  background: none;
-  border: none;
-}
-
-i.medium {
-  font-size: 3rem;
-}
-
-.admin .material-icons {
-  color: dimgrey;
-  background: none;
-  line-height: 2;
-}
-
-.admin .material-icons:hover {
-  color: white;
-}
-
-//NAVBAR ADMIN
-
-.navadm {
-  padding: 10px !important;
-}
-
-.navadm a{
-  color: white;
-  text-align: left;
-}
-
-.navadm a:hover{
-  border-radius: 15px;
-}
-
-.navadm nav ul {
-  width: 100%;
-}
-
-.navadm .dropdown-content {
-  border-radius:15px;
+  .view-first:hover img {
+    transform: scale(1.1);
+  }
+  .view-first:hover .mask {
+    opacity: 1;
+  }
+  .view-first:hover h2,
+  .view-first:hover p,
+  .view-first:hover a.info {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  .view-first:hover p {
+    transition-delay: 0.1s;
+  }
+  .view-first:hover a.info {
+    transition-delay: 0.2s;
+  }
 }
 
 
-// ADMIN LOGIN
+.navbar_admin {
+  margin-bottom: 0;
 
-.adminlog {
-  padding: 15px;
-  background: RGBA(250, 250, 250, 0.3);
-  border-radius: 15px;
+  li {
+
+    a{
+      color: #3C3F41 !important;
+    }
+
+  }
+
+  .navbar-nav {
+    width: auto;
+  }
 }
 
-// PAGINATION
-
-//select {
-//  width: 50%;
-//}
-//
-//input[type=search] {
-//  width: 50%;
-//}

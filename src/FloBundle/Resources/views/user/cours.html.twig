@@ -1,68 +1,113 @@
 {% extends 'base.html.twig' %}
 
-{% block header %}
-    {% include '@Flo/Default/navbar.html.twig' %}
-{% endblock %}
-
 {% block body %}
-<body class="page">
+<div id="page">
 
-    {% for modele in modeles %}
+    {% include '@Flo/Default/navbar.html.twig' %}
 
-        <div class="parallax-container">
-            <div class="parallax"><img src="{{ asset('bundles/flo/images/wall2.jpg') }}"></div>
-        </div>
 
-        <div class="section white">
+    <div class="container">
 
-            <div class="row cours">
+        <div class="text-center">
 
-                <div class="col s12 offset-l1 l6 m12 detailscours">
-                    <h1>{{ modele.titre }}</h1>
-                    <div class="horaires">
-                        <p>{{ modele.contenu|raw }}</p>
-                    </div>
+            <div class="button-group filters-button-group">
+                <button class="button_galerie button-style button-style-dark-galerie button-style-color-2 is-checked" data-filter="*">Tout</button>
 
-                {% if modele.liengaleriecours != null %}
-                    <div class="lien center">
-                        <a href="{{ modele.liengaleriecours }}" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Voir la galerie"><i class="fa fa-paint-brush fa-3x" aria-hidden="true"></i>
-                        </a>
-                    </div>
-                {% else %}
+                {% set newArray = [] %}
 
-                {% endif %}
-                </div>
+                {% for cour in cours|reverse %}
+                    {% if cour.categorie not in newArray %}
+                        <button class="button_galerie button-style button-style-dark-galerie button-style-color-2" data-filter="#{{ cour.categorie }}">{{ cour.categorie }}</button>
+                        {% set newArray = newArray|merge([cour.categorie]) %}
+                    {% endif %}
 
-                <div class="col s12 l4 m12 center">
-                    <a href="#"><img class="imgcours" src="{{ asset('uploads/images/') }}{{ modele.url }}" alt="{{ modele.alt }}"></a>
-                </div>
+                {% endfor %}
+
+
 
             </div>
 
+            <div id="coursadultes" class="hidden">
+                <p class="infos_cours">
+                    Cours hebdomadaires
+
+                    mercredi 19h30-22h / jeudi 14h-16h30
+
+                    Tarifs saison 2016-2017 : 100 à 119 euros par trimestre selon le lieu de résidence
+
+                    Cours mensuels (autour du 15 du mois)
+
+                    Jeudi 10h-12h30
+
+                    Tarifs saison 2016-2017 : 100 à 119 euros l'année selon le lieu de résidence
+
+                    Des frais annuels d'inscription de 20 euros sont demandés
+                </p>
+
+
+            </div>
+
+            <div id="coursenfants" class="hidden">
+                <p class="infos_cours">
+                    Cours hebdomadaires (enfant à partir de 5 ans selon déroulement séance d'essai)
+
+                    mercredi      13h30-15h30 / 15h30-17h30
+
+                    jeudi 17h30-19h30
+
+                    Tarifs pour la saison 2016-2017 : 60 à 119 euros par trimestre selon le lieu de résidence
+
+                    auxquels s'ajoutent 20 euros de frais annuels d'inscription
+
+                </p>
+            </div>
+
+            <div id="stages" class="hidden">
+                <p class="infos_cours">
+                    Du lundi au vendredi
+
+                    de 10h à 12h pour les enfants de 4 à 9 ans
+
+                    de 13h30 à 15h30 pour les enfants de 10 à 16 ans
+
+                    Généralement la première semaine des vacances scolaire d'octobre, février et avril
+
+                    Tarifs de 30 à 40 euros selon le lieu de résidence
+                </p>
+            </div>
+
+            <div id="coursados" class="hidden">
+                <p class="infos_cours">
+                    Cours hebdomadaires
+
+                    Mercredi 17h30-19h30
+
+                    Tarifs pour la saison 2016-2017 : 60 à 119 euros par trimestre selon le lieu de résidence
+
+                    Des frais annuels d'inscription de 20 euros sont demandés
+                </p>
+            </div>
+
+
+            <div class="grid_cours">
+
+                {% for cour in cours %}
+
+                    {% for image in cour.image.urls %}
+
+                    <div class="grid-item" id="{{ cour.categorie }}">
+                        <a href="{{ asset('uploads/images/' ~ image) }}" data-toggle="lightbox" data-gallery="cours">
+                            <img class="img-rounded thumbnail_galerie " src="{{ asset('uploads/images/' ~ image) }}">
+                        </a>
+                    </div>
+                    {% endfor %}
+                {% endfor %}
+            </div>
+
         </div>
-    {% endfor %}
-
-    <div class="parallax-container">
-        <div class="parallax"><img src="{{ asset('bundles/flo/images/wall2.jpg') }}"></div>
     </div>
 
+    {% include '@Flo/Default/footer.html.twig' %}
 
-{% endblock %}
 
-{% block footer %}
-    <div class="infosecole center">
-        <h1>Infos</h1>
-
-        <p class="horaires">Les cours ont lieu à l’espace culturel Gérard Philipe, Place Condorcet, à Vert-Saint-Denis.</p>
-
-        <p class="horaires">Renseignements au 01 64 10 25 55 (Syndicat intercommunal de la culture, rue du poirier saint à Cesson) ou  au 06 21 28 01 34</p>
-
-    </div>
-{% endblock %}
-
-    {% block javascripts %}
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
-    <script src="{{ asset('bundles/flo/js/flo.js') }}"></script>
 {% endblock %}

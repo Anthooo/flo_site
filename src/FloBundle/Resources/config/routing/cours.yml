@@ -1,0 +1,29 @@
+cours_index:
+    path:     /
+    defaults: { _controller: "FloBundle:Cours:index" }
+    methods:  GET
+
+cours_new:
+    path:     /new
+    defaults: { _controller: "FloBundle:Cours:new" }
+    methods:  [GET, POST]
+
+cours_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "FloBundle:Cours:edit" }
+    methods:  [GET, POST]
+
+cours_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "FloBundle:Cours:delete" }
+    requirements:
+      id: \d+
+
+#-----------------------------------------------------------------------------------------------------
+#RDelete One Image
+#-----------------------------------------------------------------------------------------------------
+
+delete_img:
+    path:     /{id}/{name}/deleteImg
+    defaults: { _controller: FloBundle:Cours:deleteImg}
+    methods: [GET, POST]

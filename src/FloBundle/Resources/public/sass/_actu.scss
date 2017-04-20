@@ -1,36 +1,29 @@
-.actu {
-  width: 300px !important;
-  border-radius: 15px !important;
-  padding: 3%;
+.grid_actu {
+  .grid-item {
+    float: left;
+    width: 275px;
+    height: auto;
+    padding-right: 1em;
+  }
+
+  .grid-item {
+    float: left;
+  }
+
+  .thumbnail_actu {
+    width: 100%;
+    height: 100%;
+  }
+
+  .modal-body, .panel-body {
+    text-align: justify;
+  }
+
+  .actu_contenu {
+    margin-top: 15px;
+  }
 }
 
-.titre_actu {
-  padding-top: 0;
-}
 
-.container .row {
-  margin-left: 0;
-  margin-right: 0;
-}
 
-.actu_next {
-  text-align: right;
-  margin-right: 5%;
-}
 
-.actu_next:hover {
-  color: steelblue;
-}
-
-.actu_card {
-  border-radius: 15px;
-}
-
-.contenu_actu {
-  text-align: justify;
-}
-
-.card .card-reveal {
-  padding-left: 5% !important;
-  padding-right: 5% !important;
-}

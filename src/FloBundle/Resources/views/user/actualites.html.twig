@@ -1,56 +1,88 @@
 {% extends 'base.html.twig' %}
 
-{% block header %}
-    {% include '@Flo/Default/navbar.html.twig' %}
-{% endblock %}
-
 {% block body %}
+    <div id="page" class="actualites">
 
-    <body class="page">
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v2.8&appId=134656409942479";
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
-<div class="container">
-    <div class="content oeuvres titre_actu">
-        <div class="row">
-            <h1>Actualités</h1>
-            {% for actualite in actualites %}
+        <div class="container">
+            {% include '@Flo/Default/navbar.html.twig' %}
 
-                <div class="col s12">
-                    <div class="card horizontal actu_card darken-3">
 
-                        <div class="card-stacked">
-                            <div class="card-content contenu_actu">
-                                <span class="card-title activator">
-                                {{ actualite.titre }}
-                                    {#<i class="material-icons right">more_vert</i>#}
-                                </span>
-                                <p>
-                                    {{ actualite.contenu | truncate(600) | raw}}
-                                </p>
-                            </div>
-                                <p class="activator actu_next">Lire la suite...</p>
-                        </div>
-                        <div class="card-image">
-                            <img class="actu" src="{{ asset('uploads/images/') }}{{ actualite.image.url }}" alt="{{ actualite.image.alt }}" />
-                        </div>
-                        <div class="card-reveal contenu_actu contenu_paddingdarken-3">
-                            <span class="card-title ">{{ actualite.titre }}<i class="material-icons right">close</i></span>
-                            <p>{{ actualite.contenu | raw }}</p>
-                            <div class="fb-share-button right" data-href="http://www.florence-pelisson.fr/actualites" data-layout="button" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.florence-pelisson.fr%2Factualites&amp;src=sdkpreparse">Partager</a></div>                        </div>
-                    </div>
+            <div class="text-center">
+
+                <div class="button-group filters-button-group">
+                    <button class="button_galerie button-style button-style-dark-galerie button-style-color-2 is-checked" data-filter="*">Tout</button>
+
+                    {% set newArray = [] %}
+
+                    {% for actualite in actualites|reverse %}
+                        {% for categorie in actualite.categorie %}
+
+                            {% if categorie not in newArray %}
+                                <button class="button_galerie button-style button-style-dark-galerie button-style-color-2" data-filter=".{{ categorie }}">{{ categorie }}</button>
+                                {% set newArray = newArray|merge([categorie]) %}
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
                 </div>
 
-            {% endfor %}
 
+                <div class="grid_actu">
+
+                    {% for actualite in actualites %}
+
+                        <div class="grid-item {% for categorie in actualite.categorie %}{% if loop.last %}{{ categorie }}{% else %}{{ categorie }} {% endif %}{% endfor %}" id="actu">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <div>
+                                    {% for image in actualite.image.urls %}
+
+                                    <img class="thumbnail_actu " src="{{ asset('uploads/images/') }}{{ image }}">
+
+                                    {% endfor %}
+                                    </div>
+                                    <div class="actu_contenu">
+                                        {{ actualite.contenu | truncate(300) |raw }}
+                                    </div>
+                                    <button class="btn btn-default pull-right" href="{{ actualite.contenu }}" data-toggle="modal" data-target="#{{ actualite.id }}">Lire la suite...</button>
+
+                                    <div class="modal" id="{{ actualite.id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                    <h4 class="modal-title" id="myModalLabel">{{ actualite.titre }}</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    {#<img class="thumbnail_actu" src="{{ asset('uploads/images/') }}{{ actualite.image }}">#}
+                                                    {{ actualite.contenu | raw }}
+                                                </div>
+                                                <div class="modal-footer">
+                                                    Publié le {{ actualite.date |date('d-m-Y') }} par {{ app.user }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {#<div class="panel-footer clearfix">#}
+                                {#<div class="pull-right">#}
+                                {#<div class="categorie">#}
+                                {#{% for categorie in actualite.categorie %}{% if loop.last %}{{ categorie }}{% else %}{{ categorie }} | {% endif %}{% endfor %}#}
+                                {#</div>#}
+                                {#</div>#}
+                                {#</div>#}
+
+
+                            </div>
+                        </div>
+
+
+                    {% endfor %}
+                </div>
+
+            </div>
         </div>
-    </div>
-</div>
 
+        {% include '@Flo/Default/footer.html.twig' %}
+    </div>
 
 {% endblock %}

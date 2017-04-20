@@ -1,0 +1,19 @@
+<div class="footer navbar-fixed-bottom">
+
+
+    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+        {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+        <a href="{{ path('fos_user_security_logout') }}">
+            {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+        </a>
+    {% else %}
+        <a href="{{ path('admin_homepage') }}">© 2016 - {{ "now"|date("Y") }} Copyright</a> | Réalisation : Anthony Menet
+    {% endif %}
+
+    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+        <a class="pull-right" href="{{ path('admin_homepage') }}">Accéder à l'Admin</a>
+    {% else %}
+
+    {% endif %}
+
+</div>

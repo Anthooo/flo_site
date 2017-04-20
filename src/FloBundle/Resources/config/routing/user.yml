@@ -4,7 +4,7 @@ flo_homepage:
 
 flo_oeuvres:
     path:     /oeuvres
-    defaults: { _controller: FloBundle:Default:oeuvres}
+    defaults: { _controller: FloBundle:Default:Galerie }
 
 flo_fictions:
     path:     /fictions
@@ -14,17 +14,17 @@ flo_cours:
     path:     /cours
     defaults: { _controller: FloBundle:Default:cours}
 
-flo_cours_adultes:
-    path:     /cours_adultes_ados
-    defaults: { _controller: FloBundle:Default:coursadultes}
-
-flo_cours_ados:
-    path:     /cours_ados
-    defaults: { _controller: FloBundle:Default:coursados}
-
-flo_cours_enfants:
-    path:     /cours_enfants
-    defaults: { _controller: FloBundle:Default:coursenfants}
+#flo_cours_adultes:
+#    path:     /cours_adultes_ados
+#    defaults: { _controller: FloBundle:Default:coursadultes}
+#
+#flo_cours_ados:
+#    path:     /cours_ados
+#    defaults: { _controller: FloBundle:Default:coursados}
+#
+#flo_cours_enfants:
+#    path:     /cours_enfants
+#    defaults: { _controller: FloBundle:Default:coursenfants}
 
 flo_stages:
     path:     /stages
@@ -41,3 +41,4 @@ flo_contact:
 flo_actu:
     path:     /actualites
     defaults: { _controller: FloBundle:Default:Actu }
+

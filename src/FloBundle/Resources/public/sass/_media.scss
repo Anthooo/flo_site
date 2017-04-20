@@ -1,59 +1,307 @@
-@media screen and (max-width: 640px) {
-  .detailscours {
-    margin-bottom: 25px;
-  }
-  .iconame {
-    display: initial;
-  }
-}
+/* ----------- iPhone 6 ----------- */
 
-@media only screen
-and (min-device-width: 768px)
-and (max-device-width: 1024px)
-and (-webkit-min-device-pixel-ratio: 2) {
-  .detailscours {
-    margin-bottom: 25px;
-  }
-  .bmenu {
-    float: right;
-  }
-  .iconame {
-    display: initial;
-  }
-}
-
+/* Portrait and Landscape */
 @media only screen
 and (min-device-width: 375px)
 and (max-device-width: 667px)
 and (-webkit-min-device-pixel-ratio: 2) {
-  .detailscours {
-    margin-bottom: 25px;
+
+  body, html {
+    height: initial;
+    min-height: initial;
   }
-  .bmenu li a{
-    line-height: 2em;
+
+  .grid_actu .grid-item {
+    width: 100% !important;
+    padding-right: 0 !important;
+  }
+
+  .grid_actu {
+    margin-bottom: 3em;
+  }
+
+  .grid-item {
+    width: 100%;
+  }
+
+  .grid_cours , .grid {
+    width: 100%;
+    padding: 0;
+    background-color: transparent;
+    margin-bottom: 3em;
+  }
+
+  .container {
+    min-height: 100vh;
+  }
+
+  .home {
+    height: 100vh;
+    .footer {
+      height: initial;
+      font-size: 15px;
+    }
+    .name {
+      h1 {
+        a {
+          font-size: 5vw;
+          margin-top: 80vh;
+          text-shadow: initial;
+          color: #B9B9B9;
+        }
+      }
+    }
+    label {
+      top: 0;
+      right: 20px;
+    }
+    .menu_flo {
+      padding: 20% 0 0 0;
+      li {
+        font-size: 25px;
+        a {
+          line-height: 1em;
+          color: white;
+        }
+      }
+    }
+  }
+
+  .navbar_flo {
+    margin-bottom: 0;
+  }
+
+  .navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: white
+  }
+
+  .navbar-default .navbar-toggle .icon-bar {
+    background-color: white;
+  }
+
+  .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+    background-color: transparent;
+  }
+
+  .button_galerie {
+    font-size: 0.9em;
+    padding: 5px;
+  }
+
+  .contactpage {
+    .row {
+      margin: 0;
+    }
+    .well {
+      margin-bottom: 15%;
+    }
+  }
+
+  .contactform {
+    margin-top: 1em;
+  }
+
+  .timeline {
+    margin-bottom: 3em;
+  }
+
+  .open {
+    width: 20px;
+    height: 20px;
   }
 }
 
-@media screen
-and (device-width: 360px)
-and (device-height: 640px)
-and (-webkit-device-pixel-ratio: 3) {
-  .detailscours {
-    margin-bottom: 25px;
-  }
-  .bmenu li a{
-    line-height: 2em;
-  }
-}
-
+/* Portrait */
 @media only screen
-and (min-device-width: 320px)
-and (max-device-width: 568px)
-and (-webkit-min-device-pixel-ratio: 2) {
-  .detailscours {
-    margin-bottom: 25px;
+and (min-device-width: 375px)
+and (max-device-width: 667px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: portrait) {
+
+  body, html {
+    height: initial;
+    min-height: initial;
   }
-  .bmenu li a{
-    line-height: 2em;
+
+  .grid_actu .grid-item {
+    width: 100% !important;
+    padding-right: 0 !important;
+  }
+
+  .grid_actu {
+    margin-bottom: 3em;
+  }
+
+  .grid-item {
+    width: 100%;
+  }
+
+  .grid_cours , .grid {
+    width: 100%;
+    padding: 0;
+    background-color: transparent;
+    margin-bottom: 3em;
+  }
+
+  .container {
+    min-height: 100vh;
+  }
+
+  .home {
+    height: 100vh;
+    .footer {
+      height: initial;
+      font-size: 15px;
+    }
+  }
+
+  .navbar_flo {
+    margin-bottom: 0;
+  }
+
+  .navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: white
+  }
+
+  .navbar-default .navbar-toggle .icon-bar {
+    background-color: white;
+  }
+
+  .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+    background-color: transparent;
+  }
+
+  .bmenu {
+    margin: 0 15px 20px 0;
+    li {
+      font-size: 30px;
+      float: right;
+      a {
+        color: #797979;
+      }
+    }
+  }
+
+  label {
+
+  }
+
+  .button_galerie {
+    font-size: 0.9em;
+    padding: 5px;
+  }
+
+  .contactpage {
+    .row {
+      margin: 0;
+    }
+    .well {
+      margin-bottom: 15%;
+    }
+  }
+
+  .contactform {
+    margin-top: 1em;
+  }
+
+  .timeline {
+    margin-bottom: 3em;
+  }
+}
+
+/* Landscape */
+@media only screen
+and (min-device-width: 375px)
+and (max-device-width: 667px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: landscape) {
+
+  body, html {
+    height: initial;
+    min-height: initial;
+  }
+
+  .grid_actu .grid-item {
+    width: 100% !important;
+    padding-right: 0 !important;
+  }
+
+  .grid_actu {
+    margin-bottom: 3em;
+  }
+
+  .grid-item {
+    width: 100%;
+  }
+
+  .grid_cours , .grid {
+    width: 100%;
+    padding: 0;
+    background-color: transparent;
+    margin-bottom: 3em;
+  }
+
+  .container {
+    min-height: 100vh;
+  }
+
+  .home {
+    height: 100vh;
+    .footer {
+      height: initial;
+      font-size: 15px;
+    }
+  }
+
+  .navbar_flo {
+    margin-bottom: 0;
+  }
+
+  .navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: white
+  }
+
+  .navbar-default .navbar-toggle .icon-bar {
+    background-color: white;
+  }
+
+  .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+    background-color: transparent;
+  }
+
+  .bmenu {
+    margin: 30% 15px 20px 0;
+    li {
+      font-size: 30px;
+      float: right;
+      a {
+        color: #797979;
+      }
+    }
+  }
+
+  .button_galerie {
+    font-size: 0.9em;
+    padding: 5px;
+  }
+
+  .contactpage {
+    .row {
+      margin: 0;
+    }
+    .well {
+      margin-bottom: 15%;
+    }
+  }
+
+  .contactform {
+    margin-top: 1em;
+  }
+
+  .timeline {
+    margin-bottom: 3em;
   }
 }

@@ -71,7 +71,6 @@ class CategorieController extends Controller
      */
     public function editAction(Request $request, Categorie $categorie)
     {
-        $deleteForm = $this->createDeleteForm($categorie);
         $editForm = $this->createForm('FloBundle\Form\CategorieType', $categorie);
         $editForm->handleRequest($request);
 
@@ -84,7 +83,6 @@ class CategorieController extends Controller
         return $this->render('@Flo/Admin/categorie/edit.html.twig', array(
             'categorie' => $categorie,
             'edit_form' => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
         ));
     }
 
@@ -92,33 +90,17 @@ class CategorieController extends Controller
      * Deletes a categorie entity.
      *
      */
-    public function deleteAction(Request $request, Categorie $categorie)
+    public function deleteAction($id)
     {
-        $form = $this->createDeleteForm($categorie);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
+        if ($id) {
             $em = $this->getDoctrine()->getManager();
+            $categorie = $em->getRepository('FloBundle:Categorie')->findOneById($id);
             $em->remove($categorie);
-            $em->flush($categorie);
-        }
+            $em->flush();
 
-        return $this->redirectToRoute('categorie_index');
-    }
+            return $this->redirectToRoute('categorie_index');
+        } else
+            return $this->redirectToRoute('categorie_index');
 
-    /**
-     * Creates a form to delete a categorie entity.
-     *
-     * @param Categorie $categorie The categorie entity
-     *
-     * @return \Symfony\Component\Form\Form The form
-     */
-    private function createDeleteForm(Categorie $categorie)
-    {
-        return $this->createFormBuilder()
-            ->setAction($this->generateUrl('categorie_delete', array('id' => $categorie->getId())))
-            ->setMethod('DELETE')
-            ->getForm()
-        ;
     }
 }

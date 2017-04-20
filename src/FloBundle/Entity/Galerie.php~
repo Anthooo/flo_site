@@ -1,0 +1,12 @@
+<?php
+
+namespace FloBundle\Entity;
+
+/**
+ * Galerie
+ */
+class Galerie
+{
+    
+}
+

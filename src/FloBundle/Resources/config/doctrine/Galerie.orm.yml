@@ -1,7 +1,7 @@
-FloBundle\Entity\Modele:
+FloBundle\Entity\Galerie:
     type: entity
     table: null
-    repositoryClass: FloBundle\Repository\ModeleRepository
+    repositoryClass: FloBundle\Repository\GalerieRepository
     id:
         id:
             type: integer
@@ -9,21 +9,12 @@ FloBundle\Entity\Modele:
             generator:
                 strategy: AUTO
     fields:
-        titre:
-            type: string
-            length: 255
         contenu:
             type: text
-        liengaleriecours:
-            type: string
-            length: 255
             nullable: true
+    lifecycleCallbacks: {  }
 
     manyToOne:
-        categorie:
-            targetEntity: FloBundle\Entity\Categorie
         image:
             targetEntity: FloBundle\Entity\Image
             cascade: ["persist", "remove"]
-
-    lifecycleCallbacks: {  }

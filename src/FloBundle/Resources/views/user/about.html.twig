@@ -1,14 +1,12 @@
 {% extends 'base.html.twig' %}
 
-{% block header %}
-    {% include '@Flo/Default/navbar.html.twig' %}
-{% endblock %}
-
 {% block body %}
 
-<body class="page about">
+<div id="page">
+    {% include '@Flo/Default/navbar.html.twig' %}
     <div class="container">
-        <div class="timeline">
+
+    <div class="timeline">
             <ul class="cbp_tmtimeline">
                 {% for about in abouts %}
                     <li>
@@ -22,12 +20,9 @@
             </ul>
         </div>
     </div>
+    {% include '@Flo/Default/footer.html.twig' %}
+
+</div>
 
 {% endblock %}
 
-{% block javascripts %}
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
-    <script src="{{ asset('bundles/flo/js/flo.js') }}"></script>
-{% endblock %}
