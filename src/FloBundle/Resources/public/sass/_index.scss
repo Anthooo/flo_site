@@ -12,7 +12,7 @@
 		li {
 			font-size: 30px;
 			a {
-				color: transparent;
+				//color: transparent;
 				display: block;
 				text-transform: uppercase;
 				text-shadow: 0px 0px 5px #fff;
@@ -27,9 +27,9 @@
 		}
 	}
 
-	.menu_flo:hover li a {
-		text-shadow: 0px 0px 5px #424242;
-	}
+	//.menu_flo:hover li a {
+	//	text-shadow: 0px 0px 5px #FFF;
+	//}
 
 	.menu_flo li a:hover {
 		color: #fff;
