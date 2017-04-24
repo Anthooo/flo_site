@@ -60,18 +60,14 @@ class GalerieController extends Controller
      */
     public function editAction(Request $request, Galerie $galerie)
     {
-        $em = $this->getDoctrine()->getManager();
-        $image = $em->getRepository('FloBundle:Image')->findOneById($galerie->getImage()->getId());
-
         $editForm = $this->createForm('FloBundle\Form\GalerieType', $galerie);
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() or $editForm->isValid()) {
             $em = $this->getDoctrine()->getManager();
 
-            $cour->getImage()->upload($cour->getImage()->files);
+            $galerie->getImage()->upload($galerie->getImage()->files);
 
-            $em->persist($galerie);
             $em->flush();
 
             return $this->redirectToRoute('galerie_edit', array('id' => $galerie->getId()));
@@ -83,18 +79,38 @@ class GalerieController extends Controller
         ));
     }
 
+//    /**
+//     * Deletes a galerie entity.
+//     *
+//     */
+//    public function deleteAction($id)
+//    {
+//        if ($id) {
+//            $em = $this->getDoctrine()->getManager();
+//            $galerie = $em->getRepository('FloBundle:Galerie')->findOneById($id);
+//            $image = $em->getRepository('FloBundle:Image')->findOneById($galerie->getImage()->getId());
+//            $em->remove($galerie);
+//            $em->remove($image);
+//            $em->flush();
+//
+//            return $this->redirectToRoute('galerie_index');
+//        } else
+//            return $this->redirectToRoute('galerie_index');
+//
+//    }
+
     /**
-     * Deletes a galerie entity.
+     * Deletes a cour entity.
      *
      */
     public function deleteAction($id)
     {
         if ($id) {
             $em = $this->getDoctrine()->getManager();
-            $galerie = $em->getRepository('FloBundle:Galerie')->findOneById($id);
-            $image = $em->getRepository('FloBundle:Image')->findOneById($galerie->getImage()->getId());
+            $galerie = $em->getRepository('FloBundle:Galerie')->findOneBy(array('id' => $id));
+            $image = $em->getRepository('FloBundle:Image')->findOneBy(array('id' => $galerie->getImage()->getId()));
             $em->remove($galerie);
-            $em->remove($image);
+            $galerie->getImage()->removeUpload($image->getUrls());
             $em->flush();
 
             return $this->redirectToRoute('galerie_index');
@@ -102,4 +118,20 @@ class GalerieController extends Controller
             return $this->redirectToRoute('galerie_index');
 
     }
+
+    /**
+     * Deletes a image entity.
+     *
+     */
+    public function deleteImgGalerieAction($id, $name)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $image = $em->getRepository('FloBundle:Image')->findOneBy(array('id' => $id));
+
+        $image->removeUpload($name);
+
+        $em->flush();
+        return $this->redirectToRoute('galerie_index');
+    }
+
 }

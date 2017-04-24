@@ -17,13 +17,20 @@
 
                 <hr>
 
-                <div class="col-xs-5">
-                    <label>Image actuelle: </label>
+                <div class="col-xs-12">
+                    <h5>Images actuelles : </h5>
+
                     {% for image in galerie.image.urls %}
 
-                    <a href="{{ asset('uploads/images/' ~ image) }}" data-toggle="lightbox" data-gallery="example-gallery">
-                        <img class="thumbnail" src="{{ asset('uploads/images/' ~ image) }}">
-                    </a>
+                        <div class="view view-first">
+                            <img src="{{ asset('uploads/images/' ~ image) }}" />
+                            <div class="mask">
+                                <a class="info btn btn-default" href="{{ asset('uploads/images/' ~ image) }}" data-toggle="lightbox" data-gallery="example-gallery"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                                </a>
+                                <a class="info btn btn-default" href="{{ path('delete_img_galerie', {'id': galerie.image.id, 'name': image }) }}"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                                </a>
+                            </div>
+                        </div>
 
                     {% endfor %}
                 </div>

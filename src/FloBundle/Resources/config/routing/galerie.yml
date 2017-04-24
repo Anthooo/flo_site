@@ -18,3 +18,12 @@ galerie_delete:
     defaults: { _controller: "FloBundle:Galerie:delete" }
     requirements:
       id: \d+
+
+#-----------------------------------------------------------------------------------------------------
+#RDelete One Image
+#-----------------------------------------------------------------------------------------------------
+
+delete_img_galerie:
+    path:     /{id}/{name}/deleteImg
+    defaults: { _controller: FloBundle:Galerie:deleteImgGalerie }
+    methods: [GET, POST]
