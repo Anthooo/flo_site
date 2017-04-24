@@ -1244,6 +1244,29 @@ a:hover {
   width: auto;
 }
 
+/* line 147, ../sass/_admin.scss */
+.panel-admin {
+  width: 20%;
+  display: inline-block;
+  text-align: center;
+}
+/* line 152, ../sass/_admin.scss */
+.panel-admin .thumbnail_admin {
+  width: 100%;
+}
+/* line 156, ../sass/_admin.scss */
+.panel-admin .panel-body {
+  height: 250px;
+  overflow: scroll;
+  border: 10px solid #fff;
+  padding: 0;
+}
+
+/* line 164, ../sass/_admin.scss */
+.thumbnail_admin {
+  width: 100px;
+}
+
 /* line 1, ../sass/_datatables.scss */
 table.dataTable thead th {
   position: relative;

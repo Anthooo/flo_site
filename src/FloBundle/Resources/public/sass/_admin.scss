@@ -144,3 +144,23 @@
   }
 }
 
+.panel-admin {
+  width: 20%;
+  display: inline-block;
+  text-align: center;
+
+  .thumbnail_admin {
+    width: 100%;
+  }
+
+  .panel-body {
+    height: 250px;
+    overflow: scroll;
+    border: 10px solid #fff;
+    padding: 0;
+  }
+}
+
+.thumbnail_admin {
+  width: 100px;
+}

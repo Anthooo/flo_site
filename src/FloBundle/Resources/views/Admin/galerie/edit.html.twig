@@ -22,18 +22,20 @@
 
                     {% for image in galerie.image.urls %}
 
-                        <div class="view view-first">
-                            <img src="{{ asset('uploads/images/' ~ image) }}" />
-                            <div class="mask">
-                                <a class="info btn btn-default" href="{{ asset('uploads/images/' ~ image) }}" data-toggle="lightbox" data-gallery="example-gallery"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-                                </a>
-                                <a class="info btn btn-default" href="{{ path('delete_img_galerie', {'id': galerie.image.id, 'name': image }) }}"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-                                </a>
+                        <div class="panel panel-default panel-admin">
+                            <div class="panel-body">
+                                <img class="thumbnail_admin" src="{{ asset('uploads/images/' ~ image) }}">
+                            </div>
+                            <div class="panel-footer">
+                                <a class="info btn btn-default" href="{{ asset('uploads/images/' ~ image) }}" data-toggle="lightbox">Voir</a>
+
+                                <a class="info btn btn-default" href="{{ path('delete_img_galerie', {'id': galerie.image.id, 'name': image }) }}">Effacer</a>
                             </div>
                         </div>
 
                     {% endfor %}
                 </div>
+
                 <div class="col-xs-7">
                     {{ form_label(edit_form.image) }}
                     {{ form_widget(edit_form.image) }}
