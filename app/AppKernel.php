@@ -20,6 +20,7 @@ class AppKernel extends Kernel
             new Sonata\SeoBundle\SonataSeoBundle(),
             new Nomaya\SocialBundle\NomayaSocialBundle(),
             new Ivory\CKEditorBundle\IvoryCKEditorBundle(),
+            new Liip\ImagineBundle\LiipImagineBundle(),
             new FloBundle\FloBundle(),
         );
 
