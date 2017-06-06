@@ -6,6 +6,10 @@ user_routing:
     resource: routing/user.yml
     prefix:   /
 
+_liip_imagine:
+    resource: "@LiipImagineBundle/Resources/config/routing.xml"
+
+
 #-----------------------------------------------------------------------------------------------------
 #Route accueil admin
 #-----------------------------------------------------------------------------------------------------
