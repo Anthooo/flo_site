@@ -1,3 +1,8 @@
+$(window).load(function() {
+    // Animate loader off screen
+    $(".se-pre-con").fadeOut("slow");
+});
+
 $(document).ready(function() {
 
     $(document).on('click', '[data-toggle="lightbox"]', function(event) {

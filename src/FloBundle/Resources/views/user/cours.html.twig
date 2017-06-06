@@ -1,7 +1,9 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-<div id="page">
+    <div class="se-pre-con"></div>
+
+    <div id="page">
 
     {% include '@Flo/Default/navbar.html.twig' %}
 
@@ -97,7 +99,7 @@
 
                     <div class="grid-item" id="{{ cour.categorie }}">
                         <a href="{{ asset('uploads/images/' ~ image) }}" data-toggle="lightbox" data-gallery="cours">
-                            <img class="img-rounded thumbnail_galerie " src="{{ asset('uploads/images/' ~ image) }}">
+                            <img class="lazy img-rounded thumbnail_galerie" src="{{ asset('uploads/images/' ~ image) }}">
                         </a>
                     </div>
                     {% endfor %}
