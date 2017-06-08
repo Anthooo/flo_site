@@ -29,6 +29,11 @@ class Actualites
     private $date;
 
     /**
+     * @var boolean
+     */
+    private $publie;
+
+    /**
      * @var \FloBundle\Entity\Image
      */
     private $image;
@@ -126,6 +131,30 @@ class Actualites
     public function getDate()
     {
         return $this->date;
+    }
+
+    /**
+     * Set publie
+     *
+     * @param boolean $publie
+     *
+     * @return Actualites
+     */
+    public function setPublie($publie)
+    {
+        $this->publie = $publie;
+
+        return $this;
+    }
+
+    /**
+     * Get publie
+     *
+     * @return boolean
+     */
+    public function getPublie()
+    {
+        return $this->publie;
     }
 
     /**

@@ -16,6 +16,8 @@ FloBundle\Entity\Actualites:
             type: text
         date:
             type: date
+        publie:
+            type: boolean
     lifecycleCallbacks: {  }
 
     manyToOne:

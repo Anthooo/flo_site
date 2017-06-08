@@ -5,7 +5,7 @@
 
     <div id="admin">
         <div class="container">
-            <h1>Actualite edit</h1>
+            <h1>Actualité - édition</h1>
 
             {{ form_start(edit_form) }}
             {{ form_label(edit_form.titre) }}
@@ -43,6 +43,14 @@
                 {{ form_errors(edit_form.image) }}
             </div>
 
+
+            <div class="col-xs-12">
+                <label>Publication ? </label>
+                {{ form_widget(edit_form.publie) }}
+                {{ form_errors(edit_form.publie) }}
+            </div>
+
+
         </div>
 
 
@@ -58,3 +66,4 @@
     {% include '@Flo/Default/footer_admin.html.twig' %}
 
 {% endblock %}
+

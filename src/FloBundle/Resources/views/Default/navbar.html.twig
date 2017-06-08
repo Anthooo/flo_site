@@ -17,8 +17,8 @@
                 <li><a class="item" href="{{ path('flo_homepage') }}">Accueil</a></li>
                 <li {% if app.request.get('_route') == 'flo_oeuvres' %} class="active"{% endif %}><a class="item" href="{{ path('flo_oeuvres') }}">Oeuvres</a></li>
                 {#<li {% if app.request.get('_route') == 'flo_fictions' %} class="active"{% endif %}><a class="item" href="{{ path('flo_fictions') }}">Fictions</a></li>#}
-                <li {% if app.request.get('_route') == 'flo_cours' %} class="active"{% endif %}><a class="item" href="{{ path('flo_cours') }}">Cours</a></li>
                 <li {% if app.request.get('_route') == 'flo_actu' %} class="active"{% endif %}><a class="item" href="{{ path('flo_actu') }}">Actualités</a></li>
+                <li {% if app.request.get('_route') == 'flo_cours' %} class="active"{% endif %}><a class="item" href="{{ path('flo_cours') }}">Cours</a></li>
                 <li {% if app.request.get('_route') == 'flo_about' %} class="active"{% endif %}><a class="item" href="{{ path('flo_about') }}">A propos</a></li>
                 <li {% if app.request.get('_route') == 'flo_contact' %} class="active"{% endif %}><a class="item" href="{{ path('flo_contact') }}">Contact</a></li>
                 <li><a class="item" href="http://instagram.com/flooo1978" target="_blank">Instagram</a></li>
