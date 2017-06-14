@@ -42,3 +42,6 @@ flo_actu:
     path:     /actualites
     defaults: { _controller: FloBundle:Default:Actu }
 
+flo_ajax:
+    path:     /cours_ajax
+    defaults: { _controller: FloBundle:Default:Ajax}

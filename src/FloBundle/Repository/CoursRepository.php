@@ -14,4 +14,23 @@ class CoursRepository extends \Doctrine\ORM\EntityRepository
     {
         return $this->findBy(array(), array('id' => 'DESC'));
     }
+
+    public function findAjax()
+    {
+        $qb = $this->createQueryBuilder('c');
+        $qb->orderBy('c.image', 'DESC')
+            ->setMaxResults(1);
+        return $qb->getQuery()->getResult();
+    }
+
+    public function getFilesOnLoad($lastId)
+    {
+        $qb = $this->createQueryBuilder('c');
+        $qb->orderBy('c.image', 'DESC')
+            ->where('c.id < :last_id')
+            ->setMaxResults(1)
+            ->setParameter('last_id', $lastId);
+        return $qb->getQuery()->getResult();
+    }
+
 }

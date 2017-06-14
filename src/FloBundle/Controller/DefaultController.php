@@ -3,7 +3,12 @@
 namespace FloBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Serializer\Encoder\JsonEncoder;
+use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
+use Symfony\Component\Serializer\Serializer;
 
 
 class DefaultController extends Controller
@@ -27,23 +32,30 @@ class DefaultController extends Controller
         ));
     }
 
-    public function fictionsAction()
-    {
-        $em = $this->getDoctrine()->getManager();
-        $modeles = $em->getRepository('FloBundle:Categorie')->getModeleByCateg('Fictions');
-        return $this->render('@Flo/user/fictions.html.twig', array(
-            'modeles' => $modeles
-        ));
-    }
-
     public function coursAction()
     {
         $em = $this->getDoctrine()->getManager();
-        $cours = $em->getRepository("FloBundle:Cours")->findAll();
-        $img = $em->getRepository("FloBundle:Image")->findAll();
+        $cours = $em->getRepository("FloBundle:Cours")->findAjax();
         return $this->render('@Flo/user/cours.html.twig', array(
             'cours'=>$cours
         ));
+    }
+
+    public function AjaxAction(Request $request)
+    {
+        if ($request->isXmlHttpRequest()) {
+            $data = $request->get('id');
+            $em = $this->getDoctrine()->getManager();
+            $cour = $em->getRepository("FloBundle:Cours")->getFilesOnLoad($data);
+            $encoders = array(new JsonEncoder());
+            $normalizers = array(new ObjectNormalizer());
+            $serializer = new Serializer($normalizers, $encoders);
+            $jsoncontent = $serializer->serialize($cour, 'json');
+            $response = new Response($jsoncontent);
+            $response->headers->set('Content-Type', 'application/json');
+            return $response;
+        }
+        return new Response('OK');
     }
 
     public function stagesAction()

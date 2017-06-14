@@ -25,8 +25,6 @@
 
                 {% endfor %}
 
-
-
             </div>
 
             <div id="coursadultes" class="hidden">
@@ -91,6 +89,7 @@
             </div>
 
 
+
             <div class="grid_cours">
 
                 {% for cour in cours %}
@@ -99,7 +98,7 @@
 
                     <div class="grid-item" id="{{ cour.categorie }}">
                         <a href="{{ asset('uploads/images/' ~ image) }}" data-toggle="lightbox" data-gallery="cours">
-                            <img class="img-rounded thumbnail_galerie" src="{{ image | imagine_filter('my_thumb')}}" />
+                            <img class="img-rounded thumbnail_galerie ajaximg" src="{{ image | imagine_filter('my_thumb')}}" id="{{ cour.id }}" />
                         </a>
                     </div>
                     {% endfor %}
@@ -111,5 +110,67 @@
 
     {% include '@Flo/Default/footer.html.twig' %}
 
+
+{% endblock %}
+
+{% block javascripts %}
+
+    {{ parent() }}
+
+    <script>
+
+        var asset = '{{ asset('uploads/images/') }}';
+        var grid = $('.grid_cours');
+
+
+        $(window).scroll(function () {
+            if($(window).scrollTop() === $(document).height() - $(window).height())
+            {
+               var last_elem = $(".ajaximg:last").attr("id");
+
+                $.ajax({
+
+                    url : '{{ path('flo_ajax') }}',
+                    type: 'POST',
+                    data: {'id' : last_elem},
+                    success: function(html) {
+                        console.log(html);
+                        if (html) {
+//                                console.log(html);
+                            for (var key in html) {
+                                var categ = html[key].categorie.nom;
+                                var id = html[key].id;
+                                for (var image in html[key].image.urls) {
+                                    var $items = $("<div class='grid-item' id='" + categ + "'><a href='" + asset + html[key].image.urls[image] + " ' data-toggle='lightbox' data-gallery='cours'><img class='img-rounded thumbnail_galerie ajaximg' src='" + asset + html[key].image.urls[image] + "' id='" + id + "' /></a></div>");
+
+
+                                    grid.append($items).isotope('appended', $items);
+                                    grid.isotope('layout');
+
+                                    grid.imagesLoaded( function() {
+                                      grid.isotope({
+                                            itemSelector: '.grid-item',
+                                            transitionDuration: '0.5s',
+                                            layoutMode: 'masonry',
+                                            sortBy: 'random'
+                                      })
+                                    });
+
+
+
+
+                                }
+                            }
+                        }
+                        else {
+
+                        }
+                    }
+                    })
+
+            }
+        });
+
+    </script>
 
 {% endblock %}
