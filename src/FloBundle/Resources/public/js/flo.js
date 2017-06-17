@@ -96,32 +96,7 @@ $(document).ready(function() {
         });
     });
 
-// JS Datatable
-    $(document).ready(function() {
 
-
-        $('#modeles').DataTable({
-            "pageLength": 10,
-            "responsive": true,
-            "scrollX": true,
-            "lengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]],
-            "language": {
-                "lengthMenu": "_MENU_ ",
-                "zeroRecords": "Rien ne correspond à votre recherche désolé",
-                "info": "Page _PAGE_ / _PAGES_",
-                "search": "Rechercher:",
-                "infoFiltered":   "(parmi _MAX_ modèles)",
-                "paginate": {
-                    "first":      "Premier",
-                    "last":       "Dernier",
-                    "next":       "Suivant",
-                    "previous":   "Précédent"
-                }
-            }}
-        )
-
-
-    } );
 
 // Modal Actualités
     $('#myModal').on('show.bs.modal', function (event) {

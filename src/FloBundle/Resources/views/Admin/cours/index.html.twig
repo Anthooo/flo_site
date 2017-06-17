@@ -48,3 +48,46 @@
     {% include '@Flo/Default/footer_admin.html.twig' %}
 
 {% endblock %}
+
+{% block javascripts %}
+
+    {{ parent() }}
+
+
+    <script>
+        // JS Datatable
+        $(document).ready(function() {
+
+
+            $('#modeles').DataTable({
+                "pageLength": 10,
+                "responsive": true,
+                "scrollX": true,
+                "lengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]],
+                "language": {
+                    "lengthMenu": "_MENU_ ",
+                    "zeroRecords": "Rien ne correspond à votre recherche désolé",
+                    "info": "Page _PAGE_ / _PAGES_",
+                    "search": "Rechercher:",
+                    "infoFiltered":   "(parmi _MAX_ modèles)",
+                    "paginate": {
+                        "first":      "Premier",
+                        "last":       "Dernier",
+                        "next":       "Suivant",
+                        "previous":   "Précédent"
+                    }
+                }}
+            )
+
+
+        } );
+
+    </script>
+
+    <!-- Appel CDN Datatables -->
+    <script src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+
+
+    <script src="//cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
+
+{% endblock %}
