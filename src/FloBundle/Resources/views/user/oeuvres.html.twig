@@ -13,7 +13,7 @@
                     {% for image in galerie.image.urls %}
 
                         <div class="grid-item">
-                            <a href="{{ image | imagine_filter('img') )}}" data-toggle="lightbox" data-gallery="example-gallery" data-footer="{{ galerie.contenu }}">
+                            <a href="{{ image | imagine_filter('img') }}" data-toggle="lightbox" data-gallery="example-gallery" data-footer="{{ galerie.contenu }}">
                                 <img class="img-rounded thumbnail_galerie" src="{{ image | imagine_filter('my_thumb')}}" />
                             </a>
 
