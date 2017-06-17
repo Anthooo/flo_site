@@ -58,7 +58,7 @@ class DefaultController extends Controller
     public function ActuAction()
     {
         $em = $this->getDoctrine()->getManager();
-        $actualites = $em->getRepository("FloBundle:Actualites")->findAll();
+        $actualites = $em->getRepository("FloBundle:Actualites")->findBy(array('publie' => true));
         return $this->render('@Flo/user/actualites.html.twig', array(
             'actualites'=>$actualites
         ));

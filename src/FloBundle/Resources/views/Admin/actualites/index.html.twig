@@ -18,25 +18,26 @@
                 <table id="modeles" class="table table-bordered" cellspacing="0" width="100%">
                     <thead>
                     <tr>
-                        <th>Image</th>
+                        {#<th>Image</th>#}
                         <th>Titre</th>
                         <th>Contenu</th>
                         <th>Catégories</th>
+                        <th>Etat</th>
+                        <th>Date</th>
                         <th>Actions</th>
                     </tr>
                     </thead>
                     <tbody>
                     {% for actualite in actualites %}
                         <tr>
-                            {% for image in actualite.image.urls %}
+                            {#{% for image in actualite.image.urls %}#}
+                            {#<td>#}
+                            {#<a href="{{ asset('uploads/images/' ~ image) }}" data-toggle="lightbox" data-gallery="example-gallery">#}
+                            {#<img class="thumbnail" src="{{ asset('uploads/images/' ~ image) }}">#}
+                            {#</a>#}
+                            {#</td>#}
 
-                            <td>
-                                <a href="{{ asset('uploads/images/' ~ image) }}" data-toggle="lightbox" data-gallery="example-gallery">
-                                    <img class="thumbnail" src="{{ asset('uploads/images/' ~ image) }}">
-                                </a>
-                            </td>
-
-                            {% endfor  %}
+                            {#{% endfor  %}#}
                             <td>{{ actualite.titre }}</td>
                             <td>{{ actualite.contenu | truncate(600) | raw }}</td>
                             <td>
@@ -44,6 +45,14 @@
                                     {{ categorie }}
                                 {% endfor %}
                             </td>
+                            <td>
+                                {% if actualite.publie == 1 %}
+                                    <p>Publié</p>
+                                {% else %}
+                                    <p>Brouillon</p>
+                                {% endif %}
+                            </td>
+                            <td>{{ actualite.date | date('d/m/Y') }}</td>
                             <td class="text-center">
                                 <a class="btn btn-default" href="{{ path('actualites_edit', { 'id': actualite.id }) }}">Editer</a>
                                 <a class="btn btn-default" href="{{ path('actualites_delete', { 'id': actualite.id }) }}">Supprimer</a>
