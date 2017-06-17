@@ -20,7 +20,8 @@
 
 
         <!-- Appel CSS personnalisé -->
-        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/flo/css/style.css') }}"/>
+
+        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/flo/css/style.css') }}" media="none" onload="if(media!=='all')media='all'"/>
 
     {% endblock %}
 
