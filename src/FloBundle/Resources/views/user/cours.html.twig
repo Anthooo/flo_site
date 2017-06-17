@@ -98,7 +98,7 @@
                     {% for image in cour.image.urls %}
 
                     <div class="grid-item" id="{{ cour.categorie }}">
-                        <a href="{{ asset('/media/cache/img/' ~ image) }}" data-toggle="lightbox" data-gallery="cours">
+                        <a href="{{ image | imagine_filter('img') }}" data-toggle="lightbox" data-gallery="example-gallery">
                             <img class="img-rounded thumbnail_galerie" src="{{ image | imagine_filter('my_thumb')}}" />
                         </a>
                     </div>
