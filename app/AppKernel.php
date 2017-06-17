@@ -17,8 +17,6 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new Lexik\Bundle\MaintenanceBundle\LexikMaintenanceBundle(),
-            new Sonata\SeoBundle\SonataSeoBundle(),
-            new Nomaya\SocialBundle\NomayaSocialBundle(),
             new Ivory\CKEditorBundle\IvoryCKEditorBundle(),
             new Liip\ImagineBundle\LiipImagineBundle(),
             new FloBundle\FloBundle(),

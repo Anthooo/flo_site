@@ -107,38 +107,38 @@ lexik_maintenance:
         code: 503
         status: "Service Temporarily Unavailable"
 
-# Sonata SEO Configuration
-sonata_seo:
-    encoding:         UTF-8
-    page:
-        title:            Florence Menet-Pélisson
-        default:          sonata.seo.page.default
-        metas:
-            name:
-                keywords:             florence, menet, pelisson, dessin, contemporain, crayon, gravure sur bois, xylogravure, graphisme, gravure taille-douce, aquatinte, eau-forte, hybride, pointe seche, encre, estampe, crayon, dessin d'art, art, pastels, pastels secs, oeuvres sur papier, lecture, livres, romans, ecriture, fiction, arts plastiques, dessins d'enfants, cours 77, cours de dessin, seine et marne, stage de dessin, contraste, gouache, collage, couleurs
-                description:          Le site de Florence Menet-Pelisson donne a voir les oeuvres sur papier (dessins au crayon, au pastel sec, gravures sur bois, gravures sur cuivre) de l'artiste ainsi que les travaux de ses eleves. La rubrique fiction presente ses lectures et les textes qu'elle-meme ecrit.
-                robots:               index, follow
-                google-site-verification: OmJpY2OE3wjHfUXSpWcf1liip8dsCtutluYVpM8TO6M
-
-            property:
-                # Open Graph information
-                # see http://developers.facebook.com/docs/opengraphprotocol/#types or http://ogp.me/
-                'og:site_name':       Florence Menet-Pelisson
-                'og:description':     Le site de Florence Menet-Pelisson donne a voir les oeuvres sur papier (dessins au crayon, au pastel sec, gravures sur bois, gravures sur cuivre) de l'artiste ainsi que les travaux de ses eleves. La rubrique fiction presente ses lectures et les textes qu'elle-meme ecrit.
-
-            http-equiv:
-                'Content-Type':         text/html;
-                #'X-Ua-Compatible':      IE=EmulateIE7
-
-            charset:
-                UTF-8:    ''
-
-        head:
-            'lang':               fr
-            'class':              no-js demo-4
-            'xmlns':              http://www.w3.org/1999/xhtml
-            'xmlns:og':           http://opengraphprotocol.org/schema/
-            #'xmlns:fb':           "http://www.facebook.com/2008/fbml"
+## Sonata SEO Configuration
+#sonata_seo:
+#    encoding:         UTF-8
+#    page:
+#        title:            Florence Menet-Pélisson
+#        default:          sonata.seo.page.default
+#        metas:
+#            name:
+#                keywords:             florence, menet, pelisson, dessin, contemporain, crayon, gravure sur bois, xylogravure, graphisme, gravure taille-douce, aquatinte, eau-forte, hybride, pointe seche, encre, estampe, crayon, dessin d'art, art, pastels, pastels secs, oeuvres sur papier, lecture, livres, romans, ecriture, fiction, arts plastiques, dessins d'enfants, cours 77, cours de dessin, seine et marne, stage de dessin, contraste, gouache, collage, couleurs
+#                description:          Le site de Florence Menet-Pelisson donne a voir les oeuvres sur papier (dessins au crayon, au pastel sec, gravures sur bois, gravures sur cuivre) de l'artiste ainsi que les travaux de ses eleves. La rubrique fiction presente ses lectures et les textes qu'elle-meme ecrit.
+#                robots:               index, follow
+#                google-site-verification: OmJpY2OE3wjHfUXSpWcf1liip8dsCtutluYVpM8TO6M
+#
+#            property:
+#                # Open Graph information
+#                # see http://developers.facebook.com/docs/opengraphprotocol/#types or http://ogp.me/
+#                'og:site_name':       Florence Menet-Pelisson
+#                'og:description':     Le site de Florence Menet-Pelisson donne a voir les oeuvres sur papier (dessins au crayon, au pastel sec, gravures sur bois, gravures sur cuivre) de l'artiste ainsi que les travaux de ses eleves. La rubrique fiction presente ses lectures et les textes qu'elle-meme ecrit.
+#
+#            http-equiv:
+#                'Content-Type':         text/html;
+#                #'X-Ua-Compatible':      IE=EmulateIE7
+#
+#            charset:
+#                UTF-8:    ''
+#
+#        head:
+#            'lang':               fr
+#            'class':              no-js demo-4
+#            'xmlns':              http://www.w3.org/1999/xhtml
+#            'xmlns:og':           http://opengraphprotocol.org/schema/
+#            #'xmlns:fb':           "http://www.facebook.com/2008/fbml"
 
 
 
@@ -148,36 +148,36 @@ services:
        tags:
            - { name: twig.extension }
 
-
-nomaya_social:
-    buttons:
-        facebook:
-            url:            "http://www.florence-pelisson.fr/actualites"
-            locale:         "fr_FR"
-            send:           false
-            width:          300
-            showFaces:      true
-            layout:         "button_count"
-        twitter:
-            url:            "http://www.florence-pelisson.fr/actualites"
-            locale:         "fr"
-            message:        "Je veux partager ça avec vous"
-            text:           "Tweet"
-            via:            null
-            tag:            "art, expo"
-        googleplus:
-            url:            null
-            locale :        "fr"
-            size :          "medium"
-            annotation :    "bubble"
-            width :         300
-        linkedin:
-            url:            null
-            locale:         "fr_FR"
-            counter:        "right"
-        pinterest:
-            url:            null
-    theme:                  'default' # optional
+#
+#nomaya_social:
+#    buttons:
+#        facebook:
+#            url:            "http://www.florence-pelisson.fr/actualites"
+#            locale:         "fr_FR"
+#            send:           false
+#            width:          300
+#            showFaces:      true
+#            layout:         "button_count"
+#        twitter:
+#            url:            "http://www.florence-pelisson.fr/actualites"
+#            locale:         "fr"
+#            message:        "Je veux partager ça avec vous"
+#            text:           "Tweet"
+#            via:            null
+#            tag:            "art, expo"
+#        googleplus:
+#            url:            null
+#            locale :        "fr"
+#            size :          "medium"
+#            annotation :    "bubble"
+#            width :         300
+#        linkedin:
+#            url:            null
+#            locale:         "fr_FR"
+#            counter:        "right"
+#        pinterest:
+#            url:            null
+#    theme:                  'default' # optional
 
 # CK Editor configuration
 ivory_ck_editor:
@@ -207,7 +207,7 @@ liip_imagine:
         # the name of the "filter set"
         my_thumb:
             # adjust the image quality to 75%
-            quality: 40
+            quality: 60
             # list of transformations to apply (the "filters")
             filters:
                  relative_resize: { widen: 247 }
@@ -215,6 +215,7 @@ liip_imagine:
         img:
             quality: 75
             filters:
-                  relative_resize: { widen: 1000 }
+                scale:
+                    to: 0.5
 
 

@@ -1,22 +1,28 @@
 <!DOCTYPE html>
-<html {{ sonata_seo_html_attributes() }} >
+<html lang="fr">
 
-<head {{ sonata_seo_head_attributes() }}>
+<head>
 
-    {{ sonata_seo_title() }}
+    <meta name="description" content="Le site de Florence Menet-Pelisson donne a voir les oeuvres sur papier (dessins au crayon, au pastel sec, gravures sur bois, gravures sur cuivre) de l'artiste ainsi que les travaux de ses eleves. La rubrique fiction presente ses lectures et les textes qu'elle-meme ecrit.
+" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
 
-    {{ sonata_seo_metadatas() }}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+
+    <title>Florence Menet-Pélisson</title>
 
     <meta name=viewport content="width=device-width, initial-scale=1">
 
     {% block stylesheets %}
-        <!-- Appel CSS personnalisé -->
+        <!-- CSS Lightbox -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.1.1/ekko-lightbox.min.css">
 
+        <!-- Appel CSS personnalisé -->
         <link rel="stylesheet" type="text/css" href="{{ asset('bundles/flo/css/style.css') }}"/>
 
     {% endblock %}
 
-    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
 
 </head>
 
@@ -48,7 +54,7 @@
     <script src="{{ asset('bundles/flo/js/isotope.pkgd.min.js') }}"></script>
 
     <!-- JS Perso -->
-    <script src="{{ asset('bundles/flo/js/flo.js') }}"></script>
+    <script src="{{ asset('bundles/flo/js/flo.min.js') }}"></script>
 {% endblock %}
 
 
