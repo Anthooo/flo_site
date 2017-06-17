@@ -1,5 +1,14 @@
 {% extends 'base.html.twig' %}
 
+{% block stylesheets %}
+
+    {{ parent() }}
+
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/flo/fonts/font-awesome-4.3.0/css/font-awesome.min.css') }}" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/dataTables.bootstrap.min.css">
+
+{% endblock %}
+
 {% block body %}
     {% include '@Flo/Default/navadmin.html.twig' %}
 
