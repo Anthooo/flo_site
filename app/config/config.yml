@@ -204,14 +204,15 @@ liip_imagine:
 
         # the name of the "filter set"
         my_thumb:
-
             # adjust the image quality to 75%
             quality: 40
-
-
             # list of transformations to apply (the "filters")
             filters:
                  relative_resize: { widen: 247 }
 
+        img:
+            quality: 75
+            filters:
+                  relative_resize: { widen: 1000 }
 
 
