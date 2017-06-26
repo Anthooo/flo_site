@@ -1,9 +1,8 @@
 <?php
 
 namespace FloBundle\Entity;
-use FOS\UserBundle\Entity\User as BaseUser;
-use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert;
+use FOS\UserBundle\Model\User as BaseUser;
+
 
 
 class User extends BaseUser

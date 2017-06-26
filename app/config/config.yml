@@ -33,6 +33,7 @@ framework:
     session:
         name: "Flosite"
 
+
 # Twig Configuration
 twig:
     debug:            "%kernel.debug%"
@@ -76,6 +77,9 @@ fos_user:
     db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
     firewall_name: main
     user_class: FloBundle\Entity\User
+    from_email:
+            address: anthony.menet@gmail.com
+            sender_name: Flo
 
 # Lexik Maintenance configuration
 lexik_maintenance:
