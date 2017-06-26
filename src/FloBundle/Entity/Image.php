@@ -2,7 +2,6 @@
 
 namespace FloBundle\Entity;
 
-
 /**
  * Image
  */
@@ -37,6 +36,7 @@ class Image
     public function getUrls()
     {
         $urls = array();
+
         foreach ($this->urls as $url){
             array_push($urls, $url);
         }
