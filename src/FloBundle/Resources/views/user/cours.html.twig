@@ -31,19 +31,11 @@
 
             <div id="coursadultes" class="hidden">
                 <p class="infos_cours">
-                    Cours hebdomadaires
+                    <p><strong>Cours hebdomadaires :</strong> mercredi 19h30 - 22h / jeudi 14h - 16h30 / Tarifs saison 2017 - 2018 : 100 à 119€ par trimestre selon le lieu de résidence.</p>
 
-                    mercredi 19h30-22h / jeudi 14h-16h30
+                    <p><strong>Cours mensuels (autour du 15 du mois)</strong> : Jeudi 10h - 12h30 / Tarifs saison 2017 - 2018 : 100 à 119€ l'année selon le lieu de résidence. </p>
 
-                    Tarifs saison 2016-2017 : 100 à 119 euros par trimestre selon le lieu de résidence
-
-                    Cours mensuels (autour du 15 du mois)
-
-                    Jeudi 10h-12h30
-
-                    Tarifs saison 2016-2017 : 100 à 119 euros l'année selon le lieu de résidence
-
-                    Des frais annuels d'inscription de 20 euros sont demandés
+                    <p><strong>Frais annuels d'inscription : 20€</strong></p>
                 </p>
 
 
@@ -51,44 +43,35 @@
 
             <div id="coursenfants" class="hidden">
                 <p class="infos_cours">
-                    Cours hebdomadaires (enfant à partir de 5 ans selon déroulement séance d'essai)
 
-                    mercredi      13h30-15h30 / 15h30-17h30
+                    <p><strong>Cours hebdomadaires (enfant à partir de 5 ans selon déroulement séance d'essai)</strong> : mercredi 13h30-15h30 / 15h30-17h30 / jeudi 17h30-19h30 / Tarifs pour la saison 2017-2018 : 60 à 119€ par trimestre selon le lieu de résidence</p>
 
-                    jeudi 17h30-19h30
+                    <p><strong>Frais annuels d'inscription : 20€</strong></p>
 
-                    Tarifs pour la saison 2016-2017 : 60 à 119 euros par trimestre selon le lieu de résidence
-
-                    auxquels s'ajoutent 20 euros de frais annuels d'inscription
-
-                </p>
-            </div>
-
-            <div id="stages" class="hidden">
-                <p class="infos_cours">
-                    Du lundi au vendredi
-
-                    de 10h à 12h pour les enfants de 4 à 9 ans
-
-                    de 13h30 à 15h30 pour les enfants de 10 à 16 ans
-
-                    Généralement la première semaine des vacances scolaire d'octobre, février et avril
-
-                    Tarifs de 30 à 40 euros selon le lieu de résidence
                 </p>
             </div>
 
             <div id="coursados" class="hidden">
                 <p class="infos_cours">
-                    Cours hebdomadaires
+                <p><strong>Cours hebdomadaires</strong> : Mercredi 17h30-19h30</p>
 
-                    Mercredi 17h30-19h30
+                <p>Tarifs pour la saison 2017-2018 : 60 à 119€ par trimestre selon le lieu de résidence</p>
 
-                    Tarifs pour la saison 2016-2017 : 60 à 119 euros par trimestre selon le lieu de résidence
-
-                    Des frais annuels d'inscription de 20 euros sont demandés
+                <p><strong>Frais annuels d'inscription : 20€</strong></p>
                 </p>
             </div>
+
+
+            <div id="stages" class="hidden">
+                <p class="infos_cours">
+                <p>Du lundi au vendredi de 10h à 12h pour les enfants de 4 à 9 ans, de 13h30 à 15h30 pour les enfants de 10 à 16 ans</p>
+
+                <p>Généralement la première semaine des vacances scolaires d'octobre, février et avril</p>
+
+                <p>Tarifs de 30 à 40€ selon le lieu de résidence</p>
+                </p>
+            </div>
+
 
 
             <div class="grid_cours">
@@ -98,7 +81,7 @@
                     {% for image in cour.image.urls %}
 
                     <div class="grid-item" id="{{ cour.categorie }}">
-                        <a href="{{ image | imagine_filter('img') }}" data-toggle="lightbox" data-gallery="example-gallery">
+                        <a href="{{ asset('uploads/images/') }}{{ image }}" data-toggle="lightbox" data-gallery="example-gallery">
                             <img class="img-rounded thumbnail_galerie" src="{{ image | imagine_filter('my_thumb')}}" />
                         </a>
                     </div>
