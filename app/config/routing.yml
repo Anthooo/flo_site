@@ -1,4 +1,5 @@
 flo:
     resource: "@FloBundle/Resources/config/routing.yml"
     prefix:   /
+    schemes: ['%http_protocol%']
 
