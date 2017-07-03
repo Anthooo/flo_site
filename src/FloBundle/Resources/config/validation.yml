@@ -1,4 +1,4 @@
 FloBundle\Entity\Image:
     properties:
-        file:
+        files:
             - Image: ~
