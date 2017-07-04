@@ -42,6 +42,10 @@ flo_actualites:
     resource: "@FloBundle/Resources/config/routing/actualites.yml"
     prefix:   /admin/actualites
 
+flo_stats:
+    path: /admin/stats
+    defaults: { _controller: FloBundle:Default:stats }
+
 #-----------------------------------------------------------------------------------------------------
 #Route FosUserBundle
 #-----------------------------------------------------------------------------------------------------

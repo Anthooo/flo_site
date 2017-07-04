@@ -18,6 +18,11 @@ class DefaultController extends Controller
         return $this->render('@Flo/Admin/index.html.twig');
     }
 
+    public function statsAction()
+    {
+        return $this->render('@Flo/Admin/stats.html.twig');
+    }
+
     public function GalerieAction()
     {
         $em = $this->getDoctrine()->getManager();

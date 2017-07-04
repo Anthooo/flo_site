@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    {% include '@Flo/Default/navadmin.html.twig' %}
+
+    <div id="admin">
+        <div class="container">
+            <div class="row">
+
+                <h1>Statistiques</h1>
+
+                <div class="stats">
+
+                    <div class="col-xs-6">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Statistiques en temps réél</div>
+                            <div class="panel-body">
+                                <div id="widgetIframe">
+                                    <iframe width="100%" height="250" src="https://www.florence-pelisson.fr/piwik/index.php?module=Widgetize&action=iframe&widget=1&moduleToWidgetize=Live&actionToWidgetize=getSimpleLastVisitCount&idSite=1&period=day&date=yesterday&disableLink=1&widget=1" scrolling="no" frameborder="0" marginheight="0" marginwidth="0">
+                                    </iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-6">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Statistiques en temps réél</div>
+                            <div class="panel-body">
+                                <div id="widgetIframe"><iframe width="100%" height="250" src="https://www.florence-pelisson.fr/piwik/index.php?module=Widgetize&action=iframe&widget=1&moduleToWidgetize=Live&actionToWidgetize=widget&idSite=1&period=day&date=yesterday&disableLink=1&widget=1" scrolling="yes" frameborder="0" marginheight="0" marginwidth="0"></iframe></div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-6">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Actions - pages</div>
+                            <div class="panel-body">
+                                <div id="widgetIframe"><iframe width="100%" height="250" src="https://www.florence-pelisson.fr/piwik/index.php?module=Widgetize&action=iframe&widget=1&moduleToWidgetize=Actions&actionToWidgetize=getPageUrls&idSite=1&period=day&date=yesterday&disableLink=1&widget=1" scrolling="no" frameborder="0" marginheight="0" marginwidth="0"></iframe></div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-6">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Mots clés</div>
+                            <div class="panel-body">
+                                <div id="widgetIframe"><iframe width="100%" height="250" src="https://www.florence-pelisson.fr/piwik/index.php?module=Widgetize&action=iframe&widget=1&moduleToWidgetize=Referrers&actionToWidgetize=getKeywords&idSite=1&period=day&date=yesterday&disableLink=1&widget=1" scrolling="no" frameborder="0" marginheight="0" marginwidth="0"></iframe></div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    {% include '@Flo/Default/footer.html.twig' %}
+
+{% endblock %}
