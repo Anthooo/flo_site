@@ -30,7 +30,7 @@
 
                 <div class="grid_actu">
 
-                    {% for actualite in actualites %}
+                    {% for actualite in actualites|reverse %}
 
                         <div class="grid-item {% for categorie in actualite.categorie %}{% if loop.last %}{{ categorie }}{% else %}{{ categorie }} {% endif %}{% endfor %}" id="actu">
                             <div class="panel panel-default">
