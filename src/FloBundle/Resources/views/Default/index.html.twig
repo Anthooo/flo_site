@@ -3,18 +3,18 @@
 {% block body %}
     <div class="home">
         <div class="row">
-            <div class="col-md-7 col-xs-10 name">
+            <div class="col-xs-10 name">
                 <h1><a href="{{ path('flo_homepage') }}">FLORENCE MENET-PELISSON</a></h1>
             </div>
 
             <div class="col-xs-2 sidebar">
 
-                <input type="checkbox" id="navigation" />
-                <label for="navigation">
-                    <span id="nav_icon" class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
-                </label>
+                {#<input type="checkbox" id="navigation" />#}
+                {#<label for="navigation">#}
+                    {#<span id="nav_icon" class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>#}
+                {#</label>#}
 
-                <nav>
+                {#<nav>#}
                     <ul class="menu_flo">
                         <li><a href="{{ path('flo_oeuvres') }}">Oeuvres</a></li>
                         <li><a href="{{ path('flo_actu') }}">Actualités</a></li>
@@ -27,7 +27,7 @@
 
                         {% endif %}
                     </ul>
-                </nav>
+                {#</nav>#}
 
             </div>
         </div>

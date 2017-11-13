@@ -31,8 +31,7 @@ $(document).ready(function() {
         $('.grid_cours').isotope({
             itemSelector: '.grid-item',
             transitionDuration: '0.5s',
-            layoutMode: 'masonry',
-            sortBy : 'random'
+            layoutMode: 'masonry'
         });
     });
 

@@ -32,15 +32,6 @@ class DefaultController extends Controller
         ));
     }
 
-    public function fictionsAction()
-    {
-        $em = $this->getDoctrine()->getManager();
-        $modeles = $em->getRepository('FloBundle:Categorie')->getModeleByCateg('Fictions');
-        return $this->render('@Flo/user/fictions.html.twig', array(
-            'modeles' => $modeles
-        ));
-    }
-
     public function coursAction()
     {
         $em = $this->getDoctrine()->getManager();
